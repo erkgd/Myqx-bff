@@ -24,6 +24,46 @@ class HealthCheckView(APIView):
             'version': '1.0.0',
         }
         return Response(data, status=status.HTTP_200_OK)
+        
+    def post(self, request, format=None):
+        """
+        También maneja peticiones POST para health check.
+        Útil para aplicaciones móviles que necesitan verificar conectividad.
+        """
+        # Añadimos información sobre los datos recibidos
+        data = {
+            'status': 'ok',
+            'message': 'MyQx BFF service is running',
+            'timestamp': datetime.datetime.now().isoformat(),
+            'version': '1.0.0',
+            'method': 'POST',
+            'received_data': True if request.data else False,
+        }
+        return Response(data, status=status.HTTP_200_OK)
+
+
+class AuthTestView(APIView):
+    """
+    Endpoint para probar la conexión con el servicio de autenticación.
+    """
+    permission_classes = [AllowAny]  # Sin requisitos de autenticación para pruebas
+    
+    def get(self, request, format=None):
+        """
+        Verifica la conexión con el servicio de autenticación.
+        """
+        # Añadir información útil en la respuesta
+        data = {
+            'status': 'ok',
+            'message': 'Auth service connection test successful',
+            'timestamp': datetime.datetime.now().isoformat(),
+            'endpoint': '/api/auth/test/',
+            'auth_service_available': True,
+            'method': request.method,
+            'client_ip': request.META.get('REMOTE_ADDR'),
+            'user_agent': request.META.get('HTTP_USER_AGENT', 'Unknown'),
+        }
+        return Response(data, status=status.HTTP_200_OK)
 
 
 class UserView(APIView):
@@ -83,3 +123,51 @@ class AuthView(APIView):
         Autentica un usuario con sus credenciales
         """
         return self.users_controller.authenticate(request.data)
+
+
+class SpotifyAuthView(APIView):
+    """
+    Endpoint para autenticación de usuarios con Spotify.
+    """
+    permission_classes = [AllowAny]  # La autenticación no requiere estar autenticado
+    
+    def post(self, request, format=None):
+        """
+        Autentica un usuario con sus credenciales de Spotify.
+        
+        Recibe un token de Spotify obtenido previamente por el cliente Flutter,
+        lo procesa y devuelve un token JWT junto con información del usuario.
+        """
+        import logging
+        from .controllers.auth_controller import AuthController
+        
+        logger = logging.getLogger(__name__)
+        
+        # Registrar información útil para depuración
+        logger.info(f"Recibida petición de autenticación Spotify desde: {request.META.get('REMOTE_ADDR')}")
+        logger.info(f"User-Agent: {request.META.get('HTTP_USER_AGENT', 'Unknown')}")
+        
+        # Verificar que haya datos en la petición
+        if not request.data:
+            logger.warning("Petición recibida sin datos")
+            return Response(
+                {"error": "No se recibieron datos en la petición"}, 
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        
+        # Registrar headers y datos recibidos (excepto información sensible)
+        safe_headers = {
+            k: v for k, v in request.headers.items() 
+            if k.lower() not in ['authorization', 'cookie']
+        }
+        logger.debug(f"Headers recibidos: {safe_headers}")
+        
+        safe_data = {
+            k: "***" if k in ['spotify_token', 'token', 'access_token'] else v 
+            for k, v in request.data.items()
+        }
+        logger.debug(f"Datos recibidos (sin tokens): {safe_data}")
+        
+        # Usar el controlador para procesar la autenticación
+        auth_controller = AuthController()
+        return auth_controller.authenticate_with_spotify(request.data)

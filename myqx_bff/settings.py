@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-y+t)%1+jb^z&%!m=-f-op
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1,10.0.2.2').split(',')
 
 
 # Application definition
@@ -220,6 +220,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Configuración de servicios externos para BFF
 USERS_SERVICE_URL = os.environ.get('USERS_SERVICE_URL', 'http://localhost:8001/api')
+AUTH_SERVICE_URL = os.environ.get('AUTH_SERVICE_URL', os.environ.get('USERS_SERVICE_URL', 'http://localhost:8001/api'))
+SPOTIFY_AUTH_SERVICE_URL = os.environ.get('SPOTIFY_AUTH_SERVICE_URL', AUTH_SERVICE_URL)
+
+# Configuración de timeouts
+SERVICES_TIMEOUT = int(os.environ.get('SERVICES_TIMEOUT', '30'))
+
+# Configuración para no añadir barras diagonales al final de las URLs
+APPEND_SLASH = False
 
 # Configuración de seguridad
 SECURE_BROWSER_XSS_FILTER = True
