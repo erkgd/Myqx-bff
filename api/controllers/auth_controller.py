@@ -60,28 +60,26 @@ class AuthController:
         """
         try:
             # Registramos los datos recibidos para debug (ocultando información sensible)
-            safe_data = {k: "***" if k in ['spotify_token', 'token', 'access_token'] else v 
+            safe_data = {k: "***" if k in ['spotifyToken', 'token', 'access_token'] else v 
                         for k, v in spotify_data.items()}
             logger.info(f"Datos de autenticación Spotify recibidos del cliente: {safe_data}")
             
-            # Si el backend está disponible, usar el servicio para autenticar
-            if not settings.DEBUG:
-                try:
-                    result = self.auth_service.authenticate_with_spotify(spotify_data)
-                    return Response(result, status=status.HTTP_200_OK)
-                except Exception as e:
-                    # Si hay un error de conexión con el backend, caemos al modo simulado en DEBUG
-                    if not isinstance(e, (AuthenticationException, ServiceUnavailableException)):
-                        raise
-                    logger.warning(f"Usando modo simulado debido a error: {str(e)}")
+            # Extraer el token de Spotify del cuerpo de la solicitud
+            spotify_token = spotify_data.get('spotifyToken')
+            if not spotify_token:
+                raise AuthenticationException("Falta el token de Spotify")
             
-            # Si estamos en modo DEBUG o hubo un error con el backend, usar simulación
-            if settings.DEBUG:
-                return self._simulate_spotify_auth(spotify_data)
-            else:
-                # Si no estamos en DEBUG y llegamos aquí, propagar el error original
-                raise
-                
+            # Preparar los datos para enviar al servicio de autenticación
+            auth_data = {
+                'spotify_token': spotify_token,
+                'username': spotify_data.get('username'),
+                'profile_image': spotify_data.get('profilePhoto'),  # Cambiado de profilePhoto
+                'spotify_id': spotify_data.get('spotifyId')  # Añadido el ID de Spotify
+            }
+            
+            # Usar el servicio para autenticar con Spotify
+            result = self.auth_service.authenticate_with_spotify(auth_data)
+            return Response(result, status=status.HTTP_200_OK)
         except AuthenticationException as e:
             logger.warning(f"Error de autenticación con Spotify: {str(e)}")
             return Response({"error": str(e)}, status=status.HTTP_401_UNAUTHORIZED)

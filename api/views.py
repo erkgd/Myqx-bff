@@ -148,12 +148,12 @@ class SpotifyAuthView(APIView):
         logger.info(f"User-Agent: {request.META.get('HTTP_USER_AGENT', 'Unknown')}")
         
         # Verificar que haya datos en la petición
-        if not request.data:
-            logger.warning("Petición recibida sin datos")
-            return Response(
-                {"error": "No se recibieron datos en la petición"}, 
-                status=status.HTTP_400_BAD_REQUEST
-            )
+        #if not request.data:
+        #    logger.warning("Petición recibida sin datos")
+        #    return Response(
+        #        {"error": "No se recibieron datos en la petición"}, 
+        #        status=status.HTTP_400_BAD_REQUEST
+        #    )
         
         # Registrar headers y datos recibidos (excepto información sensible)
         safe_headers = {

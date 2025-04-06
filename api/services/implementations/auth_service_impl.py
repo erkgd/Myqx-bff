@@ -142,21 +142,22 @@ class AuthServiceImpl(BaseService):
             
     def authenticate_with_spotify(self, data: Dict[str, Any]) -> Dict[str, Any]:
         """
-        Autentica un usuario utilizando credenciales de Spotify.
+        Autentica un usuario utilizando credenciales de Spotify y almacena la información en Neo4j.
         
         Args:
             data: Diccionario con el token de Spotify y opcionalmente
                  información del perfil de usuario
-            
+        
         Returns:
             Dict con información del token JWT y usuario autenticado
-            
+        
         Raises:
             AuthenticationException: Si el token es inválido
-            ServiceUnavailableException: Si hay problemas de conexión con el backend
+            ServiceUnavailableException: Si hay problemas de conexión con el backend Neo4j
         """
         try:
-            logger.info(f"Iniciando autenticación con Spotify")
+            logger.info(f"Datos de autenticación Spotify recibidos del cliente: {data}")
+            logger.info(f"Iniciando autenticación con Spotify para almacenamiento en Neo4j")
             
             # Extraer el token de Spotify de los datos recibidos
             spotify_token = None
@@ -170,9 +171,10 @@ class AuthServiceImpl(BaseService):
             if not spotify_token:
                 raise AuthenticationException("Falta el token de Spotify")
                 
-            # Preparar los datos para enviar al backend
+            # Preparar los datos para enviar al backend Neo4j
             auth_data = {
-                'spotify_token': spotify_token
+                'spotify_token': spotify_token,
+                'use_neo4j': True  # Indicador para el backend de que use Neo4j
             }
             
             # Añadir datos adicionales del perfil si están disponibles
@@ -181,7 +183,7 @@ class AuthServiceImpl(BaseService):
                 if field in data:
                     auth_data[field] = data[field]
             
-            logger.info(f"Enviando datos de autenticación Spotify al backend")
+            logger.info(f"Enviando datos de autenticación Spotify al backend Neo4j en localhost:8001")
             
             # Llamada al endpoint de autenticación de Spotify en el backend
             response = self.post('/auth/spotify/', data=auth_data)
@@ -191,6 +193,8 @@ class AuthServiceImpl(BaseService):
                 logger.error(f"Formato de respuesta de autenticación de Spotify inválido: {response}")
                 raise AuthenticationException("Formato de respuesta de autenticación inválido")
                 
+            # Registrar éxito de la autenticación con Neo4j
+            logger.info(f"Autenticación con Spotify y Neo4j exitosa para usuario: {response.get('user', {}).get('username', 'unknown')}")
             return response
         except Exception as e:
             # Si es un error específico de autenticación, lo propagamos
@@ -198,24 +202,10 @@ class AuthServiceImpl(BaseService):
                 raise
                 
             # Para otros errores, manejamos de forma genérica
-            logger.error(f"Error al autenticar usuario con Spotify: {str(e)}")
+            logger.error(f"Error al autenticar usuario con Spotify en Neo4j: {str(e)}")
             
             # Determinar el tipo de error para una mejor experiencia de usuario
             if "Connection" in str(e) or "connect" in str(e).lower() or "timeout" in str(e).lower():
-                raise ServiceUnavailableException("Servicio de autenticación de Spotify no disponible")
+                raise ServiceUnavailableException("Servicio de autenticación de Spotify/Neo4j no disponible")
             else:
-                raise AuthenticationException("Error en autenticación de Spotify o servicio no disponible")
-            
-    def test_auth_connection(self) -> Dict[str, Any]:
-        """
-        Prueba la conexión con el servicio de autenticación.
-        Útil para verificar la disponibilidad del backend.
-        
-        Returns:
-            Dict con información sobre el estado del servicio
-        """
-        try:
-            return self.get('/auth/test/')
-        except Exception as e:
-            logger.error(f"Error al probar conexión con autenticación: {str(e)}")
-            raise ServiceUnavailableException("Servicio de autenticación")
+                raise AuthenticationException("Error en autenticación de Spotify o servicio Neo4j no disponible")
