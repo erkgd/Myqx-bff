@@ -64,21 +64,9 @@ class AuthController:
                         for k, v in spotify_data.items()}
             logger.info(f"Datos de autenticación Spotify recibidos del cliente: {safe_data}")
             
-            # Extraer el token de Spotify del cuerpo de la solicitud
-            spotify_token = spotify_data.get('spotifyToken')
-            if not spotify_token:
-                raise AuthenticationException("Falta el token de Spotify")
-            
-            # Preparar los datos para enviar al servicio de autenticación
-            auth_data = {
-                'spotify_token': spotify_token,
-                'username': spotify_data.get('username'),
-                'profile_image': spotify_data.get('profilePhoto'),  # Cambiado de profilePhoto
-                'spotify_id': spotify_data.get('spotifyId')  # Añadido el ID de Spotify
-            }
-            
             # Usar el servicio para autenticar con Spotify
-            result = self.auth_service.authenticate_with_spotify(auth_data)
+            result = self.auth_service.authenticate_with_spotify(spotify_data)
+            logger.info(f"Respuesta del servicio de autenticación Spotify: {result}")
             return Response(result, status=status.HTTP_200_OK)
         except AuthenticationException as e:
             logger.warning(f"Error de autenticación con Spotify: {str(e)}")
@@ -92,80 +80,3 @@ class AuthController:
                 {"error": "Error interno del servidor"}, 
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
-            
-    def _simulate_spotify_auth(self, spotify_data):
-        """
-        Simula la autenticación con Spotify para desarrollo.
-        
-        Args:
-            spotify_data: Dict con los datos de Spotify
-            
-        Returns:
-            Response: Respuesta HTTP simulada
-        """
-        logger.info("Utilizando autenticación simulada con Spotify")
-        
-        # Registrar datos recibidos para debug
-        logger.info(f"Formato de los datos recibidos: {type(spotify_data)}")
-        for key, value in spotify_data.items():
-            logger.info(f"Campo '{key}': tipo {type(value)}")
-        
-        # 1. Validar que el request tenga el token de Spotify
-        spotify_token = None
-        
-        # Buscar el token en diferentes ubicaciones posibles
-        if 'spotify_token' in spotify_data:
-            spotify_token = spotify_data['spotify_token']
-        elif 'token' in spotify_data and isinstance(spotify_data['token'], str):
-            spotify_token = spotify_data['token']
-        elif 'access_token' in spotify_data:
-            spotify_token = spotify_data['access_token']
-        elif 'token' in spotify_data and isinstance(spotify_data['token'], dict) and 'access_token' in spotify_data['token']:
-            spotify_token = spotify_data['token']['access_token']
-            
-        # Si no encontramos un token, usar uno simulado
-        if not spotify_token:
-            logger.warning("No se encontró token de Spotify. Usando token simulado para desarrollo.")
-            spotify_token = "mock_spotify_token_for_development"
-        
-        # Generar datos de usuario simulados
-        user_id = str(uuid.uuid4())
-        now = datetime.now()
-        
-        # Extraer datos del perfil que el cliente pueda haber enviado
-        profile_name = spotify_data.get('display_name', spotify_data.get('username', f"User_{user_id[:8]}"))
-        profile_email = spotify_data.get('email', f"user_{user_id[:8]}@example.com")
-        profile_image = spotify_data.get('profile_image', spotify_data.get('profile_url', None))
-        
-        # MODIFICACIÓN: Simplificar formato de token para que sea compatible con el cliente Flutter
-        # Opción 1: Token como cadena simple (versión simplificada)
-        access_token = f"myqx_access_token_{user_id[:8]}"
-        refresh_token = f"myqx_refresh_token_{user_id[:8]}"
-        
-        response_data = {
-            # Enviar token de dos formas para mayor compatibilidad con diferentes
-            # implementaciones del cliente
-            "token": access_token,  # Formato simple como string
-            "access_token": access_token,  # Alternativa común
-            "refresh_token": refresh_token,
-            "token_data": {  # Formato completo con datos adicionales
-                "access": access_token,
-                "refresh": refresh_token,
-                "access_expires": (now + timedelta(hours=1)).isoformat(),
-                "refresh_expires": (now + timedelta(days=7)).isoformat()
-            },
-            "user": {
-                "id": user_id,
-                "username": profile_name,
-                "email": profile_email,
-                "profile_image": profile_image,
-                "spotify_connected": True,
-                "auth_provider": "spotify",
-                "created_at": now.isoformat(),
-                "last_login": now.isoformat()
-            }
-        }
-        
-        logger.info(f"Autenticación Spotify simulada exitosa para usuario: {response_data['user']['username']}")
-        logger.info(f"Formato de respuesta: {json.dumps(response_data, indent=2)}")
-        return Response(response_data, status=status.HTTP_200_OK)

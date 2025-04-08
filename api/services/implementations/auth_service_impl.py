@@ -155,34 +155,31 @@ class AuthServiceImpl(BaseService):
             AuthenticationException: Si el token es inválido
             ServiceUnavailableException: Si hay problemas de conexión con el backend Neo4j
         """
+        
         try:
-            logger.info(f"Datos de autenticación Spotify recibidos del cliente: {data}")
+            logger.debug(f"Datos de la petición recibidos: {data}")
             logger.info(f"Iniciando autenticación con Spotify para almacenamiento en Neo4j")
-            
             # Extraer el token de Spotify de los datos recibidos
             spotify_token = None
-            if 'spotify_token' in data:
-                spotify_token = data['spotify_token']
+            if 'spotifyToken' in data:  # Cambiado de spotify_token a spotifyToken
+                spotify_token = data['spotifyToken']
             elif 'token' in data and isinstance(data['token'], str):
                 spotify_token = data['token']
             elif 'access_token' in data:
                 spotify_token = data['access_token']
-                
+
             if not spotify_token:
                 raise AuthenticationException("Falta el token de Spotify")
-                
-            # Preparar los datos para enviar al backend Neo4j
+
+            # Preparar los datos para enviar al servicio de autenticación
             auth_data = {
                 'spotify_token': spotify_token,
+                'username': data.get('username'),
+                'profile_image': data.get('profilePhoto'),  # Cambiado de profilePhoto
+                'spotify_id': data.get('spotifyId'),  # Añadido el ID de Spotify
+                'email': data.get('email'),  # Añadido el email
                 'use_neo4j': True  # Indicador para el backend de que use Neo4j
             }
-            
-            # Añadir datos adicionales del perfil si están disponibles
-            profile_fields = ['display_name', 'email', 'profile_image', 'spotify_id']
-            for field in profile_fields:
-                if field in data:
-                    auth_data[field] = data[field]
-            
             logger.info(f"Enviando datos de autenticación Spotify al backend Neo4j en localhost:8001")
             
             # Llamada al endpoint de autenticación de Spotify en el backend
