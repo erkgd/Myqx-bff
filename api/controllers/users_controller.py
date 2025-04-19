@@ -247,3 +247,33 @@ class UsersController:
         except Exception as e:
             # El manejador de excepciones personalizado se encargará de formatear esta respuesta
             raise
+    
+    def get_following_network(self, user_id: str):
+        """
+        Obtiene la red de seguidos de un usuario específico.
+        
+        Args:
+            user_id: ID del usuario cuya red se quiere obtener
+            
+        Returns:
+            Lista de usuarios seguidos o lista vacía si no hay ninguno
+        """
+        try:
+            from ..services.implementations.users_service_impl import UsersServiceImpl
+            
+            # Crear una instancia del servicio
+            users_service = UsersServiceImpl()
+            
+            # Obtener la red de seguidos usando el método que implementamos
+            following_network = users_service.get_following_network(user_id)
+            
+            return following_network
+            
+        except Exception as e:
+            # Loggear el error
+            import logging
+            logger = logging.getLogger(__name__)
+            logger.error(f"Error al obtener red de seguidos para usuario {user_id}: {str(e)}")
+            
+            # En caso de error devolvemos una lista vacía
+            return []

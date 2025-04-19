@@ -171,3 +171,36 @@ class SpotifyAuthView(APIView):
         # Usar el controlador para procesar la autenticación
         auth_controller = AuthController()
         return auth_controller.authenticate_with_spotify(request.data)
+
+
+class FollowingNetworkView(APIView):
+    """
+    Endpoint para obtener la red de seguidos de un usuario.
+    """
+    permission_classes = [AllowAny]  # Puedes cambiar a IsAuthenticated según tus requisitos
+    users_controller = UsersController()
+    
+    def get(self, request, user_id, format=None):
+        """
+        Obtiene la red de seguidos para un usuario específico.
+        """
+        try:
+            # Usando el método que implementamos en el controlador
+            following_network = self.users_controller.get_following_network(user_id)
+            
+            # Crear una respuesta estructurada
+            data = {
+                'user_id': user_id,
+                'following_network': following_network,
+                'count': len(following_network) if following_network else 0,
+                'timestamp': datetime.datetime.now().isoformat(),
+            }
+            
+            return Response(data, status=status.HTTP_200_OK)
+        except Exception as e:
+            # Manejar errores de manera adecuada
+            error_data = {
+                'error': str(e),
+                'user_id': user_id,
+            }
+            return Response(error_data, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

@@ -114,7 +114,31 @@ class UsersServiceImpl(BaseService, UserServiceInterface):
         except Exception:
             # Para autenticación, no queremos propagar la excepción ya que es un caso de uso común
             return None
-    
+
+    def get_following_network(self, user_id: str) -> List[Dict[str, Any]]:
+        """
+        Obtiene la red de seguidos de un usuario desde el backend.
+
+        Args:
+            user_id: ID del usuario
+
+        Returns:
+            Lista de diccionarios representando los usuarios seguidos.
+        """
+        try:
+            # Conectar al endpoint específico solicitado
+            response = self.get(f'/{user_id}/following_network/')
+            # Registrar la respuesta para depuración
+            import logging
+            logger = logging.getLogger(__name__)
+            logger.info(f"Respuesta del endpoint following_network: {response}")
+            # Asumimos que la respuesta es una lista de usuarios
+            return response if isinstance(response, list) else []
+        except Exception as e:
+            self._handle_error(f"Error al obtener la red de seguidos para el usuario {user_id}", e)
+            # Para un mejor manejo del error, podríamos retornar una lista vacía
+            return []
+
     def _handle_error(self, message: str, exception: Exception) -> None:
         """
         Método auxiliar para manejar errores de manera consistente.

@@ -87,3 +87,16 @@ class UserServiceInterface(ABC):
             Dict con información del token y usuario o None si la autenticación falla
         """
         pass
+
+    @abstractmethod
+    def get_following_network(self, user_id: str) -> List[Dict[str, Any]]:
+        """
+        Obtiene la red de seguidos de un usuario.
+
+        Args:
+            user_id: ID del usuario
+
+        Returns:
+            Lista de diccionarios representando los usuarios seguidos.
+        """
+        pass
