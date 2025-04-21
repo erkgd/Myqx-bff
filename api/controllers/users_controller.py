@@ -258,8 +258,14 @@ class UsersController:
         Returns:
             Lista de usuarios seguidos o lista vacía si no hay ninguno
         """
+        import logging
+        logger = logging.getLogger(__name__)
+        
         try:
             from ..services.implementations.users_service_impl import UsersServiceImpl
+            
+            # Log del user_id recibido
+            logger.info(f"Recibido user_id: {user_id}")
             
             # Crear una instancia del servicio
             users_service = UsersServiceImpl()
@@ -267,12 +273,13 @@ class UsersController:
             # Obtener la red de seguidos usando el método que implementamos
             following_network = users_service.get_following_network(user_id)
             
+            # Log de la respuesta obtenida del servicio
+            logger.info(f"Respuesta obtenida del servicio para user_id {user_id}: {following_network}")
+            
             return following_network
             
         except Exception as e:
             # Loggear el error
-            import logging
-            logger = logging.getLogger(__name__)
             logger.error(f"Error al obtener red de seguidos para usuario {user_id}: {str(e)}")
             
             # En caso de error devolvemos una lista vacía

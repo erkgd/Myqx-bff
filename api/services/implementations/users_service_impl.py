@@ -125,18 +125,36 @@ class UsersServiceImpl(BaseService, UserServiceInterface):
         Returns:
             Lista de diccionarios representando los usuarios seguidos.
         """
+        import logging
+        logger = logging.getLogger(__name__)
+        
         try:
-            # Conectar al endpoint específico solicitado
-            response = self.get(f'/{user_id}/following_network/')
+            # Preparamos headers para la solicitud
+            headers = {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest',
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'
+            }
+            
+            # Log para inspeccionar los headers enviados
+            logger.info(f"Headers enviados en la solicitud: {headers}")
+            
+            # Log de la URL del endpoint
+            endpoint_url = f'/{user_id}/following_network/'
+            logger.info(f"URL del endpoint: {endpoint_url}")
+            
+            # Realizar la solicitud
+            response = self.get(endpoint_url, headers=headers)
+            
             # Registrar la respuesta para depuración
-            import logging
-            logger = logging.getLogger(__name__)
             logger.info(f"Respuesta del endpoint following_network: {response}")
+            
             # Asumimos que la respuesta es una lista de usuarios
             return response if isinstance(response, list) else []
         except Exception as e:
             self._handle_error(f"Error al obtener la red de seguidos para el usuario {user_id}", e)
-            # Para un mejor manejo del error, podríamos retornar una lista vacía
+            # Para un mejor manejo del error, retornamos una lista vacía
             return []
 
     def _handle_error(self, message: str, exception: Exception) -> None:
