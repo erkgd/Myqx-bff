@@ -6,6 +6,9 @@ from rest_framework_simplejwt.exceptions import TokenError, InvalidToken
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 from .utils import create_response
+import logging
+
+logger = logging.getLogger(__name__)
 
 @method_decorator(csrf_exempt, name='dispatch')
 class CustomTokenVerifyView(APIView):
@@ -16,20 +19,35 @@ class CustomTokenVerifyView(APIView):
     """
     
     def post(self, request, *args, **kwargs):
-        token = request.data.get('token')
-        if not token:
-            return create_response(
-                data=None,
-                message="Token no proporcionado",
-                status_code=status.HTTP_400_BAD_REQUEST,
-                errors={"token": "Este campo es requerido"}
-            )
-        
         try:
+            # Verificar si request.data es None o si podemos acceder a él de forma segura
+            if request.data is None:
+                request.data = {}
+                
+            # Verificar si el token está en datos codificados JSON, datos de formulario o en el cuerpo bruto
+            token = None
+            if isinstance(request.data, dict):
+                token = request.data.get('token')
+            if not token and hasattr(request, 'POST'):
+                token = request.POST.get('token')
+            if not token and 'HTTP_AUTHORIZATION' in request.META:
+                auth = request.META['HTTP_AUTHORIZATION'].split()
+                if len(auth) == 2 and auth[0].lower() == 'token':
+                    token = auth[1]
+                elif len(auth) == 2 and auth[0].lower() == 'bearer':
+                    token = auth[1]
+                    
+            # Comprobar si se proporcionó un token
+            if not token:
+                return create_response(
+                    data=None,
+                    message="Token no proporcionado",
+                    status_code=status.HTTP_400_BAD_REQUEST,
+                    errors={"token": "Este campo es requerido"}
+                )
+            
             # Intentar decodificar el token
             AccessToken(token)
-            
-            # Si no hay error, el token es válido
             return create_response(
                 data={"valid": True},
                 message="Token válido",
@@ -40,6 +58,14 @@ class CustomTokenVerifyView(APIView):
                 data={"valid": False},
                 message="Token inválido o expirado",
                 status_code=status.HTTP_401_UNAUTHORIZED
+            )
+        except Exception as e:
+            logger.exception("Error inesperado en CustomTokenVerifyView.post")
+            return create_response(
+                data=None,
+                message="Error interno al verificar token",
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                errors={"detail": str(e)}
             )
     
     def get(self, request, *args, **kwargs):

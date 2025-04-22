@@ -18,6 +18,7 @@ urlpatterns = [
     path('auth/test/', AuthTestView.as_view(), name='auth-test'),
     path('auth/spotify', SpotifyAuthView.as_view(), name='spotify-auth'),
     path('users/<str:user_id>/following_network/', FollowingNetworkView.as_view(), name='following-network'),
+    path('users/<str:user_id>/following_network', FollowingNetworkView.as_view(), name='following-network-no-slash'),
     
     # Ruta directa para acceder sin 'users/' en la URL
     path('<str:user_id>/following_network/', FollowingNetworkView.as_view(), name='direct-following-network'),
