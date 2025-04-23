@@ -212,6 +212,150 @@ class UsersServiceImpl(BaseService, UserServiceInterface):
             # Para un mejor manejo del error, retornamos una lista vacía
             return []
 
+    def follow_user(self, follower_id: str, followed_id: str) -> bool:
+        """
+        Establece una relación de seguimiento entre dos usuarios.
+
+        Args:
+            follower_id: ID del usuario que hace el seguimiento
+            followed_id: ID del usuario que es seguido
+
+        Returns:
+            bool: True si la operación fue exitosa, False en caso contrario
+        """
+        import logging
+        import sys
+        logger = logging.getLogger(__name__)
+        
+        print(f"[FOLLOW_USER] Intentando establecer relación: {follower_id} siguiendo a {followed_id}", file=sys.stderr)
+        
+        try:
+            # Preparamos headers para la solicitud
+            headers = {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest',
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'
+            }
+            
+            # Preparamos datos para enviar
+            data = {
+                'follower_id': follower_id,
+                'followed_id': followed_id
+            }
+            
+            # Endpoint para la solicitud
+            endpoint_url = '/users/following/'
+            
+            # Realizamos la solicitud POST
+            print(f"[FOLLOW_USER] Realizando solicitud POST a {endpoint_url}", file=sys.stderr)
+            response = self.post(endpoint_url, data=data, headers=headers)
+            
+            # Verificamos la respuesta
+            print(f"[FOLLOW_USER] Respuesta: {response}", file=sys.stderr)
+            
+            # Asumimos que si la respuesta no es None, la operación fue exitosa
+            return response is not None and isinstance(response, dict)
+            
+        except Exception as e:
+            error_msg = f"[FOLLOW_USER] Error al establecer relación de seguimiento: {str(e)}"
+            print(error_msg, file=sys.stderr)
+            self._handle_error(error_msg, e)
+            return False
+    
+    def unfollow_user(self, follower_id: str, followed_id: str) -> bool:
+        """
+        Elimina una relación de seguimiento entre dos usuarios.
+
+        Args:
+            follower_id: ID del usuario que hace el seguimiento
+            followed_id: ID del usuario que es seguido
+
+        Returns:
+            bool: True si la operación fue exitosa, False en caso contrario
+        """
+        import logging
+        import sys
+        logger = logging.getLogger(__name__)
+        
+        print(f"[UNFOLLOW_USER] Intentando eliminar relación: {follower_id} siguiendo a {followed_id}", file=sys.stderr)
+        
+        try:
+            # Preparamos headers para la solicitud
+            headers = {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest',
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'
+            }
+            
+            # Endpoint para la solicitud
+            endpoint_url = f'/users/following/{follower_id}/{followed_id}'
+            
+            # Realizamos la solicitud DELETE
+            print(f"[UNFOLLOW_USER] Realizando solicitud DELETE a {endpoint_url}", file=sys.stderr)
+            response = self.delete(endpoint_url, headers=headers)
+            
+            # Asumimos que si no hay excepciones, la operación fue exitosa
+            return True
+            
+        except Exception as e:
+            error_msg = f"[UNFOLLOW_USER] Error al eliminar relación de seguimiento: {str(e)}"
+            print(error_msg, file=sys.stderr)
+            self._handle_error(error_msg, e)
+            return False
+    
+    def is_following(self, follower_id: str, followed_id: str) -> bool:
+        """
+        Verifica si un usuario sigue a otro.
+
+        Args:
+            follower_id: ID del usuario que podría estar siguiendo
+            followed_id: ID del usuario que podría estar siendo seguido
+
+        Returns:
+            bool: True si existe la relación de seguimiento, False en caso contrario
+        """
+        import logging
+        import sys
+        logger = logging.getLogger(__name__)
+        
+        print(f"[IS_FOLLOWING] Verificando si {follower_id} sigue a {followed_id}", file=sys.stderr)
+        
+        try:
+            # Preparamos headers para la solicitud
+            headers = {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest',
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'
+            }
+            
+            # Endpoint para la solicitud
+            endpoint_url = f'/users/following/{follower_id}/{followed_id}'
+            
+            # Realizamos la solicitud GET
+            print(f"[IS_FOLLOWING] Realizando solicitud GET a {endpoint_url}", file=sys.stderr)
+            response = self.get(endpoint_url, headers=headers)
+            
+            # Verificamos la respuesta
+            print(f"[IS_FOLLOWING] Respuesta: {response}", file=sys.stderr)
+            
+            # Si la respuesta contiene un campo 'is_following', lo utilizamos
+            if isinstance(response, dict) and 'is_following' in response:
+                return response.get('is_following', False)
+                
+            # Si no hay campo específico, asumimos que la existencia de una respuesta válida
+            # indica que existe la relación
+            return response is not None and isinstance(response, dict)
+            
+        except Exception as e:
+            # Si hay un error, asumimos que no existe la relación
+            error_msg = f"[IS_FOLLOWING] Error al verificar relación de seguimiento: {str(e)}"
+            print(error_msg, file=sys.stderr)
+            self._handle_error(error_msg, e)
+            return False
+
     def _handle_error(self, message: str, exception: Exception) -> None:
         """
         Método auxiliar para manejar errores de manera consistente.

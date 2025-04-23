@@ -218,3 +218,29 @@ class UserProfileView(APIView):
         Obtiene el perfil completo de un usuario por su ID
         """
         return self.users_controller.get_user_profile(user_id)
+
+
+class UserFollowingView(APIView):
+    """
+    Endpoint para gestionar relaciones de seguimiento entre usuarios.
+    Permite verificar, crear y eliminar relaciones donde un usuario sigue a otro.
+    """
+    users_controller = UsersController()
+    
+    def get(self, request, follower_id, followed_id, format=None):
+        """
+        Verifica si un usuario sigue a otro
+        """
+        return self.users_controller.check_follow_status(follower_id, followed_id)
+    
+    def post(self, request, follower_id, followed_id, format=None):
+        """
+        Establece una relación de seguimiento entre dos usuarios
+        """
+        return self.users_controller.follow_user(follower_id, followed_id)
+    
+    def delete(self, request, follower_id, followed_id, format=None):
+        """
+        Elimina una relación de seguimiento entre dos usuarios
+        """
+        return self.users_controller.unfollow_user(follower_id, followed_id)

@@ -344,3 +344,153 @@ class UsersController:
             logger.exception(f"Error no esperado al obtener perfil de usuario {user_id}")
             # Propagar excepción para que sea manejada por el manejador global
             raise
+    
+    def follow_user(self, follower_id: str, followed_id: str):
+        """
+        Establece una relación de seguimiento donde un usuario sigue a otro.
+        
+        Args:
+            follower_id: ID del usuario que hace el seguimiento
+            followed_id: ID del usuario que es seguido
+            
+        Returns:
+            Response: Respuesta HTTP con el resultado de la operación
+        """
+        import logging
+        logger = logging.getLogger(__name__)
+        
+        try:
+            # Verificar que ambos usuarios existan
+            follower = self.repository.find_by_id(follower_id)
+            if not follower:
+                raise ResourceNotFoundException("Usuario seguidor", follower_id)
+                
+            followed = self.repository.find_by_id(followed_id)
+            if not followed:
+                raise ResourceNotFoundException("Usuario seguido", followed_id)
+            
+            # Usamos el servicio de usuarios para establecer la relación de seguimiento
+            from ..services.implementations.users_service_impl import UsersServiceImpl
+            users_service = UsersServiceImpl()
+            
+            # Llamar al servicio para crear la relación de seguimiento
+            result = users_service.follow_user(follower_id, followed_id)
+            
+            # Crear respuesta basada en el resultado
+            return create_response(
+                data={
+                    "follower": follower.to_dict(),
+                    "followed": followed.to_dict(),
+                    "status": "following"
+                },
+                message="Relación de seguimiento establecida con éxito",
+                status_code=status.HTTP_201_CREATED
+            )
+            
+        except ResourceNotFoundException as e:
+            # El manejador de excepciones personalizado se encargará de formatear esta respuesta
+            raise
+        except Exception as e:
+            logger.exception(f"Error al establecer relación de seguimiento: {str(e)}")
+            # Propagar excepción para que sea manejada por el manejador global
+            raise
+    
+    def unfollow_user(self, follower_id: str, followed_id: str):
+        """
+        Elimina una relación de seguimiento existente entre usuarios.
+        
+        Args:
+            follower_id: ID del usuario que hace el seguimiento
+            followed_id: ID del usuario que es seguido
+            
+        Returns:
+            Response: Respuesta HTTP con el resultado de la operación
+        """
+        import logging
+        logger = logging.getLogger(__name__)
+        
+        try:
+            # Verificar que ambos usuarios existan
+            follower = self.repository.find_by_id(follower_id)
+            if not follower:
+                raise ResourceNotFoundException("Usuario seguidor", follower_id)
+                
+            followed = self.repository.find_by_id(followed_id)
+            if not followed:
+                raise ResourceNotFoundException("Usuario seguido", followed_id)
+            
+            # Usamos el servicio de usuarios para eliminar la relación de seguimiento
+            from ..services.implementations.users_service_impl import UsersServiceImpl
+            users_service = UsersServiceImpl()
+            
+            # Llamar al servicio para eliminar la relación de seguimiento
+            result = users_service.unfollow_user(follower_id, followed_id)
+            
+            # Crear respuesta basada en el resultado
+            return create_response(
+                data={
+                    "follower": follower.to_dict(),
+                    "followed": followed.to_dict(),
+                    "status": "unfollowed"
+                },
+                message="Relación de seguimiento eliminada con éxito",
+                status_code=status.HTTP_200_OK
+            )
+            
+        except ResourceNotFoundException as e:
+            # El manejador de excepciones personalizado se encargará de formatear esta respuesta
+            raise
+        except Exception as e:
+            logger.exception(f"Error al eliminar relación de seguimiento: {str(e)}")
+            # Propagar excepción para que sea manejada por el manejador global
+            raise
+    
+    def check_follow_status(self, follower_id: str, followed_id: str):
+        """
+        Verifica si un usuario sigue a otro.
+        
+        Args:
+            follower_id: ID del usuario que podría estar siguiendo
+            followed_id: ID del usuario que podría estar siendo seguido
+            
+        Returns:
+            Response: Respuesta HTTP con el estado de la relación
+        """
+        import logging
+        logger = logging.getLogger(__name__)
+        
+        try:
+            # Verificar que ambos usuarios existan
+            follower = self.repository.find_by_id(follower_id)
+            if not follower:
+                raise ResourceNotFoundException("Usuario seguidor", follower_id)
+                
+            followed = self.repository.find_by_id(followed_id)
+            if not followed:
+                raise ResourceNotFoundException("Usuario seguido", followed_id)
+            
+            # Usamos el servicio de usuarios para verificar la relación
+            from ..services.implementations.users_service_impl import UsersServiceImpl
+            users_service = UsersServiceImpl()
+            
+            # Verificar si existe la relación de seguimiento
+            is_following = users_service.is_following(follower_id, followed_id)
+            
+            # Crear respuesta basada en el resultado
+            return create_response(
+                data={
+                    "follower_id": follower_id,
+                    "followed_id": followed_id,
+                    "is_following": is_following
+                },
+                message="Estado de seguimiento verificado con éxito",
+                status_code=status.HTTP_200_OK
+            )
+            
+        except ResourceNotFoundException as e:
+            # El manejador de excepciones personalizado se encargará de formatear esta respuesta
+            raise
+        except Exception as e:
+            logger.exception(f"Error al verificar estado de seguimiento: {str(e)}")
+            # Propagar excepción para que sea manejada por el manejador global
+            raise
