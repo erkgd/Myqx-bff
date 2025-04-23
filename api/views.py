@@ -204,3 +204,17 @@ class FollowingNetworkView(APIView):
                 'user_id': user_id,
             }
             return Response(error_data, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+class UserProfileView(APIView):
+    """
+    Endpoint para obtener el perfil detallado de un usuario específico.
+    Proporciona información adicional como estadísticas, actividad reciente y preferencias.
+    """
+    users_controller = UsersController()
+    
+    def get(self, request, user_id, format=None):
+        """
+        Obtiene el perfil completo de un usuario por su ID
+        """
+        return self.users_controller.get_user_profile(user_id)

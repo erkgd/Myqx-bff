@@ -113,7 +113,7 @@ class UsersServiceImpl(BaseService, UserServiceInterface):
             return self.post('/auth/token/', data=credentials)
         except Exception:
             # Para autenticación, no queremos propagar la excepción ya que es un caso de uso común
-            return None
+            return None    
 
     def get_following_network(self, user_id: str) -> List[Dict[str, Any]]:
         """
@@ -128,6 +128,12 @@ class UsersServiceImpl(BaseService, UserServiceInterface):
         import logging
         logger = logging.getLogger(__name__)
         
+        # Usar print para depuración directa
+        import sys
+        print("="*50, file=sys.stderr)
+        print(f"ENTRANDO A get_following_network PARA USUARIO {user_id}", file=sys.stderr)
+        print("="*50, file=sys.stderr)
+
         try:
             # Preparamos headers para la solicitud
             headers = {
@@ -138,22 +144,71 @@ class UsersServiceImpl(BaseService, UserServiceInterface):
             }
             
             # Log para inspeccionar los headers enviados
-            logger.info(f"Headers enviados en la solicitud: {headers}")
-            
-            # Log de la URL del endpoint
+            logger.info(f"[FOLLOWING_NETWORK] Headers enviados en la solicitud: {headers}")
+            print(f"[FOLLOWING_NETWORK] Headers enviados en la solicitud: {headers}", file=sys.stderr)            # Usamos directamente la URL que sabemos que funciona
             endpoint_url = f'/{user_id}/following_network/'
-            logger.info(f"URL del endpoint: {endpoint_url}")
+            full_url = f"{self.base_url}{endpoint_url}"
             
-            # Realizar la solicitud
-            response = self.get(endpoint_url, headers=headers)
+            # Registramos la URL para depuración
+            print(f"[FOLLOWING_NETWORK] Base URL: {self.base_url}", file=sys.stderr)
+            print(f"[FOLLOWING_NETWORK] Usando endpoint: {endpoint_url}", file=sys.stderr)
+            print(f"[FOLLOWING_NETWORK] URL completa: {full_url}", file=sys.stderr)
             
+            # Realizamos la solicitud al endpoint
+            print(f"[FOLLOWING_NETWORK] Realizando solicitud GET a {endpoint_url}", file=sys.stderr)
+            response = self.get(endpoint_url, headers=headers)# --------------- PROCESAMIENTO DE RESPUESTA ---------------
             # Registrar la respuesta para depuración
-            logger.info(f"Respuesta del endpoint following_network: {response}")
+            print(f"[FOLLOWING_NETWORK] Tipo de respuesta: {type(response)}", file=sys.stderr)
+            print(f"[FOLLOWING_NETWORK] Respuesta del endpoint following_network: {response}", file=sys.stderr)
             
-            # Asumimos que la respuesta es una lista de usuarios
-            return response if isinstance(response, list) else []
+            # Verificación explícita para la clave 'network'
+            network_data = None
+            
+            # Si es un diccionario, buscamos la clave 'network'
+            if isinstance(response, dict):
+                print(f"[FOLLOWING_NETWORK] Respuesta es un diccionario con claves: {response.keys()}", file=sys.stderr)
+                
+                # CASO 1: Clave 'network' directa
+                if 'network' in response:
+                    network_size = len(response.get('network', []))
+                    print(f"[FOLLOWING_NETWORK] ¡ENCONTRADA la clave 'network' con {network_size} elementos!", file=sys.stderr)
+                    network_data = response.get('network')
+                    print(f"[FOLLOWING_NETWORK] Contenido de network_data: {network_data}", file=sys.stderr)
+                
+                # CASO 2: Otras claves comunes
+                elif 'data' in response and isinstance(response.get('data'), list):
+                    print(f"[FOLLOWING_NETWORK] Usando clave 'data'", file=sys.stderr)
+                    network_data = response.get('data')
+                elif 'results' in response and isinstance(response.get('results'), list):
+                    print(f"[FOLLOWING_NETWORK] Usando clave 'results'", file=sys.stderr)
+                    network_data = response.get('results')
+                elif 'users' in response and isinstance(response.get('users'), list):
+                    print(f"[FOLLOWING_NETWORK] Usando clave 'users'", file=sys.stderr)
+                    network_data = response.get('users')
+                    
+            # CASO 3: Si la respuesta ya es una lista
+            elif isinstance(response, list):
+                print(f"[FOLLOWING_NETWORK] La respuesta ya es una lista", file=sys.stderr)
+                network_data = response
+            
+            # CASO 4: Respuesta inválida o vacía
+            if network_data is None:
+                print(f"[FOLLOWING_NETWORK] No se encontraron datos válidos en la respuesta", file=sys.stderr)
+                network_data = []
+            
+            # Resultado final
+            print(f"[FOLLOWING_NETWORK] Devolviendo {len(network_data)} elementos de la red", file=sys.stderr)
+            return network_data
         except Exception as e:
-            self._handle_error(f"Error al obtener la red de seguidos para el usuario {user_id}", e)
+            error_msg = f"[FOLLOWING_NETWORK] Error al obtener la red de seguidos para el usuario {user_id}: {str(e)}"
+            print(error_msg, file=sys.stderr)
+            print(f"[FOLLOWING_NETWORK] Tipo de excepción: {type(e).__name__}", file=sys.stderr)
+            self._handle_error(error_msg, e)
+            
+            import traceback
+            print(f"[FOLLOWING_NETWORK] Traceback completo:", file=sys.stderr)
+            traceback.print_exc(file=sys.stderr)
+            
             # Para un mejor manejo del error, retornamos una lista vacía
             return []
 

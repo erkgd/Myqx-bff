@@ -284,3 +284,63 @@ class UsersController:
             
             # En caso de error devolvemos una lista vacía
             return []
+    
+    def get_user_profile(self, user_id: str):
+        """
+        Obtiene el perfil detallado de un usuario, incluyendo información adicional
+        como estadísticas, preferencias y datos extendidos.
+        
+        Args:
+            user_id: ID del usuario cuyo perfil se quiere obtener
+            
+        Returns:
+            Response: Respuesta HTTP con los datos del perfil del usuario o error
+        """
+        import logging
+        logger = logging.getLogger(__name__)
+        
+        try:
+            # Obtener los datos básicos del usuario
+            user = self.repository.find_by_id(user_id)
+            if not user:
+                raise ResourceNotFoundException("Usuario", user_id)
+            
+            # Obtenemos información adicional del perfil del usuario
+            from ..services.implementations.users_service_impl import UsersServiceImpl
+            users_service = UsersServiceImpl()
+            
+            try:
+                # Intentamos obtener información adicional del perfil
+                following_network = self.get_following_network(user_id)
+                
+                # Creamos un objeto de perfil más completo
+                profile_data = {
+                    **user.to_dict(),  # Datos básicos del usuario
+                    "following_count": len(following_network) if following_network else 0,
+                    "following": following_network[:5] if following_network and len(following_network) > 0 else [],  # Primeros 5 seguidos
+                    "is_complete": user.email is not None and user.username is not None,
+                    "last_login": user.last_login if hasattr(user, 'last_login') else None,
+                }
+                
+                return create_response(
+                    data=profile_data,
+                    message="Perfil de usuario obtenido con éxito",
+                    status_code=status.HTTP_200_OK
+                )
+            
+            except Exception as e:
+                logger.error(f"Error al obtener datos adicionales del perfil: {str(e)}")
+                # Si hay error en los datos adicionales, devolvemos al menos los datos básicos
+                return create_response(
+                    data=user.to_dict(),
+                    message="Datos básicos de perfil obtenidos con éxito",
+                    status_code=status.HTTP_200_OK
+                )
+                
+        except ResourceNotFoundException as e:
+            # El manejador de excepciones personalizado se encargará de formatear esta respuesta
+            raise
+        except Exception as e:
+            logger.exception(f"Error no esperado al obtener perfil de usuario {user_id}")
+            # Propagar excepción para que sea manejada por el manejador global
+            raise
