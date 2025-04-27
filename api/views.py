@@ -4,7 +4,102 @@ from rest_framework.response import Response
 from rest_framework import status, viewsets
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from .controllers.users_controller import UsersController
+from .controllers.albums_controller import AlbumsController
 import datetime
+
+
+# Vista para calificaciones
+class RatingsView(APIView):
+    """
+    Endpoint centralizado para calificaciones de todo tipo de contenido musical.
+    Este es el endpoint principal para enviar calificaciones de álbumes y pistas.
+    """
+    permission_classes = [AllowAny]
+    albums_controller = AlbumsController()
+    
+    def post(self, request, format=None):
+        """
+        Envía una calificación para cualquier tipo de contenido musical.
+        
+        Datos requeridos:
+        - userId: ID del usuario que califica
+        - contentId o albumId: ID del contenido a calificar
+        - contentType: 'album' o 'track'
+        - rating: Valor entre 1 y 5
+        """
+        return self.albums_controller.rate_album(request.data)
+    
+    def get(self, request, rating_id=None, format=None):
+        """
+        Obtiene calificaciones existentes.
+        """
+        # Implementación para consultar calificaciones
+        if rating_id:
+            return Response({"message": f"Esta funcionalidad está en desarrollo. Calificación ID: {rating_id}"}, status=status.HTTP_200_OK)
+        else:
+            return Response({"message": "Esta funcionalidad está en desarrollo. Listado de calificaciones."}, status=status.HTTP_200_OK)
+
+
+# Vistas para álbumes
+class AlbumView(APIView):
+    """
+    Endpoint para operaciones en un álbum específico.
+    """
+    permission_classes = [AllowAny]
+    albums_controller = AlbumsController()
+    
+    def get(self, request, album_id, format=None):
+        """
+        Obtiene un álbum por su ID
+        """
+        return self.albums_controller.get_album(album_id)
+
+
+class AlbumsRatingView(APIView):
+    """
+    Endpoint para calificar álbumes (OBSOLETO).
+    Este endpoint está obsoleto. Por favor, use /ratings/submit/ en su lugar.
+    """
+    permission_classes = [AllowAny]
+    albums_controller = AlbumsController()
+    
+    def post(self, request, format=None):
+        """
+        Redirecciona a /ratings/submit/.
+        Este endpoint está obsoleto. Por favor, use /ratings/submit/ en su lugar.
+        """
+        # Aunque este endpoint se redirecciona en urls.py, mantenemos
+        # esta implementación por si se accede directamente a la vista
+        from django.http import HttpResponseRedirect
+        return HttpResponseRedirect('/api/ratings/submit/')
+
+
+class AlbumRatingsView(APIView):
+    """
+    Endpoint para obtener todas las calificaciones de un álbum específico.
+    """
+    permission_classes = [AllowAny]
+    albums_controller = AlbumsController()
+    
+    def get(self, request, album_id, format=None):
+        """
+        Obtiene todas las calificaciones de un álbum
+        """
+        return self.albums_controller.get_album_ratings(album_id)
+
+
+class AlbumUserRatingView(APIView):
+    """
+    Endpoint para obtener la calificación de un usuario para un álbum específico.
+    """
+    permission_classes = [AllowAny]
+    albums_controller = AlbumsController()
+    
+    def get(self, request, album_id, format=None):
+        """
+        Obtiene la calificación de un usuario para un álbum específico
+        """
+        return self.albums_controller.get_user_album_rating(album_id, request)
 
 
 class HealthCheckView(APIView):
