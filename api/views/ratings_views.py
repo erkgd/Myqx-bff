@@ -12,8 +12,7 @@ class RatingsView(APIView):
     """
     permission_classes = [AllowAny]
     albums_controller = AlbumsController()
-    
-    def post(self, request, format=None):
+      def post(self, request, format=None):
         """
         Envía una calificación para cualquier tipo de contenido musical.
         
@@ -22,6 +21,10 @@ class RatingsView(APIView):
         - contentId o albumId: ID del contenido a calificar
         - contentType: 'album' o 'track'
         - rating: Valor entre 1 y 5
+        
+        Datos opcionales:
+        - comment: Texto de reseña o comentario sobre el contenido
+        - timestamp: Marca de tiempo de la calificación (ISO 8601)
         """
         return self.albums_controller.rate_album(request.data)
     

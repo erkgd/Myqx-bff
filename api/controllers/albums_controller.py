@@ -79,13 +79,12 @@ class AlbumsController:
         except Exception as e:
             logger.exception(f"Error al obtener calificaciones del álbum {album_id}: {str(e)}")
             raise
-    
     def rate_album(self, data: Dict[str, Any]):
         """
         Califica un álbum o canción.
         
         Args:
-            data: Datos de la calificación
+            data: Datos de la calificación (rating, content_id/albumId, user_id/userId, comment opcional)
             
         Returns:
             Response: Respuesta HTTP con la calificación guardada o error
@@ -97,8 +96,7 @@ class AlbumsController:
             # Validar el ID del contenido (puede ser albumId o content_id)
             if 'albumId' not in data and 'content_id' not in data:
                 required_fields.append('content_id')
-            
-            # Validar el ID de usuario
+              # Validar el ID de usuario
             if 'userId' not in data and 'user_id' not in data:
                 required_fields.append('userId')
             
@@ -116,8 +114,22 @@ class AlbumsController:
                     errors={"rating": "La calificación debe estar entre 1 y 5"}
                 )
             
+            # Validar que el comentario, si existe, no sea demasiado largo
+            if 'comment' in data and data['comment'] and len(str(data['comment'])) > 1000:
+                raise ValidationException(
+                    "El comentario es demasiado largo",
+                    errors={"comment": "El comentario no puede exceder los 1000 caracteres"}
+                )
+              # Procesar el comentario si existe
+            comment = data.get('comment')
+            
             # Crear DTO y guardar
             rating_dto = AlbumRatingDTO.from_dict(data)
+            
+            # Asegurarnos de que el comentario se asigne correctamente
+            if comment:
+                rating_dto.comment = comment
+                
             saved_rating = self.repository.rate_album(rating_dto)
             
             if not saved_rating:
