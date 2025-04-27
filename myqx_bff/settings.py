@@ -61,6 +61,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',  # Rehabilitado para el admin
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'api.middleware.ApiRedirectMiddleware',  # Redirige rutas no encontradas a /api/
 ]
 
 # CORS configuration for BFF

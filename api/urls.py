@@ -4,7 +4,7 @@ from .views import (
     HealthCheckView, UserView, UsersView, AuthView, AuthTestView, 
     SpotifyAuthView, FollowingNetworkView, UserProfileView, UserFollowingView,
     AlbumView, AlbumsRatingView, AlbumRatingsView, AlbumUserRatingView,
-    RatingsView
+    RatingsView, FeedView
 )
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView
 from django.views.generic import RedirectView
@@ -58,8 +58,14 @@ urlpatterns = [
     # Redirecciona de albums/rate a ratings/submit
     path('albums/rate/', RedirectView.as_view(url='/api/ratings/submit/', permanent=False), name='rate-album-redirect'),
     path('albums/rate', RedirectView.as_view(url='/api/ratings/submit/', permanent=False), name='rate-album-no-slash-redirect'),
-    
-    # Rutas para consultar calificaciones
+      # Rutas para consultar calificaciones
     path('ratings/', RatingsView.as_view(), name='ratings-list'),
     path('ratings/<str:rating_id>/', RatingsView.as_view(), name='rating-detail'),
+    
+    # Rutas para el feed
+    path('feed/', FeedView.as_view(), name='feed-list'),
+    path('feed', FeedView.as_view(), name='feed-list-no-slash'),
+    path('feed/<str:item_id>/', FeedView.as_view(), name='feed-item'),
+    path('ratings/submit', RedirectView.as_view(url='/api/ratings/submit', query_string=True)),
+    path('ratings/submit/', RedirectView.as_view(url='/api/ratings/submit/', query_string=True)),
 ]

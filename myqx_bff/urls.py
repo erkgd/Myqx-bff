@@ -16,8 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic import RedirectView
+from django.views.decorators.http import require_GET
+from api.views import FeedView  # Importamos la vista directamente
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),  # Incluir las URLs de la aplicación API
+    
+    # URLs directas sin redirección
+    path('feed', FeedView.as_view(), name='feed-direct'),
+    path('feed/', FeedView.as_view(), name='feed-direct-slash'),
+    path('ratings/submit', RedirectView.as_view(url='/api/ratings/submit', query_string=True)),
+    path('ratings/submit/', RedirectView.as_view(url='/api/ratings/submit/', query_string=True)),
 ]
