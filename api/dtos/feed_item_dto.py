@@ -43,7 +43,11 @@ class FeedItemDTO:
                 created_at = datetime.fromisoformat(created_at.replace('Z', '+00:00'))
             except (ValueError, TypeError):
                 created_at = None
-        
+          # Manejar el campo comment/review de manera uniforme
+        comment = data.get('comment')
+        if comment is None:
+            comment = data.get('review')  # Si no hay 'comment', usar 'review'
+
         return FeedItemDTO(
             id=data.get('id'),
             type=data.get('type'),
@@ -56,13 +60,12 @@ class FeedItemDTO:
             content_artist=data.get('content_artist') or data.get('contentArtist'),
             content_image=data.get('content_image') or data.get('contentImage'),
             rating=data.get('rating'),
-            comment=data.get('comment'),
+            comment=comment,
             created_at=created_at,
             likes_count=data.get('likes_count') or data.get('likesCount') or 0,
             comments_count=data.get('comments_count') or data.get('commentsCount') or 0,
         )
-    
-    def to_dict(self) -> Dict[str, Any]:
+      def to_dict(self) -> Dict[str, Any]:
         """
         Convierte el DTO a un diccionario.
         
@@ -82,6 +85,7 @@ class FeedItemDTO:
             'contentImage': self.content_image,
             'rating': self.rating,
             'comment': self.comment,
+            'review': self.comment,  # Añadir campo review mapeado al campo comment
             'createdAt': self.created_at.isoformat() if self.created_at else None,
             'likesCount': self.likes_count,
             'commentsCount': self.comments_count,

@@ -47,23 +47,42 @@ class FeedServiceImpl(BaseService, FeedServiceInterface):
             # Construir la URL con los parámetros de consulta
             endpoint_url = f"/feed?user_id={user_id}&limit={limit}&offset={offset}"
             print(f"[FEED_SERVICE] Realizando solicitud GET a: {endpoint_url}", file=sys.stderr)
-            
-            response = self.get(endpoint_url, headers=headers)
-            print(f"[FEED_SERVICE] Respuesta recibida: {response}", file=sys.stderr)
-            
-            # Procesar la respuesta según la estructura devuelta por el backend
+            response = self.get(endpoint_url, headers=headers)            # No mostramos la respuesta completa pero sí información útil sobre la estructura
+            if isinstance(response, dict):
+                structure_info = []
+                if 'items' in response:
+                    structure_info.append(f"'items': {len(response['items'])} elementos")
+                if 'total' in response:
+                    structure_info.append(f"'total': {response['total']}")
+                if 'hasMore' in response:
+                    structure_info.append(f"'hasMore': {response['hasMore']}")
+                
+                print(f"[FEED_SERVICE] Respuesta recibida del servidor: {', '.join(structure_info)}", file=sys.stderr)
+            else:
+                print(f"[FEED_SERVICE] Respuesta recibida del servidor: {type(response).__name__}", file=sys.stderr)
+                
+              # Procesar la respuesta según la estructura devuelta por el backend
+            items = []
             if isinstance(response, dict) and 'items' in response:
                 # Si la respuesta tiene una clave 'items', usar esa
-                return response.get('items', [])
+                items = response.get('items', [])
             elif isinstance(response, dict) and 'feed' in response:
                 # Si la respuesta tiene una clave 'feed', usar esa
-                return response.get('feed', [])
+                items = response.get('feed', [])
             elif isinstance(response, list):
-                # Si la respuesta ya es una lista, devolverla tal cual
-                return response
-            else:
-                # Si no se reconoce el formato, devolver una lista vacía
-                return []
+                # Si la respuesta ya es una lista, usarla tal cual
+                items = response
+            
+            # Asegurarnos de que cada elemento tenga los campos 'review' y 'comment' sincronizados
+            for item in items:
+                # Si tiene 'review' pero no 'comment', copiar 'review' a 'comment'
+                if 'review' in item and 'comment' not in item:
+                    item['comment'] = item['review']
+                # Si tiene 'comment' pero no 'review', copiar 'comment' a 'review'
+                elif 'comment' in item and 'review' not in item:
+                    item['review'] = item['comment']
+                    
+            return items
                 
         except Exception as e:
             error_msg = f"[FEED_SERVICE] Error al obtener feed para usuario {user_id}: {str(e)}"
@@ -95,11 +114,15 @@ class FeedServiceImpl(BaseService, FeedServiceInterface):
             # Llamada al backend
             endpoint_url = f"/feed/{item_id}"
             print(f"[FEED_SERVICE] Realizando solicitud GET a: {endpoint_url}", file=sys.stderr)
-            
             response = self.get(endpoint_url, headers=headers)
-            print(f"[FEED_SERVICE] Respuesta recibida: {response}", file=sys.stderr)
+            print(f"[FEED_SERVICE] Respuesta recibida del servidor para elemento feed {item_id}", file=sys.stderr)
             
             if isinstance(response, dict):
+                # Si tenemos un 'review' o 'comment' en la respuesta, aseguramos que ambos campos estén presentes
+                if 'review' in response and 'comment' not in response:
+                    response['comment'] = response['review']
+                elif 'comment' in response and 'review' not in response:
+                    response['review'] = response['comment']
                 return response
             else:
                 return {}
