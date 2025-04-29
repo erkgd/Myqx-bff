@@ -65,7 +65,7 @@ class FeedItemDTO:
             likes_count=data.get('likes_count') or data.get('likesCount') or 0,
             comments_count=data.get('comments_count') or data.get('commentsCount') or 0,
         )
-      def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> Dict[str, Any]:
         """
         Convierte el DTO a un diccionario.
         

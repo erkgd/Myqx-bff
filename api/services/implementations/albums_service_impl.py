@@ -95,7 +95,7 @@ class AlbumsServiceImpl(BaseService, AlbumServiceInterface):
             print(error_msg, file=sys.stderr)
             self._handle_error(error_msg, e)
             return []
-      def rate_album(self, rating_data: Dict[str, Any]) -> Dict[str, Any]:
+    def rate_album(self, rating_data: Dict[str, Any]) -> Dict[str, Any]:
         """
         Califica un álbum o canción.
         
