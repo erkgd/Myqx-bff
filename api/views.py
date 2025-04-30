@@ -403,10 +403,25 @@ class SpotifyAuthView(APIView):
         # Usar el controlador para procesar la autenticación
         auth_controller = AuthController()
         response = auth_controller.authenticate_with_spotify(request.data)
+          # Normalizar campos de imagen en la respuesta para mantener consistencia con el frontend
+        if hasattr(response, 'data') and 'user' in response.data:
+            user_data = response.data['user']
+            
+            # Asegurar que tanto profilePhoto como profileImage estén presentes en la respuesta
+            profile_image = user_data.get('profileImage')
+            profile_photo = user_data.get('profilePhoto')
+            
+            # Si solo uno de los campos está presente, copiar su valor al otro
+            if profile_image and not profile_photo:
+                user_data['profilePhoto'] = profile_image
+                print(f"[SPOTIFY_AUTH] Normalización: Añadido campo profilePhoto", file=sys.stderr)
+            elif profile_photo and not profile_image:
+                user_data['profileImage'] = profile_photo
+                print(f"[SPOTIFY_AUTH] Normalización: Añadido campo profileImage", file=sys.stderr)
         
         # Registrar respuesta (sin información sensible)
         if hasattr(response, 'data'):
-            response_data = response.data
+            response_data = dict(response.data)  # Crear una copia para no modificar la respuesta real
             if 'token' in response_data:
                 response_data['token'] = "***" 
             print(f"[SPOTIFY_AUTH] Respuesta enviada al frontend (status {response.status_code}):", file=sys.stderr)

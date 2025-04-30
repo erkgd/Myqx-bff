@@ -188,13 +188,14 @@ class AuthServiceImpl(BaseService):
                 if 'token' in data:
                     print(f"[AUTH_SERVICE] Tipo de dato en 'token': {type(data['token'])}", file=sys.stderr)
                 raise AuthenticationException("Falta el token de Spotify")
-            print(f"[AUTH_SERVICE] Token encontrado en campo '{token_source}' (longitud: {len(str(spotify_token))})", file=sys.stderr)
-              # Preparar los datos para enviar al servicio de autenticación
+            print(f"[AUTH_SERVICE] Token encontrado en campo '{token_source}' (longitud: {len(str(spotify_token))})", file=sys.stderr)            # Preparar los datos para enviar al servicio de autenticación
             # Mantener los nombres de campos originales tal como vienen del frontend
             auth_data = {
                 'spotifyToken': spotify_token,  # Mantener el formato original (spotifyToken en lugar de spotify_token)
                 'username': data.get('username'),
                 'profilePhoto': data.get('profilePhoto'),  # Mantener como profilePhoto (no transformar)
+                # También enviar como profileImage para compatibilidad con posibles diferentes nombres en el backend
+                'profileImage': data.get('profilePhoto'),  # Añadido para garantizar compatibilidad
                 'spotifyId': data.get('spotifyId'),  # Mantener como spotifyId (no transformar)
                 'email': data.get('email'),
                 'use_neo4j': True  # Este es el único campo adicional que añadimos
@@ -287,12 +288,27 @@ class AuthServiceImpl(BaseService):
                         error_message = f"Error: {response['detail']}"
                 
                 raise AuthenticationException(error_message)
-            
-            # Registrar éxito de la autenticación con Neo4j
+              # Registrar éxito de la autenticación con Neo4j
             username = response.get('user', {}).get('username', 'unknown')
-            user_id = response.get('user', {}).get('id', 'unknown')
+            user_id = response.get('user', {}).get('id', 'unknown') or response.get('user', {}).get('userId', 'unknown')
             print(f"[AUTH_SERVICE] Autenticación exitosa para usuario: {username} (ID: {user_id})", file=sys.stderr)
             print(f"[AUTH_SERVICE] Campos en el objeto usuario: {list(response.get('user', {}).keys())}", file=sys.stderr)
+            
+            # Normalizar los campos de la respuesta para mantener consistencia con el frontend
+            if 'user' in response:
+                user_data = response['user']
+                
+                # Asegurar que tanto profilePhoto como profileImage estén presentes en la respuesta
+                profile_image = user_data.get('profileImage', user_data.get('profilePhoto'))
+                profile_photo = user_data.get('profilePhoto', user_data.get('profileImage'))
+                
+                if profile_image:
+                    user_data['profileImage'] = profile_image
+                if profile_photo:
+                    user_data['profilePhoto'] = profile_photo
+                
+                print(f"[AUTH_SERVICE] Normalización de campos de respuesta completada", file=sys.stderr)
+            
             print(f"[AUTH_SERVICE] *************************************************", file=sys.stderr)
             
             logger.info(f"Autenticación con Spotify y Neo4j exitosa para usuario: {username}")
