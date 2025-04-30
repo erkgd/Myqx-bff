@@ -340,7 +340,6 @@ class SpotifyAuthView(APIView):
     Endpoint para autenticación de usuarios con Spotify.
     """
     permission_classes = [AllowAny]  # La autenticación no requiere estar autenticado
-    
     def post(self, request, format=None):
         """
         Autentica un usuario con sus credenciales de Spotify.
@@ -349,30 +348,75 @@ class SpotifyAuthView(APIView):
         lo procesa y devuelve un token JWT junto con información del usuario.
         """
         import logging
+        import sys
+        import json
         from .controllers.auth_controller import AuthController
         
         logger = logging.getLogger(__name__)
         
-        # Registrar información útil para depuración
+        # Banner para identificar claramente inicio de la petición
+        print("\n" + "="*80, file=sys.stderr)
+        print(f"[SPOTIFY_AUTH] INICIO PROCESO DE AUTENTICACIÓN SPOTIFY - {datetime.datetime.now().isoformat()}", file=sys.stderr)
+        print("="*80, file=sys.stderr)
+        
+        # Registrar información de la petición
+        print(f"[SPOTIFY_AUTH] IP cliente: {request.META.get('REMOTE_ADDR')}", file=sys.stderr)
+        print(f"[SPOTIFY_AUTH] User-Agent: {request.META.get('HTTP_USER_AGENT', 'Unknown')}", file=sys.stderr)
+        
+        # Registrar datos recibidos del frontend (con cuidado de la información sensible)
+        print(f"[SPOTIFY_AUTH] Datos recibidos del frontend:", file=sys.stderr)
+        print(f"[SPOTIFY_AUTH] - Claves en los datos: {list(request.data.keys())}", file=sys.stderr)
+        
+        # Mostrar información específica que nos interesa (sin revelar tokens)
+        if 'spotifyToken' in request.data:
+            print(f"[SPOTIFY_AUTH] - spotifyToken recibido (longitud): {len(str(request.data['spotifyToken']))}", file=sys.stderr)
+        elif 'token' in request.data:
+            print(f"[SPOTIFY_AUTH] - token recibido (longitud): {len(str(request.data['token']))}", file=sys.stderr)
+        elif 'access_token' in request.data:
+            print(f"[SPOTIFY_AUTH] - access_token recibido (longitud): {len(str(request.data['access_token']))}", file=sys.stderr)
+            
+        # Mostrar otros campos relevantes (datos no sensibles)
+        safe_fields = ['username', 'email', 'profilePhoto', 'spotifyId']
+        for field in safe_fields:
+            if field in request.data:
+                print(f"[SPOTIFY_AUTH] - {field}: {request.data[field]}", file=sys.stderr)
+        
+        # Para los logs estándar
         logger.info(f"Recibida petición de autenticación Spotify desde: {request.META.get('REMOTE_ADDR')}")
         logger.info(f"User-Agent: {request.META.get('HTTP_USER_AGENT', 'Unknown')}")
         
-        # Registrar headers y datos recibidos (excepto información sensible)
+        # Registrar headers para los logs
         safe_headers = {
             k: v for k, v in request.headers.items() 
             if k.lower() not in ['authorization', 'cookie']
         }
         logger.debug(f"Headers recibidos: {safe_headers}")
+        print(f"[SPOTIFY_AUTH] Headers principales: Content-Type={request.headers.get('Content-Type')}, Accept={request.headers.get('Accept')}", file=sys.stderr)
         
+        # Datos seguros para logs
         safe_data = {
-            k: "***" if k in ['spotify_token', 'token', 'access_token'] else v 
+            k: "***" if k in ['spotify_token', 'spotifyToken', 'token', 'access_token'] else v 
             for k, v in request.data.items()
         }
         logger.debug(f"Datos recibidos (sin tokens): {safe_data}")
         
         # Usar el controlador para procesar la autenticación
         auth_controller = AuthController()
-        return auth_controller.authenticate_with_spotify(request.data)
+        response = auth_controller.authenticate_with_spotify(request.data)
+        
+        # Registrar respuesta (sin información sensible)
+        if hasattr(response, 'data'):
+            response_data = response.data
+            if 'token' in response_data:
+                response_data['token'] = "***" 
+            print(f"[SPOTIFY_AUTH] Respuesta enviada al frontend (status {response.status_code}):", file=sys.stderr)
+            print(f"[SPOTIFY_AUTH] {json.dumps(response_data, indent=2)}", file=sys.stderr)
+        
+        print("[SPOTIFY_AUTH] " + "="*70, file=sys.stderr)
+        print(f"[SPOTIFY_AUTH] FIN PROCESO DE AUTENTICACIÓN SPOTIFY - {datetime.datetime.now().isoformat()}", file=sys.stderr) 
+        print("="*80 + "\n", file=sys.stderr)
+        
+        return response
 
 
 class FollowingNetworkView(APIView):

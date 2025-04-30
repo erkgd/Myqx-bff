@@ -139,7 +139,7 @@ class AuthServiceImpl(BaseService):
         except Exception as e:
             logger.error(f"Error al solicitar restablecimiento de contraseña: {str(e)}")
             return False
-            
+    
     def authenticate_with_spotify(self, data: Dict[str, Any]) -> Dict[str, Any]:
         """
         Autentica un usuario utilizando credenciales de Spotify y almacena la información en Neo4j.
@@ -155,54 +155,173 @@ class AuthServiceImpl(BaseService):
             AuthenticationException: Si el token es inválido
             ServiceUnavailableException: Si hay problemas de conexión con el backend Neo4j
         """
+        import sys
         
         try:
+            print(f"[AUTH_SERVICE] ************** AUTENTICACIÓN SPOTIFY **************", file=sys.stderr)
+            print(f"[AUTH_SERVICE] Iniciando procesamiento de datos en servicio", file=sys.stderr)
+            print(f"[AUTH_SERVICE] Campos recibidos: {list(data.keys())}", file=sys.stderr)
+            
             logger.debug(f"Datos de la petición recibidos: {data}")
             logger.info(f"Iniciando autenticación con Spotify para almacenamiento en Neo4j")
+            
             # Extraer el token de Spotify de los datos recibidos
             spotify_token = None
+            token_source = None
+            
             if 'spotifyToken' in data:  # Cambiado de spotify_token a spotifyToken
                 spotify_token = data['spotifyToken']
+                token_source = 'spotifyToken'
+                print(f"[AUTH_SERVICE] Token encontrado en campo 'spotifyToken'", file=sys.stderr)
             elif 'token' in data and isinstance(data['token'], str):
                 spotify_token = data['token']
+                token_source = 'token'
+                print(f"[AUTH_SERVICE] Token encontrado en campo 'token'", file=sys.stderr)
             elif 'access_token' in data:
                 spotify_token = data['access_token']
+                token_source = 'access_token'
+                print(f"[AUTH_SERVICE] Token encontrado en campo 'access_token'", file=sys.stderr)
 
             if not spotify_token:
+                print(f"[AUTH_SERVICE] ERROR: No se encontró un token de Spotify válido", file=sys.stderr)
+                print(f"[AUTH_SERVICE] Campos disponibles: {list(data.keys())}", file=sys.stderr)
+                if 'token' in data:
+                    print(f"[AUTH_SERVICE] Tipo de dato en 'token': {type(data['token'])}", file=sys.stderr)
                 raise AuthenticationException("Falta el token de Spotify")
-
-            # Preparar los datos para enviar al servicio de autenticación
+            print(f"[AUTH_SERVICE] Token encontrado en campo '{token_source}' (longitud: {len(str(spotify_token))})", file=sys.stderr)
+              # Preparar los datos para enviar al servicio de autenticación
+            # Mantener los nombres de campos originales tal como vienen del frontend
             auth_data = {
-                'spotify_token': spotify_token,
+                'spotifyToken': spotify_token,  # Mantener el formato original (spotifyToken en lugar de spotify_token)
                 'username': data.get('username'),
-                'profile_image': data.get('profilePhoto'),  # Cambiado de profilePhoto
-                'spotify_id': data.get('spotifyId'),  # Añadido el ID de Spotify
-                'email': data.get('email'),  # Añadido el email
-                'use_neo4j': True  # Indicador para el backend de que use Neo4j
+                'profilePhoto': data.get('profilePhoto'),  # Mantener como profilePhoto (no transformar)
+                'spotifyId': data.get('spotifyId'),  # Mantener como spotifyId (no transformar)
+                'email': data.get('email'),
+                'use_neo4j': True  # Este es el único campo adicional que añadimos
             }
+            
+            # Verificar si hay campos nulos o vacíos y convertirlos a None
+            for key, value in list(auth_data.items()):
+                if value == "" or (isinstance(value, str) and not value.strip()):
+                    print(f"[AUTH_SERVICE] Advertencia: Campo '{key}' tiene valor vacío, estableciendo a None", file=sys.stderr)
+                    auth_data[key] = None
+            
+            # Importar json para formatear la salida
+            import json
+            print(f"[AUTH_SERVICE] Auth data serializada: {json.dumps(auth_data, default=str, indent=2)}", file=sys.stderr)
+            
+            print(f"[AUTH_SERVICE] Datos para enviar al backend:", file=sys.stderr)
+            for key, value in auth_data.items():
+                if key != 'spotify_token':
+                    print(f"[AUTH_SERVICE] - {key}: {value}", file=sys.stderr)
+                else:
+                    print(f"[AUTH_SERVICE] - {key}: ***token***", file=sys.stderr)
             logger.info(f"Enviando datos de autenticación Spotify al backend Neo4j en localhost:8001")
+            print(f"[AUTH_SERVICE] Preparándose para enviar solicitud al backend...", file=sys.stderr)            # Llamada al endpoint de autenticación de Spotify en el backend
+            # Definir posibles endpoints a probar (en orden de preferencia)
+            endpoints = ['/auth/spotify/', '/spotify/']
+            response = None
+            last_error = None
             
-            # Llamada al endpoint de autenticación de Spotify en el backend
-            response = self.post('/auth/spotify/', data=auth_data)
+            # Probar con cada endpoint hasta que uno funcione
+            for current_endpoint in endpoints:
+                print(f"[AUTH_SERVICE] Intentando con endpoint: {current_endpoint}", file=sys.stderr)
+                print(f"[AUTH_SERVICE] URL completa a la que se envía la solicitud: {self.base_url}{current_endpoint}", file=sys.stderr)
+                
+                try:
+                    print(f"[AUTH_SERVICE] Enviando datos con los nombres de campos exactos del frontend", file=sys.stderr)
+                    response = self.post(current_endpoint, data=auth_data)
+                    print(f"[AUTH_SERVICE] ¡ÉXITO! Respuesta recibida del backend usando endpoint: {current_endpoint}", file=sys.stderr)
+                    print(f"[AUTH_SERVICE] Campos en la respuesta: {list(response.keys() if isinstance(response, dict) else [])}", file=sys.stderr)
+                    # Si llegamos aquí, la solicitud fue exitosa, no necesitamos probar más endpoints
+                    break
+                    
+                except Exception as e:
+                    last_error = e
+                    print(f"[AUTH_SERVICE] ERROR al usar endpoint {current_endpoint}: {str(e)}", file=sys.stderr)
+                    print(f"[AUTH_SERVICE] Tipo de error: {e.__class__.__name__}", file=sys.stderr)
+                    
+                    # Capturar y mostrar detalles específicos de errores HTTP
+                    if hasattr(e, 'response') and e.response:
+                        status_code = e.response.status_code if hasattr(e.response, 'status_code') else 'Unknown'
+                        print(f"[AUTH_SERVICE] Código de estado: {status_code}", file=sys.stderr)
+                        
+                        # Para errores 422 (Unprocessable Content), intentar obtener detalles de validación
+                        if hasattr(e.response, 'status_code') and e.response.status_code == 422:
+                            print(f"[AUTH_SERVICE] ERROR 422: Contenido no procesable - Problema de validación", file=sys.stderr)
+                            try:
+                                error_detail = e.response.json() if hasattr(e.response, 'json') else {}
+                                print(f"[AUTH_SERVICE] Detalles de validación: {error_detail}", file=sys.stderr)
+                            except Exception:
+                                pass
+                        
+                        # Mostrar el texto de respuesta completo
+                        if hasattr(e.response, 'text'):
+                            print(f"[AUTH_SERVICE] Respuesta del servidor: {e.response.text}", file=sys.stderr)
+                    
+                    print(f"[AUTH_SERVICE] Probando con el siguiente endpoint (si está disponible)...", file=sys.stderr)
+                    # Continuamos con el siguiente endpoint
             
-            # Verificar que la respuesta tenga la estructura esperada
+            # Si ningún endpoint funcionó, lanzamos el último error que obtuvimos
+            if response is None:
+                print(f"[AUTH_SERVICE] TODOS LOS ENDPOINTS FALLARON. Último error: {last_error}", file=sys.stderr)
+                raise last_error
+              # Verificar que la respuesta tenga la estructura esperada
+            if response is None:
+                print(f"[AUTH_SERVICE] No se recibió respuesta válida de ningún endpoint", file=sys.stderr)
+                raise AuthenticationException("No se pudo conectar con el servicio de autenticación")
+                
             if not response.get('token') or not response.get('user'):
                 logger.error(f"Formato de respuesta de autenticación de Spotify inválido: {response}")
-                raise AuthenticationException("Formato de respuesta de autenticación inválido")
+                print(f"[AUTH_SERVICE] ERROR: La respuesta no tiene los campos esperados (token, user)", file=sys.stderr)
+                print(f"[AUTH_SERVICE] Respuesta recibida: {response}", file=sys.stderr)
                 
+                # Intentar extraer un mensaje de error específico
+                error_message = "Formato de respuesta de autenticación inválido"
+                if isinstance(response, dict):
+                    if 'error' in response:
+                        error_message = f"Error: {response['error']}"
+                    elif 'message' in response:
+                        error_message = f"Error: {response['message']}"
+                    elif 'detail' in response:
+                        error_message = f"Error: {response['detail']}"
+                
+                raise AuthenticationException(error_message)
+            
             # Registrar éxito de la autenticación con Neo4j
-            logger.info(f"Autenticación con Spotify y Neo4j exitosa para usuario: {response.get('user', {}).get('username', 'unknown')}")
+            username = response.get('user', {}).get('username', 'unknown')
+            user_id = response.get('user', {}).get('id', 'unknown')
+            print(f"[AUTH_SERVICE] Autenticación exitosa para usuario: {username} (ID: {user_id})", file=sys.stderr)
+            print(f"[AUTH_SERVICE] Campos en el objeto usuario: {list(response.get('user', {}).keys())}", file=sys.stderr)
+            print(f"[AUTH_SERVICE] *************************************************", file=sys.stderr)
+            
+            logger.info(f"Autenticación con Spotify y Neo4j exitosa para usuario: {username}")
             return response
         except Exception as e:
             # Si es un error específico de autenticación, lo propagamos
             if isinstance(e, AuthenticationException):
                 raise
-                
-            # Para otros errores, manejamos de forma genérica
+                  # Para otros errores, manejamos de forma genérica
             logger.error(f"Error al autenticar usuario con Spotify en Neo4j: {str(e)}")
             
             # Determinar el tipo de error para una mejor experiencia de usuario
             if "Connection" in str(e) or "connect" in str(e).lower() or "timeout" in str(e).lower():
                 raise ServiceUnavailableException("Servicio de autenticación de Spotify/Neo4j no disponible")
+            elif "422" in str(e):
+                # Error de validación de datos
+                error_msg = "Los datos de Spotify no tienen el formato esperado por el servidor"
+                # Intentar extraer un mensaje de error más específico
+                if hasattr(e, 'response') and hasattr(e.response, 'text'):
+                    try:
+                        import json
+                        error_data = json.loads(e.response.text)
+                        if 'detail' in error_data:
+                            error_msg = f"Error de validación: {error_data['detail']}"
+                        elif 'message' in error_data:
+                            error_msg = f"Error de validación: {error_data['message']}"
+                    except:
+                        pass
+                logger.error(f"Error de validación 422: {error_msg}")
+                raise AuthenticationException(error_msg)
             else:
                 raise AuthenticationException("Error en autenticación de Spotify o servicio Neo4j no disponible")
