@@ -12,7 +12,7 @@ class RatingsView(APIView):
     """
     permission_classes = [AllowAny]
     albums_controller = AlbumsController()
-      def post(self, request, format=None):
+    def post(self, request, format=None):
         """
         Envía una calificación para cualquier tipo de contenido musical.
         

@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import RedirectView
 from django.views.decorators.http import require_GET
-from api.views import FeedView  # Importamos la vista directamente
+from api.views.feed_views import FeedView  # Import directly from the module
 
 urlpatterns = [
     path('admin/', admin.site.urls),

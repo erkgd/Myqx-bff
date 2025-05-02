@@ -78,7 +78,7 @@ class FeedView(APIView):
                 "offset": offset,
                 "hasMore": len(feed_data) >= limit
             }
-              from ..utils import create_response
+            from ..utils import create_response
             return create_response(
                 data=feed_data,
                 message="Feed obtenido con éxito",

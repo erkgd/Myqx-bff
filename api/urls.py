@@ -1,11 +1,14 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import (
-    HealthCheckView, UserView, UsersView, AuthView, AuthTestView, 
-    SpotifyAuthView, FollowingNetworkView, UserProfileView, UserFollowingView,
-    AlbumView, AlbumsRatingView, AlbumRatingsView, AlbumUserRatingView,
-    RatingsView, FeedView
-)
+# Import directly from the views modules to avoid circular imports
+from .views.basic_views import HealthCheckView
+from .views.user_views import UserView, UsersView, FollowingNetworkView, UserProfileView, UserFollowingView
+from .views.auth_views import AuthView, AuthTestView, SpotifyAuthView
+from .views.albums_views import AlbumView, AlbumsRatingView, AlbumRatingsView, AlbumUserRatingView
+from .views.ratings_views import RatingsView
+from .views.feed_views import FeedView
+# Import UserCompleteProfileView 
+from .views.user_complete_profile_view import UserCompleteProfileView
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView
 from django.views.generic import RedirectView
 from .auth_views import CustomTokenVerifyView
@@ -19,9 +22,10 @@ urlpatterns = [
     path('health/', HealthCheckView.as_view(), name='health-check-slash'),
     path('health', HealthCheckView.as_view(), name='health-check'),
     path('users/', UsersView.as_view(), name='users-list'),
-    path('users/<str:user_id>/', UserView.as_view(), name='user-detail'),
-    path('users/<str:user_id>/profile/', UserProfileView.as_view(), name='user-profile'),
+    path('users/<str:user_id>/', UserView.as_view(), name='user-detail'),    path('users/<str:user_id>/profile/', UserProfileView.as_view(), name='user-profile'),
     path('users/<str:user_id>/profile', UserProfileView.as_view(), name='user-profile-no-slash'),
+    path('users/<str:user_id>/complete-profile/', UserCompleteProfileView.as_view(), name='user-complete-profile'),
+    path('users/<str:user_id>/complete-profile', UserCompleteProfileView.as_view(), name='user-complete-profile-no-slash'),
     path('users/following/<str:follower_id>/<str:followed_id>/', UserFollowingView.as_view(), name='user-following'),
     path('users/following/<str:follower_id>/<str:followed_id>', UserFollowingView.as_view(), name='user-following-no-slash'),
     path('auth/test/', AuthTestView.as_view(), name='auth-test'),
