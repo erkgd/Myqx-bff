@@ -7,6 +7,8 @@ from .views.auth_views import AuthView, AuthTestView, SpotifyAuthView
 from .views.albums_views import AlbumView, AlbumsRatingView, AlbumRatingsView, AlbumUserRatingView
 from .views.ratings_views import RatingsView
 from .views.feed_views import FeedView
+from .views.profile_view import ProfileView
+from .views.user_following_status_view import UserFollowingStatusView
 # Import UserCompleteProfileView 
 from .views.user_complete_profile_view import UserCompleteProfileView
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView
@@ -25,13 +27,19 @@ urlpatterns = [
     path('users/<str:user_id>/', UserView.as_view(), name='user-detail'),    path('users/<str:user_id>/profile/', UserProfileView.as_view(), name='user-profile'),
     path('users/<str:user_id>/profile', UserProfileView.as_view(), name='user-profile-no-slash'),
     path('users/<str:user_id>/complete-profile/', UserCompleteProfileView.as_view(), name='user-complete-profile'),
-    path('users/<str:user_id>/complete-profile', UserCompleteProfileView.as_view(), name='user-complete-profile-no-slash'),
-    path('users/following/<str:follower_id>/<str:followed_id>/', UserFollowingView.as_view(), name='user-following'),
+    path('users/<str:user_id>/complete-profile', UserCompleteProfileView.as_view(), name='user-complete-profile-no-slash'),    path('users/following/<str:follower_id>/<str:followed_id>/', UserFollowingView.as_view(), name='user-following'),
     path('users/following/<str:follower_id>/<str:followed_id>', UserFollowingView.as_view(), name='user-following-no-slash'),
+    path('users/following/status/<str:follower_id>/<str:followed_id>/', UserFollowingStatusView.as_view(), name='user-following-status'),
+    path('users/following/status/<str:follower_id>/<str:followed_id>', UserFollowingStatusView.as_view(), name='user-following-status-no-slash'),
     path('auth/test/', AuthTestView.as_view(), name='auth-test'),
     path('auth/spotify', SpotifyAuthView.as_view(), name='spotify-auth'),
     path('users/<str:user_id>/following_network/', FollowingNetworkView.as_view(), name='following-network'),
     path('users/<str:user_id>/following_network', FollowingNetworkView.as_view(), name='following-network-no-slash'),
+    
+    # Rutas para el nuevo endpoint de perfil
+    path('profile/<str:user_id>/', ProfileView.as_view(), name='profile-detail'),
+    path('profile/<str:user_id>', ProfileView.as_view(), name='profile-detail-no-slash'),
+    path('profile/', ProfileView.as_view(), name='own-profile'),
     
     # Ruta directa para acceder sin 'users/' en la URL
     path('<str:user_id>/following_network/', FollowingNetworkView.as_view(), name='direct-following-network'),

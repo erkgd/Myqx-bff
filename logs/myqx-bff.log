@@ -1,0 +1,299 @@
+[2025-05-04 17:15:58,762] INFO autoreload 17472 12048 Watching for file changes with StatReloader
+[2025-05-04 17:16:43,435] INFO autoreload 17472 12048 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\myqx_bff\settings.py changed, reloading.
+[2025-05-04 17:16:44,123] INFO autoreload 16132 3996 Watching for file changes with StatReloader
+[2025-05-04 17:18:03,599] INFO autoreload 16132 3996 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\myqx_bff\settings.py changed, reloading.
+[2025-05-04 17:18:04,243] INFO autoreload 12480 5356 Watching for file changes with StatReloader
+[2025-05-04 17:25:43,428] INFO autoreload 12480 5356 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\views\profile_view.py changed, reloading.
+[2025-05-04 17:25:44,073] INFO autoreload 19740 21896 Watching for file changes with StatReloader
+[2025-05-04 17:27:46,453] INFO autoreload 19740 21896 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\utils\response_utils.py changed, reloading.
+[2025-05-04 17:27:47,064] INFO autoreload 12064 21012 Watching for file changes with StatReloader
+[2025-05-04 17:29:05,672] INFO autoreload 12064 21012 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\controllers\users_controller.py changed, reloading.
+[2025-05-04 17:29:06,308] INFO autoreload 19912 19116 Watching for file changes with StatReloader
+[2025-05-04 17:29:26,527] INFO autoreload 19912 19116 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\middleware\__init__.py changed, reloading.
+[2025-05-04 17:29:27,124] INFO autoreload 11692 1648 Watching for file changes with StatReloader
+[2025-05-04 17:29:31,874] INFO autoreload 11692 1648 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\controllers\profile_controller.py changed, reloading.
+[2025-05-04 17:29:32,482] INFO autoreload 5644 13900 Watching for file changes with StatReloader
+[2025-05-04 17:30:35,702] INFO autoreload 5644 13900 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\myqx_bff\settings.py changed, reloading.
+[2025-05-04 17:30:36,306] INFO autoreload 28188 18924 Watching for file changes with StatReloader
+[2025-05-04 17:30:51,305] INFO autoreload 28188 18924 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\middleware\__init__.py changed, reloading.
+[2025-05-04 17:30:51,911] INFO autoreload 17908 25608 Watching for file changes with StatReloader
+[2025-05-04 17:31:07,968] INFO autoreload 17908 25608 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\myqx_bff\settings.py changed, reloading.
+[2025-05-04 17:31:08,660] INFO autoreload 17204 24296 Watching for file changes with StatReloader
+[2025-05-04 17:31:23,703] INFO autoreload 17204 24296 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\controllers\users_controller.py changed, reloading.
+[2025-05-04 17:31:24,355] INFO autoreload 11008 21152 Watching for file changes with StatReloader
+[2025-05-04 17:31:55,775] INFO autoreload 11008 21152 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\dtos\album_dto.py changed, reloading.
+[2025-05-04 17:31:56,378] INFO autoreload 26280 8528 Watching for file changes with StatReloader
+[2025-05-04 17:31:58,079] INFO autoreload 26280 8528 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\dtos\album_rating_dto.py changed, reloading.
+[2025-05-04 17:31:58,732] INFO autoreload 8220 13188 Watching for file changes with StatReloader
+[2025-05-04 17:32:01,469] INFO autoreload 8220 13188 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\auth_views.py changed, reloading.
+[2025-05-04 17:32:02,133] INFO autoreload 13696 23772 Watching for file changes with StatReloader
+[2025-05-04 17:32:07,921] INFO autoreload 13696 23772 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\views\user_views.py changed, reloading.
+[2025-05-04 17:32:08,585] INFO autoreload 22144 22908 Watching for file changes with StatReloader
+[2025-05-04 17:32:10,275] INFO autoreload 22144 22908 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\middleware\__init__.py changed, reloading.
+[2025-05-04 17:32:10,897] INFO autoreload 10508 23712 Watching for file changes with StatReloader
+[2025-05-04 17:32:12,572] INFO autoreload 10508 23712 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\utils\response_utils.py changed, reloading.
+[2025-05-04 17:32:13,220] INFO autoreload 6612 4816 Watching for file changes with StatReloader
+[2025-05-04 17:32:14,922] INFO autoreload 6612 4816 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\utils\logging_utils.py changed, reloading.
+[2025-05-04 17:32:15,514] INFO autoreload 27452 28520 Watching for file changes with StatReloader
+[2025-05-04 17:32:18,224] INFO autoreload 27452 28520 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\middleware\request_logging_middleware.py changed, reloading.
+[2025-05-04 17:32:18,986] INFO autoreload 9188 26788 Watching for file changes with StatReloader
+[2025-05-04 17:32:20,756] INFO autoreload 9188 26788 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\controllers\profile_controller.py changed, reloading.
+[2025-05-04 17:32:21,355] INFO autoreload 12424 7504 Watching for file changes with StatReloader
+[2025-05-04 17:32:25,073] INFO autoreload 12424 7504 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\myqx_bff\urls.py changed, reloading.
+[2025-05-04 17:32:25,728] INFO autoreload 1684 6436 Watching for file changes with StatReloader
+[2025-05-04 17:32:28,516] INFO autoreload 1684 6436 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\views\auth_views.py changed, reloading.
+[2025-05-04 17:32:29,122] INFO autoreload 17272 26112 Watching for file changes with StatReloader
+[2025-05-04 17:33:56,920] INFO autoreload 17272 26112 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\myqx_bff\settings.py changed, reloading.
+[2025-05-04 17:33:57,544] INFO autoreload 10616 14080 Watching for file changes with StatReloader
+[2025-05-04 17:34:18,733] INFO autoreload 10616 14080 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\myqx_bff\settings.py changed, reloading.
+[2025-05-04 17:34:19,373] INFO autoreload 27948 17128 Watching for file changes with StatReloader
+[2025-05-04 17:35:32,814] INFO autoreload 27948 17128 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\middleware\__init__.py changed, reloading.
+[2025-05-04 17:35:33,395] INFO autoreload 3424 14952 Watching for file changes with StatReloader
+[2025-05-04 17:35:56,604] INFO autoreload 3424 14952 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\myqx_bff\settings.py changed, reloading.
+[2025-05-04 17:35:57,237] INFO autoreload 6520 7964 Watching for file changes with StatReloader
+[2025-05-04 17:39:04,466] INFO autoreload 6520 7964 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\middleware\api_redirect_middleware.py changed, reloading.
+[2025-05-04 17:39:05,053] INFO autoreload 13164 2776 Watching for file changes with StatReloader
+[2025-05-04 17:40:49,177] INFO autoreload 13164 2776 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\middleware\api_redirect_middleware.py changed, reloading.
+[2025-05-04 17:40:49,804] INFO autoreload 27812 25936 Watching for file changes with StatReloader
+[2025-05-04 17:41:19,719] ERROR log 27812 15524 Internal Server Error: /api/profile/3
+[2025-05-04 17:41:20,136] ERROR log 27812 15524 Internal Server Error: /api/users/following/status/3
+Traceback (most recent call last):
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\views\user_views.py", line 126, in get
+    return self.users_controller.check_following(follower_id, followed_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UsersController' object has no attribute 'check_following'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\django\utils\module_loading.py", line 16, in cached_import
+    return getattr(module, class_name)
+AttributeError: module 'api.utils' has no attribute 'custom_exception_handler'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\rest_framework\settings.py", line 179, in import_from_string
+    return import_string(val)
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\django\utils\module_loading.py", line 32, in import_string
+    raise ImportError(
+    ...<2 lines>...
+    ) from err
+ImportError: Module "api.utils" does not define a "custom_exception_handler" attribute/class
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    exception_handler = self.get_exception_handler()
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\rest_framework\views.py", line 304, in get_exception_handler
+    return self.settings.EXCEPTION_HANDLER
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\rest_framework\settings.py", line 227, in __getattr__
+    val = perform_import(val, attr)
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\rest_framework\settings.py", line 168, in perform_import
+    return import_from_string(val, setting_name)
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\rest_framework\settings.py", line 182, in import_from_string
+    raise ImportError(msg)
+ImportError: Could not import 'api.utils.custom_exception_handler' for API setting 'EXCEPTION_HANDLER'. ImportError: Module "api.utils" does not define a "custom_exception_handler" attribute/class.
+[2025-05-04 17:41:54,388] ERROR log 27812 5372 Internal Server Error: /api/profile/3
+[2025-05-04 17:41:54,632] ERROR log 27812 5372 Internal Server Error: /api/users/following/status/3
+Traceback (most recent call last):
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\views\user_views.py", line 126, in get
+    return self.users_controller.check_following(follower_id, followed_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UsersController' object has no attribute 'check_following'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\django\utils\module_loading.py", line 16, in cached_import
+    return getattr(module, class_name)
+AttributeError: module 'api.utils' has no attribute 'custom_exception_handler'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\rest_framework\settings.py", line 179, in import_from_string
+    return import_string(val)
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\django\utils\module_loading.py", line 32, in import_string
+    raise ImportError(
+    ...<2 lines>...
+    ) from err
+ImportError: Module "api.utils" does not define a "custom_exception_handler" attribute/class
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    exception_handler = self.get_exception_handler()
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\rest_framework\views.py", line 304, in get_exception_handler
+    return self.settings.EXCEPTION_HANDLER
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\rest_framework\settings.py", line 227, in __getattr__
+    val = perform_import(val, attr)
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\rest_framework\settings.py", line 168, in perform_import
+    return import_from_string(val, setting_name)
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\rest_framework\settings.py", line 182, in import_from_string
+    raise ImportError(msg)
+ImportError: Could not import 'api.utils.custom_exception_handler' for API setting 'EXCEPTION_HANDLER'. ImportError: Module "api.utils" does not define a "custom_exception_handler" attribute/class.
+[2025-05-04 17:42:57,794] INFO autoreload 27812 25936 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\services\implementations\profile_service_impl.py changed, reloading.
+[2025-05-04 17:42:58,381] INFO autoreload 14964 7356 Watching for file changes with StatReloader
+[2025-05-04 18:32:11,823] INFO autoreload 14964 7356 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\controllers\users_controller.py changed, reloading.
+[2025-05-04 18:32:12,778] INFO autoreload 17740 7060 Watching for file changes with StatReloader
+[2025-05-04 18:32:20,770] ERROR log 17740 12456 Internal Server Error: /api/profile/3
+[2025-05-04 18:32:21,210] ERROR log 17740 12456 Internal Server Error: /api/users/following/status/3
+Traceback (most recent call last):
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\controllers\users_controller.py", line 600, in check_following
+    print(f"[USERS_CONTROLLER] Verificando relación de seguimiento entre {follower_id} y {followed_id}", file=sys.stderr)
+                                                                                                              ^^^
+NameError: name 'sys' is not defined. Did you forget to import 'sys'?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\views\user_views.py", line 126, in get
+    return self.users_controller.check_following(follower_id, followed_id)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\controllers\users_controller.py", line 637, in check_following
+    print(f"[USERS_CONTROLLER] Error verificando relación de seguimiento: {str(e)}", file=sys.stderr)
+                                                                                          ^^^
+NameError: name 'sys' is not defined. Did you forget to import 'sys'?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\django\utils\module_loading.py", line 16, in cached_import
+    return getattr(module, class_name)
+AttributeError: module 'api.utils' has no attribute 'custom_exception_handler'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\rest_framework\settings.py", line 179, in import_from_string
+    return import_string(val)
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\django\utils\module_loading.py", line 32, in import_string
+    raise ImportError(
+    ...<2 lines>...
+    ) from err
+ImportError: Module "api.utils" does not define a "custom_exception_handler" attribute/class
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    exception_handler = self.get_exception_handler()
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\rest_framework\views.py", line 304, in get_exception_handler
+    return self.settings.EXCEPTION_HANDLER
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\rest_framework\settings.py", line 227, in __getattr__
+    val = perform_import(val, attr)
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\rest_framework\settings.py", line 168, in perform_import
+    return import_from_string(val, setting_name)
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\venv\Lib\site-packages\rest_framework\settings.py", line 182, in import_from_string
+    raise ImportError(msg)
+ImportError: Could not import 'api.utils.custom_exception_handler' for API setting 'EXCEPTION_HANDLER'. ImportError: Module "api.utils" does not define a "custom_exception_handler" attribute/class.
+[2025-05-04 18:33:18,208] INFO autoreload 17740 7060 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\controllers\profile_controller.py changed, reloading.
+[2025-05-04 18:33:18,974] INFO autoreload 24424 25512 Watching for file changes with StatReloader
+[2025-05-04 18:33:57,969] INFO autoreload 24424 25512 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\controllers\users_controller.py changed, reloading.
+[2025-05-04 18:33:58,731] INFO autoreload 2644 18704 Watching for file changes with StatReloader
+[2025-05-04 18:35:59,200] INFO autoreload 2644 18704 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\utils\__init__.py changed, reloading.
+[2025-05-04 18:35:59,948] INFO autoreload 17796 10264 Watching for file changes with StatReloader
+[2025-05-04 18:42:39,191] INFO autoreload 17796 10264 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\utils\__init__.py changed, reloading.
+[2025-05-04 18:42:40,123] INFO autoreload 11220 17576 Watching for file changes with StatReloader
+[2025-05-04 18:43:06,868] INFO autoreload 11220 17576 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\myqx_bff\settings.py changed, reloading.
+[2025-05-04 18:43:07,751] INFO autoreload 22336 26020 Watching for file changes with StatReloader
+[2025-05-04 18:43:38,731] INFO autoreload 22336 26020 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\utils\exception_handler.py changed, reloading.
+[2025-05-04 18:43:39,562] INFO autoreload 15196 24696 Watching for file changes with StatReloader
+[2025-05-04 18:47:46,956] INFO autoreload 15196 24696 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\views\user_following_status_view.py changed, reloading.
+[2025-05-04 18:47:47,807] INFO autoreload 6460 24512 Watching for file changes with StatReloader
+[2025-05-04 18:48:04,031] ERROR log 6460 19944 Internal Server Error: /api/users/following/status/3
+[2025-05-04 18:57:40,487] INFO autoreload 6460 24512 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\middleware\api_redirect_middleware.py changed, reloading.
+[2025-05-04 18:57:41,323] INFO autoreload 1920 15696 Watching for file changes with StatReloader
+[2025-05-04 19:24:06,585] ERROR log 1920 17652 Internal Server Error: /api/auth/verify
+[2025-05-04 19:24:06,688] ERROR log 1920 17652 Internal Server Error: /api/auth/verify
+[2025-05-04 19:24:06,817] ERROR log 1920 17652 Internal Server Error: /api/auth/verify
+[2025-05-04 19:26:46,698] ERROR log 1920 3176 Internal Server Error: /api/feed
+[2025-05-04 19:26:51,037] ERROR log 1920 3176 Internal Server Error: /api/feed
+[2025-05-04 19:28:45,181] INFO autoreload 1920 15696 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\urls.py changed, reloading.
+[2025-05-04 19:28:46,028] INFO autoreload 14008 21888 Watching for file changes with StatReloader
+[2025-05-04 19:29:12,589] INFO autoreload 14008 21888 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\views\user_following_status_view.py changed, reloading.
+[2025-05-04 19:29:13,371] INFO autoreload 25964 11872 Watching for file changes with StatReloader
+[2025-05-04 19:29:22,242] INFO autoreload 25964 11872 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\views\user_following_status_view.py changed, reloading.
+[2025-05-04 19:29:23,035] INFO autoreload 15212 21488 Watching for file changes with StatReloader
+[2025-05-04 19:29:27,568] ERROR log 15212 27556 Internal Server Error: /api/users/following/status/4/3
+[2025-05-04 19:29:39,844] ERROR log 15212 23160 Internal Server Error: /api/feed
+[2025-05-04 19:29:47,510] ERROR log 15212 23160 Internal Server Error: /api/feed
+[2025-05-04 19:29:52,883] ERROR log 15212 23160 Internal Server Error: /api/feed
+[2025-05-04 19:30:51,814] INFO autoreload 15212 21488 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\utils\response_utils.py changed, reloading.
+[2025-05-04 19:30:52,559] INFO autoreload 13248 7528 Watching for file changes with StatReloader
+[2025-05-04 19:31:15,435] ERROR log 13248 1900 Internal Server Error: /api/users/following/status/4/3
+[2025-05-04 19:32:53,263] ERROR log 13248 16488 Internal Server Error: /api/users/following/status/4/3
+[2025-05-04 19:45:03,865] ERROR log 13248 1648 Internal Server Error: /api/users/following/status/4/3
+[2025-05-04 19:45:17,682] ERROR log 13248 7976 Internal Server Error: /api/users/following/status/4/3
+[2025-05-04 19:48:48,651] ERROR log 13248 15312 Internal Server Error: /api/users/following/status/4/3
+[2025-05-04 19:51:02,923] ERROR log 13248 26660 Internal Server Error: /api/users/following/status/4/3
+[2025-05-04 19:51:26,005] ERROR log 13248 16536 Internal Server Error: /api/users/following/status/4/3
+[2025-05-04 20:24:24,568] ERROR log 13248 16744 Internal Server Error: /api/users/following/status/4/3
+[2025-05-04 20:25:45,491] ERROR log 13248 17708 Internal Server Error: /api/users/following/status/4/3
+[2025-05-04 20:26:32,674] ERROR log 13248 14356 Internal Server Error: /api/users/following/status/4/3
+[2025-05-04 22:23:02,364] ERROR log 13248 24836 Internal Server Error: /api/users/following/status/4/3
+[2025-05-04 22:35:51,569] ERROR log 13248 4032 Internal Server Error: /api/users/following/status/4/3
+[2025-05-04 22:43:50,388] ERROR log 13248 26084 Internal Server Error: /api/users/following/status/4/3
+[2025-05-04 22:51:20,192] ERROR log 13248 23664 Internal Server Error: /api/users/following/status/4/3
+[2025-05-04 22:58:36,453] ERROR log 13248 19896 Internal Server Error: /api/users/following/status/4/3
+[2025-05-04 23:03:06,899] ERROR log 13248 26012 Internal Server Error: /api/auth/verify
+[2025-05-04 23:03:06,997] ERROR log 13248 26012 Internal Server Error: /api/auth/verify
+[2025-05-04 23:03:07,172] ERROR log 13248 26012 Internal Server Error: /api/auth/verify
+[2025-05-04 23:03:43,540] ERROR log 13248 15552 Internal Server Error: /api/users/following/status/4/3
+[2025-05-04 23:06:54,365] ERROR log 13248 17536 Internal Server Error: /api/users/following/status/4/3
+[2025-05-04 23:08:01,529] ERROR log 13248 9428 Internal Server Error: /api/users/following/status/4/3
+[2025-05-04 23:29:26,502] ERROR log 13248 19164 Internal Server Error: /api/users/following/status/4/3
+[2025-05-04 23:31:44,353] ERROR log 13248 4080 Internal Server Error: /api/users/following/status/4/3
+[2025-05-04 23:36:35,278] INFO autoreload 13248 7528 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\views\user_following_status_view.py changed, reloading.
+[2025-05-04 23:36:35,989] INFO autoreload 19904 8572 Watching for file changes with StatReloader

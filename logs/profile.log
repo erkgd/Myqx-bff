@@ -1,0 +1,1708 @@
+2025-05-04 17:41:13,470 INFO 
+[PROFILE_VIEW] ===========================================
+[PROFILE_VIEW] GET /api/profile/3 HTTP/1.1
+[PROFILE_VIEW] Timestamp: 2025-05-04T17:41:13.470087
+[PROFILE_VIEW] Cliente: 127.0.0.1
+[PROFILE_VIEW] User-Agent: Dart/3.7 (dart:io)
+[PROFILE_VIEW] Parámetros de consulta: {}
+[PROFILE_VIEW] Usuario objetivo: 3
+[PROFILE_VIEW] ===========================================
+             - module:profile_view process:27812 thread:15524
+2025-05-04 17:41:19,715 ERROR Error al obtener perfil de usuario 3: 'ProfileServiceImpl' object has no attribute '_handle_error' - module:profile_controller process:27812 thread:15524
+Traceback (most recent call last):
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\services\implementations\profile_service_impl.py", line 55, in get_profile
+    [PROFILE_SERVICE] Timestamp: {datetime.datetime.now().isoformat()}
+                                  ^^^^^^^^
+NameError: name 'datetime' is not defined. Did you forget to import 'datetime'?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\controllers\profile_controller.py", line 46, in get_profile
+    profile_data = self.profile_service.get_profile(user_id)
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\services\implementations\profile_service_impl.py", line 72, in get_profile
+    self._handle_error(f"Error al obtener perfil de usuario {user_id}", e)
+    ^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProfileServiceImpl' object has no attribute '_handle_error'
+2025-05-04 17:41:50,230 INFO 
+[PROFILE_VIEW] ===========================================
+[PROFILE_VIEW] GET /api/profile/3 HTTP/1.1
+[PROFILE_VIEW] Timestamp: 2025-05-04T17:41:50.230739
+[PROFILE_VIEW] Cliente: 127.0.0.1
+[PROFILE_VIEW] User-Agent: Dart/3.7 (dart:io)
+[PROFILE_VIEW] Parámetros de consulta: {}
+[PROFILE_VIEW] Usuario objetivo: 3
+[PROFILE_VIEW] ===========================================
+             - module:profile_view process:27812 thread:5372
+2025-05-04 17:41:54,385 ERROR Error al obtener perfil de usuario 3: 'ProfileServiceImpl' object has no attribute '_handle_error' - module:profile_controller process:27812 thread:5372
+Traceback (most recent call last):
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\services\implementations\profile_service_impl.py", line 55, in get_profile
+    [PROFILE_SERVICE] Timestamp: {datetime.datetime.now().isoformat()}
+                                  ^^^^^^^^
+NameError: name 'datetime' is not defined. Did you forget to import 'datetime'?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\controllers\profile_controller.py", line 46, in get_profile
+    profile_data = self.profile_service.get_profile(user_id)
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\services\implementations\profile_service_impl.py", line 72, in get_profile
+    self._handle_error(f"Error al obtener perfil de usuario {user_id}", e)
+    ^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProfileServiceImpl' object has no attribute '_handle_error'
+2025-05-04 18:32:16,596 INFO 
+[PROFILE_VIEW] ===========================================
+[PROFILE_VIEW] GET /api/profile/3 HTTP/1.1
+[PROFILE_VIEW] Timestamp: 2025-05-04T18:32:16.596090
+[PROFILE_VIEW] Cliente: 127.0.0.1
+[PROFILE_VIEW] User-Agent: Dart/3.7 (dart:io)
+[PROFILE_VIEW] Parámetros de consulta: {}
+[PROFILE_VIEW] Usuario objetivo: 3
+[PROFILE_VIEW] ===========================================
+             - module:profile_view process:17740 thread:12456
+2025-05-04 18:32:20,766 ERROR Error al obtener perfil de usuario 3: name 'datetime' is not defined - module:profile_controller process:17740 thread:12456
+Traceback (most recent call last):
+  File "C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\controllers\profile_controller.py", line 73, in get_profile
+    [PROFILE_CONTROLLER] Timestamp: {datetime.datetime.now().isoformat()}
+                                     ^^^^^^^^
+NameError: name 'datetime' is not defined. Did you forget to import 'datetime'?
+2025-05-04 18:47:55,204 INFO 
+[PROFILE_VIEW] ===========================================
+[PROFILE_VIEW] GET /api/profile/3 HTTP/1.1
+[PROFILE_VIEW] Timestamp: 2025-05-04T18:47:55.204701
+[PROFILE_VIEW] Cliente: 127.0.0.1
+[PROFILE_VIEW] User-Agent: Dart/3.7 (dart:io)
+[PROFILE_VIEW] Parámetros de consulta: {}
+[PROFILE_VIEW] Usuario objetivo: 3
+[PROFILE_VIEW] ===========================================
+             - module:profile_view process:6460 thread:19944
+2025-05-04 18:48:01,524 INFO 
+[PROFILE_CONTROLLER] ===== RESPUESTA =====
+[PROFILE_CONTROLLER] Status: 200
+[PROFILE_CONTROLLER] Timestamp: 2025-05-04T18:48:01.524447
+[PROFILE_CONTROLLER] Payload:
+{
+  "status": "success",
+  "timestamp": "2025-05-04T18:48:01.524225",
+  "message": "Perfil de usuario obtenido con \u00e9xito",
+  "data": {
+    "userId": "3",
+    "username": "erkgd",
+    "profileImage": "https://i.scdn.co/image/ab6775700000ee85258fa22dda85658db09d03b0",
+    "spotifyId": "31anflvbhjbrb4insk223drl4ecu",
+    "topRatedTrack": {
+      "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+      "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+      "artist": "Artista desconocido",
+      "imageUrl": null,
+      "rating": 4,
+      "normalizedRating": 2.0,
+      "date": "2025-04-29T10:47:33.414000Z",
+      "review": null
+    },
+    "recentRatings": [
+      {
+        "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+        "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T10:47:33.414000Z",
+        "review": null
+      },
+      {
+        "trackId": "3vWjeWqLto8tUv8go8TRmM",
+        "title": "Canci\u00f3n 3vWjeWqLto8tUv8go8TRmM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T09:56:48.083000Z",
+        "review": null
+      },
+      {
+        "trackId": "7H6lDjQ509hVPiN72wlwzM",
+        "title": "Canci\u00f3n 7H6lDjQ509hVPiN72wlwzM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:25:42.387000Z",
+        "review": null
+      },
+      {
+        "trackId": "6gJGe9pUcgmMIhFxDigsLz",
+        "title": "Canci\u00f3n 6gJGe9pUcgmMIhFxDigsLz",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:08:01.088000Z",
+        "review": null
+      }
+    ],
+    "totalRatings": 13,
+    "averageRating": 3.46
+  }
+}
+[PROFILE_CONTROLLER] =======================
+             - module:profile_controller process:6460 thread:19944
+2025-05-04 19:02:44,827 INFO 
+[PROFILE_VIEW] ===========================================
+[PROFILE_VIEW] GET /api/profile/3 HTTP/1.1
+[PROFILE_VIEW] Timestamp: 2025-05-04T19:02:44.827042
+[PROFILE_VIEW] Cliente: 127.0.0.1
+[PROFILE_VIEW] User-Agent: Dart/3.7 (dart:io)
+[PROFILE_VIEW] Parámetros de consulta: {}
+[PROFILE_VIEW] Usuario objetivo: 3
+[PROFILE_VIEW] ===========================================
+             - module:profile_view process:1920 thread:27872
+2025-05-04 19:02:48,943 INFO 
+[PROFILE_CONTROLLER] ===== RESPUESTA =====
+[PROFILE_CONTROLLER] Status: 200
+[PROFILE_CONTROLLER] Timestamp: 2025-05-04T19:02:48.942900
+[PROFILE_CONTROLLER] Payload:
+{
+  "status": "success",
+  "timestamp": "2025-05-04T19:02:48.942703",
+  "message": "Perfil de usuario obtenido con \u00e9xito",
+  "data": {
+    "userId": "3",
+    "username": "erkgd",
+    "profileImage": "https://i.scdn.co/image/ab6775700000ee85258fa22dda85658db09d03b0",
+    "spotifyId": "31anflvbhjbrb4insk223drl4ecu",
+    "topRatedTrack": {
+      "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+      "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+      "artist": "Artista desconocido",
+      "imageUrl": null,
+      "rating": 4,
+      "normalizedRating": 2.0,
+      "date": "2025-04-29T10:47:33.414000Z",
+      "review": null
+    },
+    "recentRatings": [
+      {
+        "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+        "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T10:47:33.414000Z",
+        "review": null
+      },
+      {
+        "trackId": "3vWjeWqLto8tUv8go8TRmM",
+        "title": "Canci\u00f3n 3vWjeWqLto8tUv8go8TRmM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T09:56:48.083000Z",
+        "review": null
+      },
+      {
+        "trackId": "7H6lDjQ509hVPiN72wlwzM",
+        "title": "Canci\u00f3n 7H6lDjQ509hVPiN72wlwzM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:25:42.387000Z",
+        "review": null
+      },
+      {
+        "trackId": "6gJGe9pUcgmMIhFxDigsLz",
+        "title": "Canci\u00f3n 6gJGe9pUcgmMIhFxDigsLz",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:08:01.088000Z",
+        "review": null
+      }
+    ],
+    "totalRatings": 13,
+    "averageRating": 3.46
+  }
+}
+[PROFILE_CONTROLLER] =======================
+             - module:profile_controller process:1920 thread:27872
+2025-05-04 19:19:36,696 INFO 
+[PROFILE_VIEW] ===========================================
+[PROFILE_VIEW] GET /api/profile/3 HTTP/1.1
+[PROFILE_VIEW] Timestamp: 2025-05-04T19:19:36.693973
+[PROFILE_VIEW] Cliente: 127.0.0.1
+[PROFILE_VIEW] User-Agent: Dart/3.7 (dart:io)
+[PROFILE_VIEW] Parámetros de consulta: {}
+[PROFILE_VIEW] Usuario objetivo: 3
+[PROFILE_VIEW] ===========================================
+             - module:profile_view process:1920 thread:25100
+2025-05-04 19:19:41,238 INFO 
+[PROFILE_CONTROLLER] ===== RESPUESTA =====
+[PROFILE_CONTROLLER] Status: 200
+[PROFILE_CONTROLLER] Timestamp: 2025-05-04T19:19:41.236816
+[PROFILE_CONTROLLER] Payload:
+{
+  "status": "success",
+  "timestamp": "2025-05-04T19:19:41.236197",
+  "message": "Perfil de usuario obtenido con \u00e9xito",
+  "data": {
+    "userId": "3",
+    "username": "erkgd",
+    "profileImage": "https://i.scdn.co/image/ab6775700000ee85258fa22dda85658db09d03b0",
+    "spotifyId": "31anflvbhjbrb4insk223drl4ecu",
+    "topRatedTrack": {
+      "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+      "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+      "artist": "Artista desconocido",
+      "imageUrl": null,
+      "rating": 4,
+      "normalizedRating": 2.0,
+      "date": "2025-04-29T10:47:33.414000Z",
+      "review": null
+    },
+    "recentRatings": [
+      {
+        "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+        "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T10:47:33.414000Z",
+        "review": null
+      },
+      {
+        "trackId": "3vWjeWqLto8tUv8go8TRmM",
+        "title": "Canci\u00f3n 3vWjeWqLto8tUv8go8TRmM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T09:56:48.083000Z",
+        "review": null
+      },
+      {
+        "trackId": "7H6lDjQ509hVPiN72wlwzM",
+        "title": "Canci\u00f3n 7H6lDjQ509hVPiN72wlwzM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:25:42.387000Z",
+        "review": null
+      },
+      {
+        "trackId": "6gJGe9pUcgmMIhFxDigsLz",
+        "title": "Canci\u00f3n 6gJGe9pUcgmMIhFxDigsLz",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:08:01.088000Z",
+        "review": null
+      }
+    ],
+    "totalRatings": 13,
+    "averageRating": 3.46
+  }
+}
+[PROFILE_CONTROLLER] =======================
+             - module:profile_controller process:1920 thread:25100
+2025-05-04 19:24:59,953 INFO 
+[PROFILE_VIEW] ===========================================
+[PROFILE_VIEW] GET /api/profile/3 HTTP/1.1
+[PROFILE_VIEW] Timestamp: 2025-05-04T19:24:59.953208
+[PROFILE_VIEW] Cliente: 127.0.0.1
+[PROFILE_VIEW] User-Agent: Dart/3.7 (dart:io)
+[PROFILE_VIEW] Parámetros de consulta: {}
+[PROFILE_VIEW] Usuario objetivo: 3
+[PROFILE_VIEW] ===========================================
+             - module:profile_view process:1920 thread:10748
+2025-05-04 19:25:04,066 INFO 
+[PROFILE_CONTROLLER] ===== RESPUESTA =====
+[PROFILE_CONTROLLER] Status: 200
+[PROFILE_CONTROLLER] Timestamp: 2025-05-04T19:25:04.066572
+[PROFILE_CONTROLLER] Payload:
+{
+  "status": "success",
+  "timestamp": "2025-05-04T19:25:04.066493",
+  "message": "Perfil de usuario obtenido con \u00e9xito",
+  "data": {
+    "userId": "3",
+    "username": "erkgd",
+    "profileImage": "https://i.scdn.co/image/ab6775700000ee85258fa22dda85658db09d03b0",
+    "spotifyId": "31anflvbhjbrb4insk223drl4ecu",
+    "topRatedTrack": {
+      "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+      "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+      "artist": "Artista desconocido",
+      "imageUrl": null,
+      "rating": 4,
+      "normalizedRating": 2.0,
+      "date": "2025-04-29T10:47:33.414000Z",
+      "review": null
+    },
+    "recentRatings": [
+      {
+        "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+        "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T10:47:33.414000Z",
+        "review": null
+      },
+      {
+        "trackId": "3vWjeWqLto8tUv8go8TRmM",
+        "title": "Canci\u00f3n 3vWjeWqLto8tUv8go8TRmM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T09:56:48.083000Z",
+        "review": null
+      },
+      {
+        "trackId": "7H6lDjQ509hVPiN72wlwzM",
+        "title": "Canci\u00f3n 7H6lDjQ509hVPiN72wlwzM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:25:42.387000Z",
+        "review": null
+      },
+      {
+        "trackId": "6gJGe9pUcgmMIhFxDigsLz",
+        "title": "Canci\u00f3n 6gJGe9pUcgmMIhFxDigsLz",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:08:01.088000Z",
+        "review": null
+      }
+    ],
+    "totalRatings": 13,
+    "averageRating": 3.46
+  }
+}
+[PROFILE_CONTROLLER] =======================
+             - module:profile_controller process:1920 thread:10748
+2025-05-04 19:29:27,205 INFO 
+[PROFILE_VIEW] ===========================================
+[PROFILE_VIEW] GET /api/profile/3 HTTP/1.1
+[PROFILE_VIEW] Timestamp: 2025-05-04T19:29:27.205244
+[PROFILE_VIEW] Cliente: 127.0.0.1
+[PROFILE_VIEW] User-Agent: Dart/3.7 (dart:io)
+[PROFILE_VIEW] Parámetros de consulta: {}
+[PROFILE_VIEW] Usuario objetivo: 3
+[PROFILE_VIEW] ===========================================
+             - module:profile_view process:15212 thread:9096
+2025-05-04 19:29:31,341 INFO 
+[PROFILE_CONTROLLER] ===== RESPUESTA =====
+[PROFILE_CONTROLLER] Status: 200
+[PROFILE_CONTROLLER] Timestamp: 2025-05-04T19:29:31.340904
+[PROFILE_CONTROLLER] Payload:
+{
+  "status": "success",
+  "timestamp": "2025-05-04T19:29:31.340795",
+  "message": "Perfil de usuario obtenido con \u00e9xito",
+  "data": {
+    "userId": "3",
+    "username": "erkgd",
+    "profileImage": "https://i.scdn.co/image/ab6775700000ee85258fa22dda85658db09d03b0",
+    "spotifyId": "31anflvbhjbrb4insk223drl4ecu",
+    "topRatedTrack": {
+      "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+      "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+      "artist": "Artista desconocido",
+      "imageUrl": null,
+      "rating": 4,
+      "normalizedRating": 2.0,
+      "date": "2025-04-29T10:47:33.414000Z",
+      "review": null
+    },
+    "recentRatings": [
+      {
+        "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+        "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T10:47:33.414000Z",
+        "review": null
+      },
+      {
+        "trackId": "3vWjeWqLto8tUv8go8TRmM",
+        "title": "Canci\u00f3n 3vWjeWqLto8tUv8go8TRmM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T09:56:48.083000Z",
+        "review": null
+      },
+      {
+        "trackId": "7H6lDjQ509hVPiN72wlwzM",
+        "title": "Canci\u00f3n 7H6lDjQ509hVPiN72wlwzM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:25:42.387000Z",
+        "review": null
+      },
+      {
+        "trackId": "6gJGe9pUcgmMIhFxDigsLz",
+        "title": "Canci\u00f3n 6gJGe9pUcgmMIhFxDigsLz",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:08:01.088000Z",
+        "review": null
+      }
+    ],
+    "totalRatings": 13,
+    "averageRating": 3.46
+  }
+}
+[PROFILE_CONTROLLER] =======================
+             - module:profile_controller process:15212 thread:9096
+2025-05-04 19:32:52,989 INFO 
+[PROFILE_VIEW] ===========================================
+[PROFILE_VIEW] GET /api/profile/3 HTTP/1.1
+[PROFILE_VIEW] Timestamp: 2025-05-04T19:32:52.989416
+[PROFILE_VIEW] Cliente: 127.0.0.1
+[PROFILE_VIEW] User-Agent: Dart/3.7 (dart:io)
+[PROFILE_VIEW] Parámetros de consulta: {}
+[PROFILE_VIEW] Usuario objetivo: 3
+[PROFILE_VIEW] ===========================================
+             - module:profile_view process:13248 thread:20552
+2025-05-04 19:32:57,116 INFO 
+[PROFILE_CONTROLLER] ===== RESPUESTA =====
+[PROFILE_CONTROLLER] Status: 200
+[PROFILE_CONTROLLER] Timestamp: 2025-05-04T19:32:57.116246
+[PROFILE_CONTROLLER] Payload:
+{
+  "status": "success",
+  "timestamp": "2025-05-04T19:32:57.116173",
+  "message": "Perfil de usuario obtenido con \u00e9xito",
+  "data": {
+    "userId": "3",
+    "username": "erkgd",
+    "profileImage": "https://i.scdn.co/image/ab6775700000ee85258fa22dda85658db09d03b0",
+    "spotifyId": "31anflvbhjbrb4insk223drl4ecu",
+    "topRatedTrack": {
+      "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+      "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+      "artist": "Artista desconocido",
+      "imageUrl": null,
+      "rating": 4,
+      "normalizedRating": 2.0,
+      "date": "2025-04-29T10:47:33.414000Z",
+      "review": null
+    },
+    "recentRatings": [
+      {
+        "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+        "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T10:47:33.414000Z",
+        "review": null
+      },
+      {
+        "trackId": "3vWjeWqLto8tUv8go8TRmM",
+        "title": "Canci\u00f3n 3vWjeWqLto8tUv8go8TRmM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T09:56:48.083000Z",
+        "review": null
+      },
+      {
+        "trackId": "7H6lDjQ509hVPiN72wlwzM",
+        "title": "Canci\u00f3n 7H6lDjQ509hVPiN72wlwzM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:25:42.387000Z",
+        "review": null
+      },
+      {
+        "trackId": "6gJGe9pUcgmMIhFxDigsLz",
+        "title": "Canci\u00f3n 6gJGe9pUcgmMIhFxDigsLz",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:08:01.088000Z",
+        "review": null
+      }
+    ],
+    "totalRatings": 13,
+    "averageRating": 3.46
+  }
+}
+[PROFILE_CONTROLLER] =======================
+             - module:profile_controller process:13248 thread:20552
+2025-05-04 19:44:59,387 INFO 
+[PROFILE_VIEW] ===========================================
+[PROFILE_VIEW] GET /api/profile/3 HTTP/1.1
+[PROFILE_VIEW] Timestamp: 2025-05-04T19:44:59.387436
+[PROFILE_VIEW] Cliente: 127.0.0.1
+[PROFILE_VIEW] User-Agent: Dart/3.7 (dart:io)
+[PROFILE_VIEW] Parámetros de consulta: {}
+[PROFILE_VIEW] Usuario objetivo: 3
+[PROFILE_VIEW] ===========================================
+             - module:profile_view process:13248 thread:1648
+2025-05-04 19:45:03,487 INFO 
+[PROFILE_CONTROLLER] ===== RESPUESTA =====
+[PROFILE_CONTROLLER] Status: 200
+[PROFILE_CONTROLLER] Timestamp: 2025-05-04T19:45:03.487867
+[PROFILE_CONTROLLER] Payload:
+{
+  "status": "success",
+  "timestamp": "2025-05-04T19:45:03.487786",
+  "message": "Perfil de usuario obtenido con \u00e9xito",
+  "data": {
+    "userId": "3",
+    "username": "erkgd",
+    "profileImage": "https://i.scdn.co/image/ab6775700000ee85258fa22dda85658db09d03b0",
+    "spotifyId": "31anflvbhjbrb4insk223drl4ecu",
+    "topRatedTrack": {
+      "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+      "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+      "artist": "Artista desconocido",
+      "imageUrl": null,
+      "rating": 4,
+      "normalizedRating": 2.0,
+      "date": "2025-04-29T10:47:33.414000Z",
+      "review": null
+    },
+    "recentRatings": [
+      {
+        "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+        "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T10:47:33.414000Z",
+        "review": null
+      },
+      {
+        "trackId": "3vWjeWqLto8tUv8go8TRmM",
+        "title": "Canci\u00f3n 3vWjeWqLto8tUv8go8TRmM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T09:56:48.083000Z",
+        "review": null
+      },
+      {
+        "trackId": "7H6lDjQ509hVPiN72wlwzM",
+        "title": "Canci\u00f3n 7H6lDjQ509hVPiN72wlwzM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:25:42.387000Z",
+        "review": null
+      },
+      {
+        "trackId": "6gJGe9pUcgmMIhFxDigsLz",
+        "title": "Canci\u00f3n 6gJGe9pUcgmMIhFxDigsLz",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:08:01.088000Z",
+        "review": null
+      }
+    ],
+    "totalRatings": 13,
+    "averageRating": 3.46
+  }
+}
+[PROFILE_CONTROLLER] =======================
+             - module:profile_controller process:13248 thread:1648
+2025-05-04 19:48:48,305 INFO 
+[PROFILE_VIEW] ===========================================
+[PROFILE_VIEW] GET /api/profile/3 HTTP/1.1
+[PROFILE_VIEW] Timestamp: 2025-05-04T19:48:48.305082
+[PROFILE_VIEW] Cliente: 127.0.0.1
+[PROFILE_VIEW] User-Agent: Dart/3.7 (dart:io)
+[PROFILE_VIEW] Parámetros de consulta: {}
+[PROFILE_VIEW] Usuario objetivo: 3
+[PROFILE_VIEW] ===========================================
+             - module:profile_view process:13248 thread:13788
+2025-05-04 19:48:54,483 INFO 
+[PROFILE_CONTROLLER] ===== RESPUESTA =====
+[PROFILE_CONTROLLER] Status: 200
+[PROFILE_CONTROLLER] Timestamp: 2025-05-04T19:48:54.483389
+[PROFILE_CONTROLLER] Payload:
+{
+  "status": "success",
+  "timestamp": "2025-05-04T19:48:54.483303",
+  "message": "Perfil de usuario obtenido con \u00e9xito",
+  "data": {
+    "userId": "3",
+    "username": "erkgd",
+    "profileImage": "https://i.scdn.co/image/ab6775700000ee85258fa22dda85658db09d03b0",
+    "spotifyId": "31anflvbhjbrb4insk223drl4ecu",
+    "topRatedTrack": {
+      "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+      "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+      "artist": "Artista desconocido",
+      "imageUrl": null,
+      "rating": 4,
+      "normalizedRating": 2.0,
+      "date": "2025-04-29T10:47:33.414000Z",
+      "review": null
+    },
+    "recentRatings": [
+      {
+        "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+        "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T10:47:33.414000Z",
+        "review": null
+      },
+      {
+        "trackId": "3vWjeWqLto8tUv8go8TRmM",
+        "title": "Canci\u00f3n 3vWjeWqLto8tUv8go8TRmM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T09:56:48.083000Z",
+        "review": null
+      },
+      {
+        "trackId": "7H6lDjQ509hVPiN72wlwzM",
+        "title": "Canci\u00f3n 7H6lDjQ509hVPiN72wlwzM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:25:42.387000Z",
+        "review": null
+      },
+      {
+        "trackId": "6gJGe9pUcgmMIhFxDigsLz",
+        "title": "Canci\u00f3n 6gJGe9pUcgmMIhFxDigsLz",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:08:01.088000Z",
+        "review": null
+      }
+    ],
+    "totalRatings": 13,
+    "averageRating": 3.46
+  }
+}
+[PROFILE_CONTROLLER] =======================
+             - module:profile_controller process:13248 thread:13788
+2025-05-04 19:51:02,658 INFO 
+[PROFILE_VIEW] ===========================================
+[PROFILE_VIEW] GET /api/profile/3 HTTP/1.1
+[PROFILE_VIEW] Timestamp: 2025-05-04T19:51:02.658712
+[PROFILE_VIEW] Cliente: 127.0.0.1
+[PROFILE_VIEW] User-Agent: Dart/3.7 (dart:io)
+[PROFILE_VIEW] Parámetros de consulta: {}
+[PROFILE_VIEW] Usuario objetivo: 3
+[PROFILE_VIEW] ===========================================
+             - module:profile_view process:13248 thread:28276
+2025-05-04 19:51:06,774 INFO 
+[PROFILE_CONTROLLER] ===== RESPUESTA =====
+[PROFILE_CONTROLLER] Status: 200
+[PROFILE_CONTROLLER] Timestamp: 2025-05-04T19:51:06.773926
+[PROFILE_CONTROLLER] Payload:
+{
+  "status": "success",
+  "timestamp": "2025-05-04T19:51:06.773854",
+  "message": "Perfil de usuario obtenido con \u00e9xito",
+  "data": {
+    "userId": "3",
+    "username": "erkgd",
+    "profileImage": "https://i.scdn.co/image/ab6775700000ee85258fa22dda85658db09d03b0",
+    "spotifyId": "31anflvbhjbrb4insk223drl4ecu",
+    "topRatedTrack": {
+      "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+      "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+      "artist": "Artista desconocido",
+      "imageUrl": null,
+      "rating": 4,
+      "normalizedRating": 2.0,
+      "date": "2025-04-29T10:47:33.414000Z",
+      "review": null
+    },
+    "recentRatings": [
+      {
+        "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+        "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T10:47:33.414000Z",
+        "review": null
+      },
+      {
+        "trackId": "3vWjeWqLto8tUv8go8TRmM",
+        "title": "Canci\u00f3n 3vWjeWqLto8tUv8go8TRmM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T09:56:48.083000Z",
+        "review": null
+      },
+      {
+        "trackId": "7H6lDjQ509hVPiN72wlwzM",
+        "title": "Canci\u00f3n 7H6lDjQ509hVPiN72wlwzM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:25:42.387000Z",
+        "review": null
+      },
+      {
+        "trackId": "6gJGe9pUcgmMIhFxDigsLz",
+        "title": "Canci\u00f3n 6gJGe9pUcgmMIhFxDigsLz",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:08:01.088000Z",
+        "review": null
+      }
+    ],
+    "totalRatings": 13,
+    "averageRating": 3.46
+  }
+}
+[PROFILE_CONTROLLER] =======================
+             - module:profile_controller process:13248 thread:28276
+2025-05-04 20:24:19,889 INFO 
+[PROFILE_VIEW] ===========================================
+[PROFILE_VIEW] GET /api/profile/3 HTTP/1.1
+[PROFILE_VIEW] Timestamp: 2025-05-04T20:24:19.889202
+[PROFILE_VIEW] Cliente: 127.0.0.1
+[PROFILE_VIEW] User-Agent: Dart/3.7 (dart:io)
+[PROFILE_VIEW] Parámetros de consulta: {}
+[PROFILE_VIEW] Usuario objetivo: 3
+[PROFILE_VIEW] ===========================================
+             - module:profile_view process:13248 thread:16744
+2025-05-04 20:24:24,021 INFO 
+[PROFILE_CONTROLLER] ===== RESPUESTA =====
+[PROFILE_CONTROLLER] Status: 200
+[PROFILE_CONTROLLER] Timestamp: 2025-05-04T20:24:24.021148
+[PROFILE_CONTROLLER] Payload:
+{
+  "status": "success",
+  "timestamp": "2025-05-04T20:24:24.021054",
+  "message": "Perfil de usuario obtenido con \u00e9xito",
+  "data": {
+    "userId": "3",
+    "username": "erkgd",
+    "profileImage": "https://i.scdn.co/image/ab6775700000ee85258fa22dda85658db09d03b0",
+    "spotifyId": "31anflvbhjbrb4insk223drl4ecu",
+    "topRatedTrack": {
+      "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+      "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+      "artist": "Artista desconocido",
+      "imageUrl": null,
+      "rating": 4,
+      "normalizedRating": 2.0,
+      "date": "2025-04-29T10:47:33.414000Z",
+      "review": null
+    },
+    "recentRatings": [
+      {
+        "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+        "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T10:47:33.414000Z",
+        "review": null
+      },
+      {
+        "trackId": "3vWjeWqLto8tUv8go8TRmM",
+        "title": "Canci\u00f3n 3vWjeWqLto8tUv8go8TRmM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T09:56:48.083000Z",
+        "review": null
+      },
+      {
+        "trackId": "7H6lDjQ509hVPiN72wlwzM",
+        "title": "Canci\u00f3n 7H6lDjQ509hVPiN72wlwzM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:25:42.387000Z",
+        "review": null
+      },
+      {
+        "trackId": "6gJGe9pUcgmMIhFxDigsLz",
+        "title": "Canci\u00f3n 6gJGe9pUcgmMIhFxDigsLz",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:08:01.088000Z",
+        "review": null
+      }
+    ],
+    "totalRatings": 13,
+    "averageRating": 3.46
+  }
+}
+[PROFILE_CONTROLLER] =======================
+             - module:profile_controller process:13248 thread:16744
+2025-05-04 20:26:32,369 INFO 
+[PROFILE_VIEW] ===========================================
+[PROFILE_VIEW] GET /api/profile/3 HTTP/1.1
+[PROFILE_VIEW] Timestamp: 2025-05-04T20:26:32.369370
+[PROFILE_VIEW] Cliente: 127.0.0.1
+[PROFILE_VIEW] User-Agent: Dart/3.7 (dart:io)
+[PROFILE_VIEW] Parámetros de consulta: {}
+[PROFILE_VIEW] Usuario objetivo: 3
+[PROFILE_VIEW] ===========================================
+             - module:profile_view process:13248 thread:24660
+2025-05-04 20:26:36,485 INFO 
+[PROFILE_CONTROLLER] ===== RESPUESTA =====
+[PROFILE_CONTROLLER] Status: 200
+[PROFILE_CONTROLLER] Timestamp: 2025-05-04T20:26:36.485162
+[PROFILE_CONTROLLER] Payload:
+{
+  "status": "success",
+  "timestamp": "2025-05-04T20:26:36.485077",
+  "message": "Perfil de usuario obtenido con \u00e9xito",
+  "data": {
+    "userId": "3",
+    "username": "erkgd",
+    "profileImage": "https://i.scdn.co/image/ab6775700000ee85258fa22dda85658db09d03b0",
+    "spotifyId": "31anflvbhjbrb4insk223drl4ecu",
+    "topRatedTrack": {
+      "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+      "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+      "artist": "Artista desconocido",
+      "imageUrl": null,
+      "rating": 4,
+      "normalizedRating": 2.0,
+      "date": "2025-04-29T10:47:33.414000Z",
+      "review": null
+    },
+    "recentRatings": [
+      {
+        "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+        "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T10:47:33.414000Z",
+        "review": null
+      },
+      {
+        "trackId": "3vWjeWqLto8tUv8go8TRmM",
+        "title": "Canci\u00f3n 3vWjeWqLto8tUv8go8TRmM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T09:56:48.083000Z",
+        "review": null
+      },
+      {
+        "trackId": "7H6lDjQ509hVPiN72wlwzM",
+        "title": "Canci\u00f3n 7H6lDjQ509hVPiN72wlwzM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:25:42.387000Z",
+        "review": null
+      },
+      {
+        "trackId": "6gJGe9pUcgmMIhFxDigsLz",
+        "title": "Canci\u00f3n 6gJGe9pUcgmMIhFxDigsLz",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:08:01.088000Z",
+        "review": null
+      }
+    ],
+    "totalRatings": 13,
+    "averageRating": 3.46
+  }
+}
+[PROFILE_CONTROLLER] =======================
+             - module:profile_controller process:13248 thread:24660
+2025-05-04 22:22:55,645 INFO 
+[PROFILE_VIEW] ===========================================
+[PROFILE_VIEW] GET /api/profile/3 HTTP/1.1
+[PROFILE_VIEW] Timestamp: 2025-05-04T22:22:55.644950
+[PROFILE_VIEW] Cliente: 127.0.0.1
+[PROFILE_VIEW] User-Agent: Dart/3.7 (dart:io)
+[PROFILE_VIEW] Parámetros de consulta: {}
+[PROFILE_VIEW] Usuario objetivo: 3
+[PROFILE_VIEW] ===========================================
+             - module:profile_view process:13248 thread:24836
+2025-05-04 22:23:01,823 INFO 
+[PROFILE_CONTROLLER] ===== RESPUESTA =====
+[PROFILE_CONTROLLER] Status: 200
+[PROFILE_CONTROLLER] Timestamp: 2025-05-04T22:23:01.823190
+[PROFILE_CONTROLLER] Payload:
+{
+  "status": "success",
+  "timestamp": "2025-05-04T22:23:01.823081",
+  "message": "Perfil de usuario obtenido con \u00e9xito",
+  "data": {
+    "userId": "3",
+    "username": "erkgd",
+    "profileImage": "https://i.scdn.co/image/ab6775700000ee85258fa22dda85658db09d03b0",
+    "spotifyId": "31anflvbhjbrb4insk223drl4ecu",
+    "topRatedTrack": {
+      "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+      "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+      "artist": "Artista desconocido",
+      "imageUrl": null,
+      "rating": 4,
+      "normalizedRating": 2.0,
+      "date": "2025-04-29T10:47:33.414000Z",
+      "review": null
+    },
+    "recentRatings": [
+      {
+        "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+        "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T10:47:33.414000Z",
+        "review": null
+      },
+      {
+        "trackId": "3vWjeWqLto8tUv8go8TRmM",
+        "title": "Canci\u00f3n 3vWjeWqLto8tUv8go8TRmM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T09:56:48.083000Z",
+        "review": null
+      },
+      {
+        "trackId": "7H6lDjQ509hVPiN72wlwzM",
+        "title": "Canci\u00f3n 7H6lDjQ509hVPiN72wlwzM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:25:42.387000Z",
+        "review": null
+      },
+      {
+        "trackId": "6gJGe9pUcgmMIhFxDigsLz",
+        "title": "Canci\u00f3n 6gJGe9pUcgmMIhFxDigsLz",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:08:01.088000Z",
+        "review": null
+      }
+    ],
+    "totalRatings": 13,
+    "averageRating": 3.46
+  }
+}
+[PROFILE_CONTROLLER] =======================
+             - module:profile_controller process:13248 thread:24836
+2025-05-04 22:35:46,910 INFO 
+[PROFILE_VIEW] ===========================================
+[PROFILE_VIEW] GET /api/profile/3 HTTP/1.1
+[PROFILE_VIEW] Timestamp: 2025-05-04T22:35:46.910501
+[PROFILE_VIEW] Cliente: 127.0.0.1
+[PROFILE_VIEW] User-Agent: Dart/3.7 (dart:io)
+[PROFILE_VIEW] Parámetros de consulta: {}
+[PROFILE_VIEW] Usuario objetivo: 3
+[PROFILE_VIEW] ===========================================
+             - module:profile_view process:13248 thread:4032
+2025-05-04 22:35:51,011 INFO 
+[PROFILE_CONTROLLER] ===== RESPUESTA =====
+[PROFILE_CONTROLLER] Status: 200
+[PROFILE_CONTROLLER] Timestamp: 2025-05-04T22:35:51.011172
+[PROFILE_CONTROLLER] Payload:
+{
+  "status": "success",
+  "timestamp": "2025-05-04T22:35:51.011082",
+  "message": "Perfil de usuario obtenido con \u00e9xito",
+  "data": {
+    "userId": "3",
+    "username": "erkgd",
+    "profileImage": "https://i.scdn.co/image/ab6775700000ee85258fa22dda85658db09d03b0",
+    "spotifyId": "31anflvbhjbrb4insk223drl4ecu",
+    "topRatedTrack": {
+      "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+      "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+      "artist": "Artista desconocido",
+      "imageUrl": null,
+      "rating": 4,
+      "normalizedRating": 2.0,
+      "date": "2025-04-29T10:47:33.414000Z",
+      "review": null
+    },
+    "recentRatings": [
+      {
+        "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+        "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T10:47:33.414000Z",
+        "review": null
+      },
+      {
+        "trackId": "3vWjeWqLto8tUv8go8TRmM",
+        "title": "Canci\u00f3n 3vWjeWqLto8tUv8go8TRmM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T09:56:48.083000Z",
+        "review": null
+      },
+      {
+        "trackId": "7H6lDjQ509hVPiN72wlwzM",
+        "title": "Canci\u00f3n 7H6lDjQ509hVPiN72wlwzM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:25:42.387000Z",
+        "review": null
+      },
+      {
+        "trackId": "6gJGe9pUcgmMIhFxDigsLz",
+        "title": "Canci\u00f3n 6gJGe9pUcgmMIhFxDigsLz",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:08:01.088000Z",
+        "review": null
+      }
+    ],
+    "totalRatings": 13,
+    "averageRating": 3.46
+  }
+}
+[PROFILE_CONTROLLER] =======================
+             - module:profile_controller process:13248 thread:4032
+2025-05-04 22:43:50,016 INFO 
+[PROFILE_VIEW] ===========================================
+[PROFILE_VIEW] GET /api/profile/3 HTTP/1.1
+[PROFILE_VIEW] Timestamp: 2025-05-04T22:43:50.016178
+[PROFILE_VIEW] Cliente: 127.0.0.1
+[PROFILE_VIEW] User-Agent: Dart/3.7 (dart:io)
+[PROFILE_VIEW] Parámetros de consulta: {}
+[PROFILE_VIEW] Usuario objetivo: 3
+[PROFILE_VIEW] ===========================================
+             - module:profile_view process:13248 thread:21896
+2025-05-04 22:43:54,123 INFO 
+[PROFILE_CONTROLLER] ===== RESPUESTA =====
+[PROFILE_CONTROLLER] Status: 200
+[PROFILE_CONTROLLER] Timestamp: 2025-05-04T22:43:54.122927
+[PROFILE_CONTROLLER] Payload:
+{
+  "status": "success",
+  "timestamp": "2025-05-04T22:43:54.122842",
+  "message": "Perfil de usuario obtenido con \u00e9xito",
+  "data": {
+    "userId": "3",
+    "username": "erkgd",
+    "profileImage": "https://i.scdn.co/image/ab6775700000ee85258fa22dda85658db09d03b0",
+    "spotifyId": "31anflvbhjbrb4insk223drl4ecu",
+    "topRatedTrack": {
+      "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+      "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+      "artist": "Artista desconocido",
+      "imageUrl": null,
+      "rating": 4,
+      "normalizedRating": 2.0,
+      "date": "2025-04-29T10:47:33.414000Z",
+      "review": null
+    },
+    "recentRatings": [
+      {
+        "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+        "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T10:47:33.414000Z",
+        "review": null
+      },
+      {
+        "trackId": "3vWjeWqLto8tUv8go8TRmM",
+        "title": "Canci\u00f3n 3vWjeWqLto8tUv8go8TRmM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T09:56:48.083000Z",
+        "review": null
+      },
+      {
+        "trackId": "7H6lDjQ509hVPiN72wlwzM",
+        "title": "Canci\u00f3n 7H6lDjQ509hVPiN72wlwzM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:25:42.387000Z",
+        "review": null
+      },
+      {
+        "trackId": "6gJGe9pUcgmMIhFxDigsLz",
+        "title": "Canci\u00f3n 6gJGe9pUcgmMIhFxDigsLz",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:08:01.088000Z",
+        "review": null
+      }
+    ],
+    "totalRatings": 13,
+    "averageRating": 3.46
+  }
+}
+[PROFILE_CONTROLLER] =======================
+             - module:profile_controller process:13248 thread:21896
+2025-05-04 22:51:19,756 INFO 
+[PROFILE_VIEW] ===========================================
+[PROFILE_VIEW] GET /api/profile/3 HTTP/1.1
+[PROFILE_VIEW] Timestamp: 2025-05-04T22:51:19.756480
+[PROFILE_VIEW] Cliente: 127.0.0.1
+[PROFILE_VIEW] User-Agent: Dart/3.7 (dart:io)
+[PROFILE_VIEW] Parámetros de consulta: {}
+[PROFILE_VIEW] Usuario objetivo: 3
+[PROFILE_VIEW] ===========================================
+             - module:profile_view process:13248 thread:13216
+2025-05-04 22:51:23,852 INFO 
+[PROFILE_CONTROLLER] ===== RESPUESTA =====
+[PROFILE_CONTROLLER] Status: 200
+[PROFILE_CONTROLLER] Timestamp: 2025-05-04T22:51:23.852829
+[PROFILE_CONTROLLER] Payload:
+{
+  "status": "success",
+  "timestamp": "2025-05-04T22:51:23.852714",
+  "message": "Perfil de usuario obtenido con \u00e9xito",
+  "data": {
+    "userId": "3",
+    "username": "erkgd",
+    "profileImage": "https://i.scdn.co/image/ab6775700000ee85258fa22dda85658db09d03b0",
+    "spotifyId": "31anflvbhjbrb4insk223drl4ecu",
+    "topRatedTrack": {
+      "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+      "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+      "artist": "Artista desconocido",
+      "imageUrl": null,
+      "rating": 4,
+      "normalizedRating": 2.0,
+      "date": "2025-04-29T10:47:33.414000Z",
+      "review": null
+    },
+    "recentRatings": [
+      {
+        "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+        "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T10:47:33.414000Z",
+        "review": null
+      },
+      {
+        "trackId": "3vWjeWqLto8tUv8go8TRmM",
+        "title": "Canci\u00f3n 3vWjeWqLto8tUv8go8TRmM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T09:56:48.083000Z",
+        "review": null
+      },
+      {
+        "trackId": "7H6lDjQ509hVPiN72wlwzM",
+        "title": "Canci\u00f3n 7H6lDjQ509hVPiN72wlwzM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:25:42.387000Z",
+        "review": null
+      },
+      {
+        "trackId": "6gJGe9pUcgmMIhFxDigsLz",
+        "title": "Canci\u00f3n 6gJGe9pUcgmMIhFxDigsLz",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:08:01.088000Z",
+        "review": null
+      }
+    ],
+    "totalRatings": 13,
+    "averageRating": 3.46
+  }
+}
+[PROFILE_CONTROLLER] =======================
+             - module:profile_controller process:13248 thread:13216
+2025-05-04 22:58:36,067 INFO 
+[PROFILE_VIEW] ===========================================
+[PROFILE_VIEW] GET /api/profile/3 HTTP/1.1
+[PROFILE_VIEW] Timestamp: 2025-05-04T22:58:36.067618
+[PROFILE_VIEW] Cliente: 127.0.0.1
+[PROFILE_VIEW] User-Agent: Dart/3.7 (dart:io)
+[PROFILE_VIEW] Parámetros de consulta: {}
+[PROFILE_VIEW] Usuario objetivo: 3
+[PROFILE_VIEW] ===========================================
+             - module:profile_view process:13248 thread:11996
+2025-05-04 22:58:40,151 INFO 
+[PROFILE_CONTROLLER] ===== RESPUESTA =====
+[PROFILE_CONTROLLER] Status: 200
+[PROFILE_CONTROLLER] Timestamp: 2025-05-04T22:58:40.151280
+[PROFILE_CONTROLLER] Payload:
+{
+  "status": "success",
+  "timestamp": "2025-05-04T22:58:40.151185",
+  "message": "Perfil de usuario obtenido con \u00e9xito",
+  "data": {
+    "userId": "3",
+    "username": "erkgd",
+    "profileImage": "https://i.scdn.co/image/ab6775700000ee85258fa22dda85658db09d03b0",
+    "spotifyId": "31anflvbhjbrb4insk223drl4ecu",
+    "topRatedTrack": {
+      "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+      "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+      "artist": "Artista desconocido",
+      "imageUrl": null,
+      "rating": 4,
+      "normalizedRating": 2.0,
+      "date": "2025-04-29T10:47:33.414000Z",
+      "review": null
+    },
+    "recentRatings": [
+      {
+        "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+        "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T10:47:33.414000Z",
+        "review": null
+      },
+      {
+        "trackId": "3vWjeWqLto8tUv8go8TRmM",
+        "title": "Canci\u00f3n 3vWjeWqLto8tUv8go8TRmM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T09:56:48.083000Z",
+        "review": null
+      },
+      {
+        "trackId": "7H6lDjQ509hVPiN72wlwzM",
+        "title": "Canci\u00f3n 7H6lDjQ509hVPiN72wlwzM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:25:42.387000Z",
+        "review": null
+      },
+      {
+        "trackId": "6gJGe9pUcgmMIhFxDigsLz",
+        "title": "Canci\u00f3n 6gJGe9pUcgmMIhFxDigsLz",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:08:01.088000Z",
+        "review": null
+      }
+    ],
+    "totalRatings": 13,
+    "averageRating": 3.46
+  }
+}
+[PROFILE_CONTROLLER] =======================
+             - module:profile_controller process:13248 thread:11996
+2025-05-04 23:03:38,819 INFO 
+[PROFILE_VIEW] ===========================================
+[PROFILE_VIEW] GET /api/profile/3 HTTP/1.1
+[PROFILE_VIEW] Timestamp: 2025-05-04T23:03:38.819208
+[PROFILE_VIEW] Cliente: 127.0.0.1
+[PROFILE_VIEW] User-Agent: Dart/3.7 (dart:io)
+[PROFILE_VIEW] Parámetros de consulta: {}
+[PROFILE_VIEW] Usuario objetivo: 3
+[PROFILE_VIEW] ===========================================
+             - module:profile_view process:13248 thread:15552
+2025-05-04 23:03:42,934 INFO 
+[PROFILE_CONTROLLER] ===== RESPUESTA =====
+[PROFILE_CONTROLLER] Status: 200
+[PROFILE_CONTROLLER] Timestamp: 2025-05-04T23:03:42.934018
+[PROFILE_CONTROLLER] Payload:
+{
+  "status": "success",
+  "timestamp": "2025-05-04T23:03:42.933934",
+  "message": "Perfil de usuario obtenido con \u00e9xito",
+  "data": {
+    "userId": "3",
+    "username": "erkgd",
+    "profileImage": "https://i.scdn.co/image/ab6775700000ee85258fa22dda85658db09d03b0",
+    "spotifyId": "31anflvbhjbrb4insk223drl4ecu",
+    "topRatedTrack": {
+      "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+      "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+      "artist": "Artista desconocido",
+      "imageUrl": null,
+      "rating": 4,
+      "normalizedRating": 2.0,
+      "date": "2025-04-29T10:47:33.414000Z",
+      "review": null
+    },
+    "recentRatings": [
+      {
+        "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+        "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T10:47:33.414000Z",
+        "review": null
+      },
+      {
+        "trackId": "3vWjeWqLto8tUv8go8TRmM",
+        "title": "Canci\u00f3n 3vWjeWqLto8tUv8go8TRmM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T09:56:48.083000Z",
+        "review": null
+      },
+      {
+        "trackId": "7H6lDjQ509hVPiN72wlwzM",
+        "title": "Canci\u00f3n 7H6lDjQ509hVPiN72wlwzM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:25:42.387000Z",
+        "review": null
+      },
+      {
+        "trackId": "6gJGe9pUcgmMIhFxDigsLz",
+        "title": "Canci\u00f3n 6gJGe9pUcgmMIhFxDigsLz",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:08:01.088000Z",
+        "review": null
+      }
+    ],
+    "totalRatings": 13,
+    "averageRating": 3.46
+  }
+}
+[PROFILE_CONTROLLER] =======================
+             - module:profile_controller process:13248 thread:15552
+2025-05-04 23:06:53,833 INFO 
+[PROFILE_VIEW] ===========================================
+[PROFILE_VIEW] GET /api/profile/3 HTTP/1.1
+[PROFILE_VIEW] Timestamp: 2025-05-04T23:06:53.833449
+[PROFILE_VIEW] Cliente: 127.0.0.1
+[PROFILE_VIEW] User-Agent: Dart/3.7 (dart:io)
+[PROFILE_VIEW] Parámetros de consulta: {}
+[PROFILE_VIEW] Usuario objetivo: 3
+[PROFILE_VIEW] ===========================================
+             - module:profile_view process:13248 thread:2000
+2025-05-04 23:06:57,966 INFO 
+[PROFILE_CONTROLLER] ===== RESPUESTA =====
+[PROFILE_CONTROLLER] Status: 200
+[PROFILE_CONTROLLER] Timestamp: 2025-05-04T23:06:57.966605
+[PROFILE_CONTROLLER] Payload:
+{
+  "status": "success",
+  "timestamp": "2025-05-04T23:06:57.966510",
+  "message": "Perfil de usuario obtenido con \u00e9xito",
+  "data": {
+    "userId": "3",
+    "username": "erkgd",
+    "profileImage": "https://i.scdn.co/image/ab6775700000ee85258fa22dda85658db09d03b0",
+    "spotifyId": "31anflvbhjbrb4insk223drl4ecu",
+    "topRatedTrack": {
+      "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+      "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+      "artist": "Artista desconocido",
+      "imageUrl": null,
+      "rating": 4,
+      "normalizedRating": 2.0,
+      "date": "2025-04-29T10:47:33.414000Z",
+      "review": null
+    },
+    "recentRatings": [
+      {
+        "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+        "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T10:47:33.414000Z",
+        "review": null
+      },
+      {
+        "trackId": "3vWjeWqLto8tUv8go8TRmM",
+        "title": "Canci\u00f3n 3vWjeWqLto8tUv8go8TRmM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T09:56:48.083000Z",
+        "review": null
+      },
+      {
+        "trackId": "7H6lDjQ509hVPiN72wlwzM",
+        "title": "Canci\u00f3n 7H6lDjQ509hVPiN72wlwzM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:25:42.387000Z",
+        "review": null
+      },
+      {
+        "trackId": "6gJGe9pUcgmMIhFxDigsLz",
+        "title": "Canci\u00f3n 6gJGe9pUcgmMIhFxDigsLz",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:08:01.088000Z",
+        "review": null
+      }
+    ],
+    "totalRatings": 13,
+    "averageRating": 3.46
+  }
+}
+[PROFILE_CONTROLLER] =======================
+             - module:profile_controller process:13248 thread:2000
+2025-05-04 23:29:21,954 INFO 
+[PROFILE_VIEW] ===========================================
+[PROFILE_VIEW] GET /api/profile/3 HTTP/1.1
+[PROFILE_VIEW] Timestamp: 2025-05-04T23:29:21.954473
+[PROFILE_VIEW] Cliente: 127.0.0.1
+[PROFILE_VIEW] User-Agent: Dart/3.7 (dart:io)
+[PROFILE_VIEW] Parámetros de consulta: {}
+[PROFILE_VIEW] Usuario objetivo: 3
+[PROFILE_VIEW] ===========================================
+             - module:profile_view process:13248 thread:19164
+2025-05-04 23:29:26,035 INFO 
+[PROFILE_CONTROLLER] ===== RESPUESTA =====
+[PROFILE_CONTROLLER] Status: 200
+[PROFILE_CONTROLLER] Timestamp: 2025-05-04T23:29:26.035615
+[PROFILE_CONTROLLER] Payload:
+{
+  "status": "success",
+  "timestamp": "2025-05-04T23:29:26.035534",
+  "message": "Perfil de usuario obtenido con \u00e9xito",
+  "data": {
+    "userId": "3",
+    "username": "erkgd",
+    "profileImage": "https://i.scdn.co/image/ab6775700000ee85258fa22dda85658db09d03b0",
+    "spotifyId": "31anflvbhjbrb4insk223drl4ecu",
+    "topRatedTrack": {
+      "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+      "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+      "artist": "Artista desconocido",
+      "imageUrl": null,
+      "rating": 4,
+      "normalizedRating": 2.0,
+      "date": "2025-04-29T10:47:33.414000Z",
+      "review": null
+    },
+    "recentRatings": [
+      {
+        "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+        "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T10:47:33.414000Z",
+        "review": null
+      },
+      {
+        "trackId": "3vWjeWqLto8tUv8go8TRmM",
+        "title": "Canci\u00f3n 3vWjeWqLto8tUv8go8TRmM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T09:56:48.083000Z",
+        "review": null
+      },
+      {
+        "trackId": "7H6lDjQ509hVPiN72wlwzM",
+        "title": "Canci\u00f3n 7H6lDjQ509hVPiN72wlwzM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:25:42.387000Z",
+        "review": null
+      },
+      {
+        "trackId": "6gJGe9pUcgmMIhFxDigsLz",
+        "title": "Canci\u00f3n 6gJGe9pUcgmMIhFxDigsLz",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:08:01.088000Z",
+        "review": null
+      }
+    ],
+    "totalRatings": 13,
+    "averageRating": 3.46
+  }
+}
+[PROFILE_CONTROLLER] =======================
+             - module:profile_controller process:13248 thread:19164
+2025-05-04 23:31:43,928 INFO 
+[PROFILE_VIEW] ===========================================
+[PROFILE_VIEW] GET /api/profile/3 HTTP/1.1
+[PROFILE_VIEW] Timestamp: 2025-05-04T23:31:43.928754
+[PROFILE_VIEW] Cliente: 127.0.0.1
+[PROFILE_VIEW] User-Agent: Dart/3.7 (dart:io)
+[PROFILE_VIEW] Parámetros de consulta: {}
+[PROFILE_VIEW] Usuario objetivo: 3
+[PROFILE_VIEW] ===========================================
+             - module:profile_view process:13248 thread:6292
+2025-05-04 23:31:48,058 INFO 
+[PROFILE_CONTROLLER] ===== RESPUESTA =====
+[PROFILE_CONTROLLER] Status: 200
+[PROFILE_CONTROLLER] Timestamp: 2025-05-04T23:31:48.057951
+[PROFILE_CONTROLLER] Payload:
+{
+  "status": "success",
+  "timestamp": "2025-05-04T23:31:48.057834",
+  "message": "Perfil de usuario obtenido con \u00e9xito",
+  "data": {
+    "userId": "3",
+    "username": "erkgd",
+    "profileImage": "https://i.scdn.co/image/ab6775700000ee85258fa22dda85658db09d03b0",
+    "spotifyId": "31anflvbhjbrb4insk223drl4ecu",
+    "topRatedTrack": {
+      "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+      "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+      "artist": "Artista desconocido",
+      "imageUrl": null,
+      "rating": 4,
+      "normalizedRating": 2.0,
+      "date": "2025-04-29T10:47:33.414000Z",
+      "review": null
+    },
+    "recentRatings": [
+      {
+        "trackId": "0X5DkLjrJuiz4q4jYIWX4X",
+        "title": "Canci\u00f3n 0X5DkLjrJuiz4q4jYIWX4X",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T10:47:33.414000Z",
+        "review": null
+      },
+      {
+        "trackId": "3vWjeWqLto8tUv8go8TRmM",
+        "title": "Canci\u00f3n 3vWjeWqLto8tUv8go8TRmM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-29T09:56:48.083000Z",
+        "review": null
+      },
+      {
+        "trackId": "7H6lDjQ509hVPiN72wlwzM",
+        "title": "Canci\u00f3n 7H6lDjQ509hVPiN72wlwzM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:25:42.387000Z",
+        "review": null
+      },
+      {
+        "trackId": "6gJGe9pUcgmMIhFxDigsLz",
+        "title": "Canci\u00f3n 6gJGe9pUcgmMIhFxDigsLz",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "rating": 4,
+        "normalizedRating": 2.0,
+        "date": "2025-04-27T12:08:01.088000Z",
+        "review": null
+      }
+    ],
+    "totalRatings": 13,
+    "averageRating": 3.46
+  }
+}
+[PROFILE_CONTROLLER] =======================
+             - module:profile_controller process:13248 thread:6292

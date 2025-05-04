@@ -4,7 +4,10 @@ from rest_framework.request import Request
 from ..repositories.user_repository import UserRepository
 from ..dtos.user_dto import UserDTO
 from ..exceptions.api_exceptions import ResourceNotFoundException, ValidationException, AuthenticationException
-from ..utils import create_response
+from ..utils.response_utils import create_response
+import logging
+import sys
+import datetime
 
 
 class UsersController:
@@ -581,3 +584,59 @@ class UsersController:
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 error=str(e)
             )
+    
+    def check_following(self, follower_id: str, followed_id: str):
+        """
+        Verifica si un usuario sigue a otro.
+        
+        Args:
+            follower_id: ID del usuario que podría estar siguiendo
+            followed_id: ID del usuario que podría estar siendo seguido
+            
+        Returns:
+            Response: Respuesta HTTP con el estado de la relación
+        """
+        import logging
+        logger = logging.getLogger(__name__)
+        
+        try:
+            print(f"[USERS_CONTROLLER] Verificando relación de seguimiento entre {follower_id} y {followed_id}", file=sys.stderr)
+            
+            # Verificar que ambos usuarios existan
+            follower = self.repository.find_by_id(follower_id)
+            if not follower:
+                raise ResourceNotFoundException("Usuario seguidor", follower_id)
+                
+            followed = self.repository.find_by_id(followed_id)
+            if not followed:
+                raise ResourceNotFoundException("Usuario seguido", followed_id)
+            
+            # Usamos el servicio de usuarios para verificar la relación
+            from ..services.implementations.users_service_impl import UsersServiceImpl
+            users_service = UsersServiceImpl()
+            
+            # Verificar si existe la relación de seguimiento
+            is_following = users_service.is_following(follower_id, followed_id)
+            
+            print(f"[USERS_CONTROLLER] Estado de seguimiento: {is_following}", file=sys.stderr)
+            
+            # Crear respuesta basada en el resultado
+            return create_response(
+                data={
+                    "follower_id": follower_id,
+                    "followed_id": followed_id,
+                    "is_following": is_following,
+                    "timestamp": datetime.datetime.now().isoformat()
+                },
+                message="Estado de seguimiento verificado con éxito",
+                status_code=status.HTTP_200_OK
+            )
+            
+        except ResourceNotFoundException as e:
+            # El manejador de excepciones personalizado se encargará de formatear esta respuesta
+            raise
+        except Exception as e:
+            logger.exception(f"Error al verificar estado de seguimiento: {str(e)}")
+            print(f"[USERS_CONTROLLER] Error verificando relación de seguimiento: {str(e)}", file=sys.stderr)
+            # Propagar excepción para que sea manejada por el manejador global
+            raise

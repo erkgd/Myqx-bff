@@ -5,6 +5,7 @@ from rest_framework.views import exception_handler
 from rest_framework.response import Response
 from rest_framework import status
 from .exceptions.api_exceptions import ApiException
+import datetime
 
 logger = logging.getLogger(__name__)
 
@@ -65,28 +66,30 @@ def custom_exception_handler(exc, context):
     )
 
 
-# Función auxiliar para respuestas exitosas con formato estándar
-def create_response(data=None, message="Operación exitosa", status_code=status.HTTP_200_OK, meta=None):
+def create_response(data=None, message=None, status_code=status.HTTP_200_OK, error=None):
     """
-    Crea una respuesta HTTP con formato estándar para la aplicación Flutter.
+    Función auxiliar para crear respuestas HTTP con formato estandarizado para el frontend.
     
     Args:
-        data: Datos a devolver (opcional)
-        message: Mensaje de éxito (opcional)
-        status_code: Código de estado HTTP (opcional)
-        meta: Metadatos adicionales como paginación (opcional)
+        data: Datos a devolver en la respuesta
+        message: Mensaje descriptivo de la respuesta
+        status_code: Código de estado HTTP
+        error: Mensaje de error (si aplica)
         
     Returns:
-        Response: Respuesta HTTP con formato estandarizado
+        Response: Objeto Response con formato estandarizado
     """
     response_data = {
-        "success": True,
-        "message": message,
-        "data": data or {}
+        'status': 'success' if error is None else 'error',
+        'timestamp': datetime.datetime.now().isoformat(),
+        'message': message or ('Operación completada con éxito' if error is None else 'Error en la operación')
     }
     
-    if meta:
-        response_data["meta"] = meta
+    if data is not None:
+        response_data['data'] = data
+        
+    if error:
+        response_data['error'] = error
         
     return Response(response_data, status=status_code)
 
