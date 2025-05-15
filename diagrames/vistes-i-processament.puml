@@ -1,0 +1,52 @@
+@startuml Capa de Vistes i Processament de Peticions
+
+' Configuració general del diagrama
+!include ../style-config.puml
+
+' Títol general
+title Capa de Vistes i Processament de Peticions - Myqx-BFF
+
+package "Aplicació Flutter" as MobileClient {
+    component "Myqx App Mòbil" as Client #CLIENT_COLOR
+}
+
+package "Django Myqx-BFF" as BFF {
+    ' CAPA D'ENTRADA I MIDDLEWARE
+    package "Processament de Peticions" as RequestLayer #MIDDLEWARE_COLOR {
+        component "ApiRedirectMiddleware" as ApiRedirectMiddleware
+        component "RequestLoggingMiddleware" as RequestLoggingMiddleware
+        interface "HttpRequest" as HttpRequest
+    }      
+    
+    ' CAPA DE VISTES
+    package "Vistes API" as ViewLayer #VIEW_COLOR {
+        component "VistesAutenticació" as AuthView
+        component "VistesUsuari" as UserView
+        component "VistesÀlbum" as AlbumView
+        component "VistaFeed" as FeedView
+        component "VistaPerfil" as ProfileView
+        component "VistaEstatSeguimentUsuari" as UserFollowingStatusView
+        component "VistaPerfilCompletUsuari" as UserCompleteProfileView
+        component "VistesValoració" as RatingsView
+        component "VistaComprovacióSalut" as HealthCheckView
+    }
+}
+
+' Relacions del client
+Client --> HttpRequest : Peticions HTTP
+
+' Flux de petició
+HttpRequest --> ApiRedirectMiddleware : Processament
+ApiRedirectMiddleware --> RequestLoggingMiddleware : Passa
+RequestLoggingMiddleware --> ViewLayer : Enrutament
+
+' Llegenda
+note right of BFF
+  <b>Processament de Peticions i Vistes:</b>
+  
+  1. Els clients fan peticions HTTP al Myqx-BFF
+  2. <color:#D4E1F5>Middlewares</color> processen la sol·licitud (redirecció API, registre)
+  3. <color:#D5E8D4>Vistes API</color> reben les peticions i les dirigeixen als controladors
+end note
+
+@enduml

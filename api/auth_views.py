@@ -20,11 +20,11 @@ class CustomTokenVerifyView(APIView):
     
     def post(self, request, *args, **kwargs):
         try:
-            # Verificar si request.data es None o si podemos acceder a él de forma segura
+
             if request.data is None:
                 request.data = {}
                 
-            # Verificar si el token está en datos codificados JSON, datos de formulario o en el cuerpo bruto
+            # Aquí es verifica si el token esta inclos en el cos de la petició
             token = None
             if isinstance(request.data, dict):
                 token = request.data.get('token')

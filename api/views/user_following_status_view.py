@@ -50,11 +50,10 @@ class UserFollowingStatusView(APIView):
                     },
                     status=status.HTTP_400_BAD_REQUEST
                 )
-            
-            print(f"[USER_FOLLOWING_STATUS_VIEW] Usando follower_id: {follower_id}", file=sys.stderr)
+            print(f"[USER_FOLLOWING_STATUS_VIEW] Usando follower_id: {follower_id} y followed_id: {followed_id}", file=sys.stderr)
             
             # Llamar al controlador para verificar estado de seguimiento
-            return self.controller.check_following(follower_id, user_id)
+            return self.controller.check_following(follower_id, followed_id)
             
         except Exception as e:
             error_msg = f"Error al procesar solicitud de estado de seguimiento: {str(e)}"

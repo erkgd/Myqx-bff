@@ -1,0 +1,76 @@
+@startuml Flux Complet de Peticions
+
+' Definició de colors per a les capes
+!define CLIENT_COLOR #C2E0FF
+!define VIEW_COLOR #D5E8D4
+!define CONTROLLER_COLOR #DAE8FC
+!define SERVICE_COLOR #F8CECC
+!define REPOSITORY_COLOR #FFE6CC
+!define DTO_COLOR #E1D5E7
+!define INTERFACE_COLOR #FFF2CC
+!define MIDDLEWARE_COLOR #D4E1F5
+!define MODEL_COLOR #F5F5F5
+!define UTILS_COLOR #FFF8DC
+
+' Títol general
+title Flux Complet de Peticions - Myqx-BFF
+
+actor "Usuari App" as User
+boundary "Aplicació Flutter" as MobileApp #CLIENT_COLOR
+
+' Capes del BFF
+box "Django Myqx-BFF" #FEFEFE
+    participant "Middleware" as Middleware #MIDDLEWARE_COLOR
+    participant "Vistes API" as Views #VIEW_COLOR
+    participant "Controladors" as Controllers #CONTROLLER_COLOR
+    participant "Serveis" as Services #SERVICE_COLOR
+    participant "Repositoris" as Repositories #REPOSITORY_COLOR
+    database "Models/DTOs" as Models #DTO_COLOR
+end box
+
+' Sistemes Externs
+cloud "APIs Externes" as ExternalAPIs
+
+' Flux de la petició
+User -> MobileApp : Interacció
+MobileApp -> Middleware : Petició HTTP
+activate Middleware
+    Middleware -> Views : Enruta la petició
+    activate Views
+        Views -> Controllers : Delega processament
+        activate Controllers
+            Controllers -> Services : Sol·licita operacions
+            activate Services
+                Services -> Repositories : Accedeix a dades
+                activate Repositories
+                    Repositories -> Models : Utilitza DTOs
+                    Repositories -> ExternalAPIs : Peticions HTTP
+                    ExternalAPIs --> Repositories : Resposta
+                    Models --> Repositories : Dades
+                deactivate Repositories
+                Repositories --> Services : Resultat
+            deactivate Services
+            Services --> Controllers : Resultat
+        deactivate Controllers
+        Controllers --> Views : Resultat
+    deactivate Views
+    Views --> Middleware : Resposta
+deactivate Middleware
+Middleware --> MobileApp : Resposta HTTP
+MobileApp --> User : Actualització UI
+
+' Llegenda
+note right of User
+  <b>Flux Complet d'una Petició:</b>
+  
+  1. Usuari interactua amb l'aplicació mòbil
+  2. L'app envia una petició HTTP al Myqx-BFF
+  3. El middleware processa la petició
+  4. La vista rep la petició i la delega al controlador adequat
+  5. El controlador utilitza serveis per a la lògica de negoci
+  6. El servei accedeix a dades via repositoris
+  7. Els repositoris poden comunicar-se amb APIs externes
+  8. La resposta segueix el camí invers fins a l'usuari
+end note
+
+@enduml

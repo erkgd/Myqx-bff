@@ -1,0 +1,48 @@
+@startuml Flux_Peticions_Simple
+
+' Style definitions
+skinparam packageStyle rectangle
+skinparam backgroundColor white
+skinparam componentStyle uml2
+skinparam linetype ortho
+skinparam sequenceArrowThickness 2
+skinparam sequenceGroupBorderThickness 2
+
+' Títol general
+title Flux Complet de Peticions - Myqx-BFF
+
+actor "Usuari App" as User
+boundary "Aplicació Flutter" as MobileApp
+control "Middleware" as Middleware
+boundary "Vistes API" as Views
+control "Controladors" as Controllers
+entity "Serveis" as Services
+database "Repositoris" as Repositories
+collections "Models/DTOs" as Models
+cloud "APIs Externes" as ExternalAPIs
+
+' Flux de la petició
+User -> MobileApp : Interacció
+MobileApp -> Middleware : Petició HTTP
+Middleware -> Views : Enruta la petició
+Views -> Controllers : Delega processament
+Controllers -> Services : Sol·licita operacions
+Services -> Repositories : Accedeix a dades
+Repositories -> Models : Utilitza DTOs
+Repositories -> ExternalAPIs : Peticions HTTP
+ExternalAPIs --> Repositories : Resposta
+Models --> Repositories : Dades
+Repositories --> Services : Resultat
+Services --> Controllers : Resultat
+Controllers --> Views : Resultat
+Views --> Middleware : Resposta
+Middleware --> MobileApp : Resposta HTTP
+MobileApp --> User : Actualització UI
+
+note right of User
+  Flux complet d'una petició,
+  des de l'usuari fins a les 
+  APIs externes i tornada
+end note
+
+@enduml

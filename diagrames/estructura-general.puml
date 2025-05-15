@@ -1,0 +1,75 @@
+@startuml Estructura General Myqx-BFF
+
+' Definició de colors per a les capes
+!define CLIENT_COLOR #C2E0FF
+!define VIEW_COLOR #D5E8D4
+!define CONTROLLER_COLOR #DAE8FC
+!define SERVICE_COLOR #F8CECC
+!define REPOSITORY_COLOR #FFE6CC
+!define DTO_COLOR #E1D5E7
+!define INTERFACE_COLOR #FFF2CC
+!define MIDDLEWARE_COLOR #D4E1F5
+!define MODEL_COLOR #F5F5F5
+!define UTILS_COLOR #FFF8DC
+
+' Títol general
+title Estructura General Myqx-BFF - Actualitzat 14 de Maig, 2025
+
+' Definició de components principals
+package "Aplicació Flutter" as MobileClient {
+    component "Myqx App Mòbil" as Client #CLIENT_COLOR
+}
+
+package "Django Myqx-BFF" as BFF {
+    package "Capes Principals" as Layers {
+        component "Processament de Peticions" as RequestLayer #MIDDLEWARE_COLOR
+        component "Vistes API" as ViewLayer #VIEW_COLOR
+        component "Controladors" as ControllerLayer #CONTROLLER_COLOR
+        component "Interfícies" as InterfaceLayer #INTERFACE_COLOR
+        component "Serveis" as ServiceLayer #SERVICE_COLOR
+        component "Repositoris" as RepositoryLayer #REPOSITORY_COLOR
+        component "DTOs" as DtoLayer #DTO_COLOR
+        component "Models" as ModelLayer #MODEL_COLOR
+        component "Utils i Excepcions" as UtilLayer #UTILS_COLOR
+        component "Configuració" as ConfigLayer
+    }
+}
+
+package "Serveis Backend" as BackendServices {
+    component "API d'Usuaris" as UsersAPI
+    component "API d'Àlbums" as AlbumsAPI
+    component "API de Valoracions" as RatingsAPI
+    component "API de Feed" as FeedAPI
+    component "API de Spotify" as SpotifyAPI
+}
+
+' Relacions generals entre components
+Client --> BFF : Peticions HTTP
+BFF --> BackendServices : Peticions HTTP
+
+' Flux bàsic dins del BFF
+RequestLayer -down-> ViewLayer
+ViewLayer -down-> ControllerLayer
+ControllerLayer -down-> ServiceLayer
+ServiceLayer -down-> RepositoryLayer
+RepositoryLayer -down-> DtoLayer
+DtoLayer -down-> ModelLayer
+UtilLayer --> BFF : Dona suport
+ConfigLayer --> BFF : Configura
+
+' Llegenda de l'arquitectura
+note right of BFF
+  <b>Estructura en Capes del Myqx-BFF:</b>
+  
+  1. <color:#D5E8D4>Vistes API</color> - Endpoints REST per a l'app mòbil
+  2. <color:#DAE8FC>Controladors</color> - Lògica de negoci específica
+  3. <color:#FFF2CC>Interfícies</color> - Contractes d'abstracció
+  4. <color:#F8CECC>Serveis</color> - Comunicació amb backends externs
+  5. <color:#FFE6CC>Repositoris</color> - Accés a dades
+  6. <color:#E1D5E7>DTOs</color> - Objectes de transferència de dades
+  7. <color:#F5F5F5>Models</color> - Entitats de domini
+  8. <color:#FFF8DC>Utilitats</color> - Funcionalitat compartida
+  9. <color:#D4E1F5>Middleware</color> - Processament de peticions
+end note
+
+@enduml

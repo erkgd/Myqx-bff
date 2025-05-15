@@ -1,0 +1,93 @@
+@startuml Repositoris i DTOs
+
+' Definició de colors per a les capes
+!define CLIENT_COLOR #C2E0FF
+!define VIEW_COLOR #D5E8D4
+!define CONTROLLER_COLOR #DAE8FC
+!define SERVICE_COLOR #F8CECC
+!define REPOSITORY_COLOR #FFE6CC
+!define DTO_COLOR #E1D5E7
+!define INTERFACE_COLOR #FFF2CC
+!define MIDDLEWARE_COLOR #D4E1F5
+!define MODEL_COLOR #F5F5F5
+!define UTILS_COLOR #FFF8DC
+
+' Títol general
+title Repositoris, DTOs i Models - Myqx-BFF
+
+' CAPA DE CONTROLADORS
+package "Controladors" as ControllerLayer #CONTROLLER_COLOR {
+    component "ControladorUsuaris" as UsersController
+    component "ControladorÀlbums" as AlbumsController
+    component "ControladorFeed" as FeedController
+    component "ControladorPerfil" as ProfileController
+}
+
+' CAPA D'INTERFÍCIES
+package "Interfícies" as InterfaceLayer #INTERFACE_COLOR {
+    interface "InterfícieRepositori<T>" as RepositoryInterface
+}
+
+' CAPA DE REPOSITORIS
+package "Repositoris" as RepositoryLayer #REPOSITORY_COLOR {
+    component "RepositoriUsuari" as UserRepository
+    component "RepositoriÀlbum" as AlbumRepository
+    component "RepositoriFeed" as FeedRepository
+}
+
+' CAPA DE SERVEIS
+package "Serveis" as ServiceLayer #SERVICE_COLOR {
+    component "ImplServeiUsuaris" as UsersServiceImpl
+    component "ImplServeiÀlbums" as AlbumsServiceImpl
+    component "ImplServeiFeed" as FeedServiceImpl
+}
+
+' CAPA DE DTOs
+package "DTOs" as DtoLayer #DTO_COLOR {
+    component "DTOUsuari" as UserDTO
+    component "DTOÀlbum" as AlbumDTO
+    component "DTOValoracióÀlbum" as AlbumRatingDTO
+    component "DTOElementFeed" as FeedItemDTO
+}
+
+' CAPA DE MODELS
+package "Models" as ModelLayer #MODEL_COLOR {
+    component "ModelUsuari" as UserModel
+}
+
+' Relacions de controladors a repositoris
+UsersController --> UserRepository : Utilitza
+AlbumsController --> AlbumRepository : Utilitza
+FeedController --> FeedRepository : Utilitza
+ProfileController --> UserRepository : Utilitza
+
+' Implementacions d'interfícies
+RepositoryInterface <|.. UserRepository : Implementa
+RepositoryInterface <|.. AlbumRepository : Implementa
+RepositoryInterface <|.. FeedRepository : Implementa
+
+' Relacions de repositoris a serveis
+UserRepository --> UsersServiceImpl : Usa
+AlbumRepository --> AlbumsServiceImpl : Usa
+FeedRepository --> FeedServiceImpl : Usa
+
+' Relacions de DTOs
+UserRepository --> UserDTO : Utilitza
+AlbumRepository --> AlbumDTO : Utilitza
+AlbumRepository --> AlbumRatingDTO : Utilitza
+FeedRepository --> FeedItemDTO : Utilitza
+
+' Relacions amb models
+UserDTO --> UserModel : Es relaciona
+
+' Llegenda
+note bottom of DtoLayer
+  <b>Capa de Dades:</b>
+  
+  1. <color:#FFE6CC>Repositoris</color> - Accés a les dades i abstracció de la font
+  2. <color:#E1D5E7>DTOs</color> - Objectes de transferència per a peticions/respostes
+  3. <color:#F5F5F5>Models</color> - Representacions de les entitats de domini
+  4. Els repositoris implementen una interfície comuna per operacions CRUD
+end note
+
+@enduml

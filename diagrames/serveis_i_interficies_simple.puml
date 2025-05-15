@@ -1,0 +1,88 @@
+@startuml Serveis_i_Interficies_Simple
+
+' Style definitions
+skinparam packageStyle rectangle
+skinparam backgroundColor white
+skinparam componentStyle uml2
+skinparam linetype ortho
+
+' Títol general
+title Serveis i Interfícies - Myqx-BFF
+
+' CAPA DE CONTROLADORS
+package "Controladors" {
+    component [ControladorAutenticació] as AuthController
+    component [ControladorUsuaris] as UsersController
+    component [ControladorÀlbums] as AlbumsController
+    component [ControladorFeed] as FeedController
+    component [ControladorPerfil] as ProfileController
+}
+
+' CAPA D'INTERFÍCIES
+package "Interfícies" {
+    component [InterfícieServeiUsuari] as UserServiceInterface
+    component [InterfícieServeiÀlbum] as AlbumServiceInterface
+    component [InterfícieServeiFeed] as FeedServiceInterface
+    component [InterfícieServeiPerfil] as ProfileServiceInterface
+    component [InterfícieRepositori] as RepositoryInterface
+}
+
+' CAPA DE SERVEIS
+package "Serveis" {
+    component [ServeiBase] as BaseService
+    
+    package "Implementacions" {
+        component [ImplServeiUsuaris] as UsersServiceImpl
+        component [ImplServeiAutenticació] as AuthServiceImpl
+        component [ImplServeiÀlbums] as AlbumsServiceImpl
+        component [ImplServeiFeed] as FeedServiceImpl
+        component [ImplServeiPerfil] as ProfileServiceImpl
+    }
+}
+
+' BACKENDS EXTERNS
+package "Serveis Backend" {
+    component [API d'Usuaris] as UsersAPI
+    component [API d'Àlbums] as AlbumsAPI
+    component [API de Valoracions] as RatingsAPI
+    component [API de Feed] as FeedAPI
+    component [API de Spotify] as SpotifyAPI
+}
+
+' Relacions de controladors a serveis
+AuthController --> AuthServiceImpl
+ProfileController --> ProfileServiceImpl
+
+' Implementacions d'interfícies
+UserServiceInterface <|.. UsersServiceImpl : Implementa
+AlbumServiceInterface <|.. AlbumsServiceImpl : Implementa
+FeedServiceInterface <|.. FeedServiceImpl : Implementa
+ProfileServiceInterface <|.. ProfileServiceImpl : Implementa
+
+' Relacions de serveis
+BaseService <-- UsersServiceImpl
+BaseService <-- AuthServiceImpl
+BaseService <-- AlbumsServiceImpl
+BaseService <-- FeedServiceImpl
+BaseService <-- ProfileServiceImpl
+
+' Relacions amb backends externs
+UsersServiceImpl --> UsersAPI
+AuthServiceImpl --> UsersAPI
+AuthServiceImpl --> SpotifyAPI : OAuth
+AlbumsServiceImpl --> AlbumsAPI
+AlbumsServiceImpl --> RatingsAPI
+FeedServiceImpl --> FeedAPI
+ProfileServiceImpl --> UsersAPI
+
+note bottom of "Interfícies"
+  Defineixen contractes 
+  per a les implementacions
+end note
+
+note bottom of "Implementacions"
+  Implementen la lògica
+  de comunicació amb backends
+end note
+
+@enduml

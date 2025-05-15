@@ -1,0 +1,59 @@
+@startuml Index_Simple
+
+' Style definitions
+skinparam packageStyle rectangle
+skinparam backgroundColor white
+skinparam componentStyle uml2
+skinparam linetype ortho
+
+title Índex de Diagrames d'Arquitectura - Myqx-BFF
+
+rectangle "Estructura General" as General {
+  text "estructura_general_simple.puml"
+}
+
+together {
+  rectangle "Vistes i Processament" as Vistes {
+    text "vistes_i_processament_simple.puml"
+  }
+  
+  rectangle "Controladors i Vistes" as Controladors {
+    text "controladors_i_vistes_simple.puml"
+  }
+}
+
+together {
+  rectangle "Serveis i Interfícies" as Serveis {
+    text "serveis_i_interficies_simple.puml"
+  }
+  
+  rectangle "Repositoris, DTOs i Models" as Repositoris {
+    text "repositoris_dtos_models_simple.puml"
+  }
+}
+
+rectangle "Utils i Configuració" as Utils {
+  text "utils_i_configuracio_simple.puml"
+}
+
+rectangle "Flux Complet de Peticions" as Flux {
+  text "flux_peticions_simple.puml"
+}
+
+General -down-> Vistes
+General -down-> Controladors
+General -down-> Serveis
+General -down-> Repositoris
+General -down-> Utils
+General -down-> Flux
+
+note right
+  <b>Diagrames d'Arquitectura Myqx-BFF</b>
+  
+  Aquest índex conté els enllaços a tots els diagrames
+  d'arquitectura disponibles per al projecte Myqx-BFF.
+  
+  Actualitzat: 14 de Maig, 2025
+end note
+
+@enduml

@@ -1,0 +1,58 @@
+@startuml Utils_i_Configuracio_Simple
+
+' Style definitions
+skinparam packageStyle rectangle
+skinparam backgroundColor white
+skinparam componentStyle uml2
+skinparam linetype ortho
+
+' Títol general
+title Utils, Excepcions i Configuració - Myqx-BFF
+
+' CAPA DE MIDDLEWARE
+package "Processament de Peticions" {
+    component [ApiRedirectMiddleware] as ApiRedirectMiddleware
+    component [RequestLoggingMiddleware] as RequestLoggingMiddleware
+}
+
+' CAPA DE VISTES
+package "Vistes API" {
+    component [VistesAutenticació] as AuthView
+    component [VistesUsuari] as UserView
+}
+
+' CAPA D'EXCEPCIONS I UTILS
+package "Utils i Excepcions" {
+    component [ExcepcionsApi] as ApiExceptions
+    component [UtilsResposta] as ResponseUtils
+    component [UtilsRegistre] as LoggingUtils
+    component [GestorExcepcions] as ExceptionHandler
+}
+
+' CONFIGURACIÓ
+package "Configuració" {
+    component [Configuracions] as Settings
+    component [URLs] as URLs
+    component [WSGI] as WSGI
+}
+
+' Relacions amb utilitats
+ExceptionHandler <-- "Vistes API" : Gestiona excepcions
+LoggingUtils <-- RequestLoggingMiddleware : Usa
+ResponseUtils <-- "Vistes API" : Utilitza
+
+' Relacions amb configuració
+Settings --> "Processament de Peticions" : Configura
+URLs --> "Vistes API" : Defineix rutes
+
+note right of "Utils i Excepcions"
+  Components transversals que donen
+  suport a la resta de l'aplicació
+end note
+
+note right of "Configuració"
+  Parametrització i configuració
+  global del sistema
+end note
+
+@enduml

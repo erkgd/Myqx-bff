@@ -1,0 +1,69 @@
+@startuml Estructura_General_Simple
+
+' Style definitions
+skinparam packageStyle rectangle
+skinparam backgroundColor white
+skinparam componentStyle uml2
+skinparam linetype ortho
+
+' Títol general
+title Estructura General Myqx-BFF - Actualitzat 14 de Maig, 2025
+
+' Definició de components principals
+package "Aplicació Flutter" {
+    component [Myqx App Mòbil] as Client
+}
+
+package "Django Myqx-BFF" as BFF {
+    package "Capes Principals" {
+        component [Processament de Peticions] as RequestLayer
+        component [Vistes API] as ViewLayer
+        component [Controladors] as ControllerLayer
+        component [Interfícies] as InterfaceLayer
+        component [Serveis] as ServiceLayer
+        component [Repositoris] as RepositoryLayer
+        component [DTOs] as DtoLayer
+        component [Models] as ModelLayer
+        component [Utils i Excepcions] as UtilLayer
+        component [Configuració] as ConfigLayer
+    }
+}
+
+package "Serveis Backend" {
+    component [API d'Usuaris] as UsersAPI
+    component [API d'Àlbums] as AlbumsAPI
+    component [API de Valoracions] as RatingsAPI
+    component [API de Feed] as FeedAPI
+    component [API de tractament de Spotify] as SpotifyAPI
+}
+
+' Relacions generals entre components
+Client --> BFF : Peticions HTTP
+BFF --> "Serveis Backend" : Peticions HTTP
+
+' Flux bàsic dins del BFF
+RequestLayer -down-> ViewLayer
+ViewLayer -down-> ControllerLayer
+ControllerLayer -down-> ServiceLayer
+ServiceLayer -down-> RepositoryLayer
+RepositoryLayer -down-> DtoLayer
+DtoLayer -down-> ModelLayer
+UtilLayer --> BFF : Dona suport
+ConfigLayer --> BFF : Configura
+
+note right of Client
+  Frontend mòbil 
+  per a usuaris finals
+end note
+
+note right of BFF
+  Backend For Frontend
+  Intermediari entre app i serveis
+end note
+
+note right of "Serveis Backend"
+  APIs externes que 
+  proveeixen les dades
+end note
+
+@enduml

@@ -136,3 +136,313 @@
 [2025-05-04 23:31:44,354] ERROR "GET /api/users/following/status/4/3 HTTP/1.1" 500 142
 [2025-05-04 23:31:48,058] INFO "GET /api/profile/3 HTTP/1.1" 200 1405
 [2025-05-04 23:34:46,715] INFO "GET /api/feed?limit=20&offset=0&user_id=4 HTTP/1.1" 200 5042
+[2025-05-04 23:37:14,182] WARNING Request failed: {"request": {"timestamp": "04/May/2025 23:37:14", "request_id": "ecf7e430", "method": "GET", "path": "/api/users/following/status/4/3", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": ""}, "response": {"timestamp": "04/May/2025 23:37:14", "request_id": "ecf7e430", "status_code": 500, "processing_time_ms": 2.33, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-04 23:37:14,183] ERROR "GET /api/users/following/status/4/3 HTTP/1.1" 500 142
+[2025-05-04 23:37:20,023] INFO "GET /api/profile/3 HTTP/1.1" 200 1405
+[2025-05-15 17:08:53,468] WARNING Request failed: {"request": {"timestamp": "15/May/2025 17:08:53", "request_id": "f1638aa8", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 17:08:53", "request_id": "f1638aa8", "status_code": 500, "processing_time_ms": 7.03, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 17:08:53,470] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 17:08:53,556] WARNING Request failed: {"request": {"timestamp": "15/May/2025 17:08:53", "request_id": "ee58eebe", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 17:08:53", "request_id": "ee58eebe", "status_code": 500, "processing_time_ms": 9.07, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 17:08:53,556] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 17:08:54,042] WARNING Request failed: {"request": {"timestamp": "15/May/2025 17:08:54", "request_id": "18676a7d", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 17:08:54", "request_id": "18676a7d", "status_code": 500, "processing_time_ms": 2.26, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 17:08:54,043] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 17:14:41,533] INFO "POST /api/auth/spotify HTTP/1.1" 200 763
+[2025-05-15 17:19:43,135] INFO "POST /api/auth/spotify HTTP/1.1" 200 777
+[2025-05-15 17:21:36,196] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 4338
+[2025-05-15 17:25:08,477] INFO "GET /api/users/3/following_network HTTP/1.1" 200 1518
+[2025-05-15 17:46:56,934] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 4338
+[2025-05-15 17:48:41,042] WARNING Request failed: {"request": {"timestamp": "15/May/2025 17:48:41", "request_id": "c61719a9", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 17:48:41", "request_id": "c61719a9", "status_code": 500, "processing_time_ms": 2.61, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 17:48:41,043] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 18:09:58,663] INFO "POST /api/ratings/submit HTTP/1.1" 201 274
+[2025-05-15 18:10:02,495] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 4641
+[2025-05-15 18:25:38,291] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 4641
+[2025-05-15 18:35:48,263] WARNING Request failed: {"request": {"timestamp": "15/May/2025 18:35:48", "request_id": "6dbc7111", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 18:35:48", "request_id": "6dbc7111", "status_code": 500, "processing_time_ms": 1.59, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 18:35:48,264] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 18:35:48,346] WARNING Request failed: {"request": {"timestamp": "15/May/2025 18:35:48", "request_id": "75149461", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 18:35:48", "request_id": "75149461", "status_code": 500, "processing_time_ms": 1.5, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 18:35:48,347] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 18:35:48,452] WARNING Request failed: {"request": {"timestamp": "15/May/2025 18:35:48", "request_id": "eff7d829", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 18:35:48", "request_id": "eff7d829", "status_code": 500, "processing_time_ms": 1.81, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 18:35:48,452] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 18:38:26,582] INFO "POST /api/auth/spotify HTTP/1.1" 200 777
+[2025-05-15 18:38:32,126] INFO "GET /api/users/3/following_network HTTP/1.1" 200 1518
+[2025-05-15 18:38:34,666] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 4641
+[2025-05-15 19:00:18,337] WARNING Request failed: {"request": {"timestamp": "15/May/2025 19:00:18", "request_id": "eebc55f2", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 19:00:18", "request_id": "eebc55f2", "status_code": 500, "processing_time_ms": 4.25, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 19:00:18,338] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 19:00:18,450] WARNING Request failed: {"request": {"timestamp": "15/May/2025 19:00:18", "request_id": "f2ea89ee", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 19:00:18", "request_id": "f2ea89ee", "status_code": 500, "processing_time_ms": 2.33, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 19:00:18,451] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 19:00:18,552] WARNING Request failed: {"request": {"timestamp": "15/May/2025 19:00:18", "request_id": "5834454e", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 19:00:18", "request_id": "5834454e", "status_code": 500, "processing_time_ms": 1.63, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 19:00:18,553] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 19:00:34,023] INFO "POST /api/auth/spotify HTTP/1.1" 200 777
+[2025-05-15 19:00:39,790] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 4641
+[2025-05-15 19:15:02,592] INFO "POST /api/ratings/submit HTTP/1.1" 201 274
+[2025-05-15 19:20:31,824] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 4944
+[2025-05-15 19:32:13,765] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 4944
+[2025-05-15 22:07:59,482] WARNING Request failed: {"request": {"timestamp": "15/May/2025 22:07:59", "request_id": "786b05c1", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 22:07:59", "request_id": "786b05c1", "status_code": 500, "processing_time_ms": 5.63, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 22:07:59,484] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 22:07:59,567] WARNING Request failed: {"request": {"timestamp": "15/May/2025 22:07:59", "request_id": "1b2967bf", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 22:07:59", "request_id": "1b2967bf", "status_code": 500, "processing_time_ms": 2.02, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 22:07:59,568] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 22:07:59,692] WARNING Request failed: {"request": {"timestamp": "15/May/2025 22:07:59", "request_id": "e026ec8a", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 22:07:59", "request_id": "e026ec8a", "status_code": 500, "processing_time_ms": 2.95, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 22:07:59,693] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 22:08:55,825] INFO "POST /api/auth/spotify HTTP/1.1" 200 777
+[2025-05-15 22:09:09,673] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 4944
+[2025-05-15 22:12:21,120] WARNING Request failed: {"request": {"timestamp": "15/May/2025 22:12:21", "request_id": "1b07a278", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 22:12:21", "request_id": "1b07a278", "status_code": 500, "processing_time_ms": 9.14, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 22:12:21,121] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 22:12:41,450] WARNING Request failed: {"request": {"timestamp": "15/May/2025 22:12:41", "request_id": "ea96f19d", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 22:12:41", "request_id": "ea96f19d", "status_code": 500, "processing_time_ms": 2.67, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 22:12:41,451] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 22:13:21,875] WARNING Request failed: {"request": {"timestamp": "15/May/2025 22:13:21", "request_id": "8565c105", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 22:13:21", "request_id": "8565c105", "status_code": 500, "processing_time_ms": 1.65, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 22:13:21,876] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 22:13:21,958] WARNING Request failed: {"request": {"timestamp": "15/May/2025 22:13:21", "request_id": "b4df951c", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 22:13:21", "request_id": "b4df951c", "status_code": 500, "processing_time_ms": 3.26, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 22:13:21,959] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 22:13:22,091] WARNING Request failed: {"request": {"timestamp": "15/May/2025 22:13:22", "request_id": "aae2da20", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 22:13:22", "request_id": "aae2da20", "status_code": 500, "processing_time_ms": 1.53, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 22:13:22,091] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 22:14:00,838] WARNING Request failed: {"request": {"timestamp": "15/May/2025 22:13:56", "request_id": "26a389c4", "method": "POST", "path": "/api/auth/spotify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "486"}, "response": {"timestamp": "15/May/2025 22:14:00", "request_id": "26a389c4", "status_code": 401, "processing_time_ms": 4119.85, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 22:14:00,839] WARNING "POST /api/auth/spotify HTTP/1.1" 401 77
+[2025-05-15 22:14:26,573] WARNING Request failed: {"request": {"timestamp": "15/May/2025 22:14:18", "request_id": "54ac7326", "method": "POST", "path": "/api/auth/spotify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "486"}, "response": {"timestamp": "15/May/2025 22:14:26", "request_id": "54ac7326", "status_code": 401, "processing_time_ms": 8374.74, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 22:14:26,573] WARNING "POST /api/auth/spotify HTTP/1.1" 401 77
+[2025-05-15 22:15:49,496] INFO "POST /api/auth/spotify HTTP/1.1" 200 777
+[2025-05-15 22:16:01,053] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 4944
+[2025-05-15 22:16:30,625] WARNING Request failed: {"request": {"timestamp": "15/May/2025 22:16:30", "request_id": "81d619ea", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 22:16:30", "request_id": "81d619ea", "status_code": 500, "processing_time_ms": 2.07, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 22:16:30,625] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 22:17:00,692] INFO "POST /api/ratings/submit HTTP/1.1" 201 274
+[2025-05-15 22:17:15,355] INFO "POST /api/ratings/submit HTTP/1.1" 201 274
+[2025-05-15 22:18:11,402] INFO "GET /api/users/3/following_network HTTP/1.1" 200 1518
+[2025-05-15 22:18:20,045] INFO "GET /api/profile/4 HTTP/1.1" 200 344
+[2025-05-15 22:18:20,404] WARNING Request failed: {"request": {"timestamp": "15/May/2025 22:18:20", "request_id": "de4e7097", "method": "GET", "path": "/api/users/following/status/3/4", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": ""}, "response": {"timestamp": "15/May/2025 22:18:20", "request_id": "de4e7097", "status_code": 500, "processing_time_ms": 2.91, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 22:18:20,405] ERROR "GET /api/users/following/status/3/4 HTTP/1.1" 500 142
+[2025-05-15 22:18:32,316] INFO "POST /api/users/following/3/4 HTTP/1.1" 201 363
+[2025-05-15 22:18:50,873] INFO "GET /api/users/3/following_network HTTP/1.1" 200 2019
+[2025-05-15 22:20:11,961] WARNING Request failed: {"request": {"timestamp": "15/May/2025 22:20:11", "request_id": "be3b233b", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 22:20:11", "request_id": "be3b233b", "status_code": 500, "processing_time_ms": 1.37, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 22:20:11,961] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 22:20:12,045] WARNING Request failed: {"request": {"timestamp": "15/May/2025 22:20:12", "request_id": "462e2ce5", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 22:20:12", "request_id": "462e2ce5", "status_code": 500, "processing_time_ms": 2.68, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 22:20:12,046] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 22:20:12,163] WARNING Request failed: {"request": {"timestamp": "15/May/2025 22:20:12", "request_id": "2a2918e5", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 22:20:12", "request_id": "2a2918e5", "status_code": 500, "processing_time_ms": 7.34, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 22:20:12,164] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 22:20:24,091] INFO "POST /api/auth/spotify HTTP/1.1" 200 777
+[2025-05-15 22:20:30,507] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 6282
+[2025-05-15 22:20:50,768] INFO "GET /api/users/3/following_network HTTP/1.1" 200 2019
+[2025-05-15 22:20:57,130] INFO "GET /api/profile/4 HTTP/1.1" 200 344
+[2025-05-15 22:20:57,512] WARNING Request failed: {"request": {"timestamp": "15/May/2025 22:20:57", "request_id": "2e6ba91d", "method": "GET", "path": "/api/users/following/status/3/4", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": ""}, "response": {"timestamp": "15/May/2025 22:20:57", "request_id": "2e6ba91d", "status_code": 500, "processing_time_ms": 1.91, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 22:20:57,512] ERROR "GET /api/users/following/status/3/4 HTTP/1.1" 500 142
+[2025-05-15 22:22:37,503] INFO "POST /api/auth/spotify HTTP/1.1" 200 777
+[2025-05-15 22:22:44,497] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 6282
+[2025-05-15 22:23:26,827] INFO "POST /api/ratings/submit HTTP/1.1" 201 274
+[2025-05-15 22:23:44,787] INFO "POST /api/ratings/submit HTTP/1.1" 201 274
+[2025-05-15 22:24:06,063] INFO "GET /api/users/3/following_network HTTP/1.1" 200 2019
+[2025-05-15 22:24:14,204] INFO "GET /api/profile/4 HTTP/1.1" 200 344
+[2025-05-15 22:24:14,637] WARNING Request failed: {"request": {"timestamp": "15/May/2025 22:24:14", "request_id": "5098999f", "method": "GET", "path": "/api/users/following/status/3/4", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": ""}, "response": {"timestamp": "15/May/2025 22:24:14", "request_id": "5098999f", "status_code": 500, "processing_time_ms": 2.04, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 22:24:14,637] ERROR "GET /api/users/following/status/3/4 HTTP/1.1" 500 142
+[2025-05-15 22:26:04,745] WARNING Request failed: {"request": {"timestamp": "15/May/2025 22:26:04", "request_id": "46fdbfab", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 22:26:04", "request_id": "46fdbfab", "status_code": 500, "processing_time_ms": 1.5, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 22:26:04,746] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 22:26:04,816] WARNING Request failed: {"request": {"timestamp": "15/May/2025 22:26:04", "request_id": "38266270", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 22:26:04", "request_id": "38266270", "status_code": 500, "processing_time_ms": 1.48, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 22:26:04,816] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 22:26:05,024] WARNING Request failed: {"request": {"timestamp": "15/May/2025 22:26:05", "request_id": "57b0c09a", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 22:26:05", "request_id": "57b0c09a", "status_code": 500, "processing_time_ms": 1.64, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 22:26:05,024] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 22:28:18,487] INFO "POST /api/auth/spotify HTTP/1.1" 200 763
+[2025-05-15 22:28:27,185] INFO "GET /api/feed?limit=20&offset=0&user_id=4 HTTP/1.1" 200 6614
+[2025-05-15 22:28:42,390] INFO "GET /api/users/4/following_network HTTP/1.1" 200 2009
+[2025-05-15 22:28:48,444] INFO "GET /api/profile/3 HTTP/1.1" 200 2249
+[2025-05-15 22:28:48,709] WARNING Request failed: {"request": {"timestamp": "15/May/2025 22:28:48", "request_id": "31ba1c7e", "method": "GET", "path": "/api/users/following/status/4/3", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": ""}, "response": {"timestamp": "15/May/2025 22:28:48", "request_id": "31ba1c7e", "status_code": 500, "processing_time_ms": 1.63, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 22:28:48,710] ERROR "GET /api/users/following/status/4/3 HTTP/1.1" 500 142
+[2025-05-15 22:28:55,891] WARNING Request failed: {"request": {"timestamp": "15/May/2025 22:28:55", "request_id": "dd4167f4", "method": "GET", "path": "/api/users/following/status/4/3", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": ""}, "response": {"timestamp": "15/May/2025 22:28:55", "request_id": "dd4167f4", "status_code": 500, "processing_time_ms": 1.69, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 22:28:55,892] ERROR "GET /api/users/following/status/4/3 HTTP/1.1" 500 142
+[2025-05-15 22:29:20,605] WARNING Request failed: {"request": {"timestamp": "15/May/2025 22:29:20", "request_id": "5a847336", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 22:29:20", "request_id": "5a847336", "status_code": 500, "processing_time_ms": 1.55, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 22:29:20,606] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 22:29:20,664] WARNING Request failed: {"request": {"timestamp": "15/May/2025 22:29:20", "request_id": "50516daf", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 22:29:20", "request_id": "50516daf", "status_code": 500, "processing_time_ms": 1.63, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 22:29:20,665] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 22:29:20,736] WARNING Request failed: {"request": {"timestamp": "15/May/2025 22:29:20", "request_id": "ac77a6df", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 22:29:20", "request_id": "ac77a6df", "status_code": 500, "processing_time_ms": 1.74, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 22:29:20,737] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 22:30:19,356] INFO "POST /api/auth/spotify HTTP/1.1" 200 763
+[2025-05-15 22:30:26,970] INFO "GET /api/feed?limit=20&offset=0&user_id=4 HTTP/1.1" 200 6614
+[2025-05-15 22:31:18,289] INFO "POST /api/ratings/submit HTTP/1.1" 201 274
+[2025-05-15 22:31:30,591] INFO "POST /api/ratings/submit HTTP/1.1" 201 274
+[2025-05-15 22:31:43,371] INFO "GET /api/users/4/following_network HTTP/1.1" 200 2009
+[2025-05-15 22:31:50,217] INFO "GET /api/profile/3 HTTP/1.1" 200 2249
+[2025-05-15 22:31:50,530] WARNING Request failed: {"request": {"timestamp": "15/May/2025 22:31:50", "request_id": "0e4c062a", "method": "GET", "path": "/api/users/following/status/4/3", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": ""}, "response": {"timestamp": "15/May/2025 22:31:50", "request_id": "0e4c062a", "status_code": 500, "processing_time_ms": 1.86, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 22:31:50,531] ERROR "GET /api/users/following/status/4/3 HTTP/1.1" 500 142
+[2025-05-15 22:32:00,892] INFO "GET /api/users/4/following_network HTTP/1.1" 200 2009
+[2025-05-15 22:32:02,151] WARNING Request failed: {"request": {"timestamp": "15/May/2025 22:32:02", "request_id": "4c37ab46", "method": "GET", "path": "/api/users/following/status/4/3", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": ""}, "response": {"timestamp": "15/May/2025 22:32:02", "request_id": "4c37ab46", "status_code": 500, "processing_time_ms": 1.42, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 22:32:02,151] ERROR "GET /api/users/following/status/4/3 HTTP/1.1" 500 142
+[2025-05-15 22:48:53,859] INFO "POST /api/auth/spotify HTTP/1.1" 200 777
+[2025-05-15 22:49:00,083] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 6696
+[2025-05-15 22:49:30,264] INFO "GET /api/users/3/following_network HTTP/1.1" 200 2019
+[2025-05-15 22:49:39,549] INFO "GET /api/profile/4 HTTP/1.1" 200 760
+[2025-05-15 22:49:39,855] WARNING Request failed: {"request": {"timestamp": "15/May/2025 22:49:39", "request_id": "28ebe1d6", "method": "GET", "path": "/api/users/following/status/3/4", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": ""}, "response": {"timestamp": "15/May/2025 22:49:39", "request_id": "28ebe1d6", "status_code": 500, "processing_time_ms": 2.09, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 22:49:39,855] ERROR "GET /api/users/following/status/3/4 HTTP/1.1" 500 142
+[2025-05-15 22:50:22,179] INFO "POST /api/ratings/submit HTTP/1.1" 201 274
+[2025-05-15 22:53:19,570] INFO "GET /api/profile/3 HTTP/1.1" 200 2249
+[2025-05-15 22:54:16,803] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 6696
+[2025-05-15 22:55:25,767] INFO "POST /api/ratings/submit HTTP/1.1" 201 274
+[2025-05-15 22:57:29,395] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 6696
+[2025-05-15 22:57:39,203] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 6696
+[2025-05-15 22:57:59,623] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 6696
+[2025-05-15 22:58:08,172] WARNING Request failed: {"request": {"timestamp": "15/May/2025 22:58:08", "request_id": "0768c440", "method": "GET", "path": "/api/users/following/status/3/4", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": ""}, "response": {"timestamp": "15/May/2025 22:58:08", "request_id": "0768c440", "status_code": 500, "processing_time_ms": 1.65, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 22:58:08,172] ERROR "GET /api/users/following/status/3/4 HTTP/1.1" 500 142
+[2025-05-15 22:58:12,024] INFO "GET /api/profile/4 HTTP/1.1" 200 760
+[2025-05-15 23:01:04,421] WARNING Request failed: {"request": {"timestamp": "15/May/2025 23:01:04", "request_id": "dfe7daa9", "method": "GET", "path": "/api/users/following/status/3/4", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": ""}, "response": {"timestamp": "15/May/2025 23:01:04", "request_id": "dfe7daa9", "status_code": 500, "processing_time_ms": 1.91, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 23:01:04,421] ERROR "GET /api/users/following/status/3/4 HTTP/1.1" 500 142
+[2025-05-15 23:01:08,290] INFO "GET /api/profile/4 HTTP/1.1" 200 760
+[2025-05-15 23:04:13,815] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 6696
+[2025-05-15 23:04:25,465] INFO "GET /api/profile/3 HTTP/1.1" 200 2249
+[2025-05-15 23:06:38,410] INFO "GET /api/profile/3 HTTP/1.1" 200 2249
+[2025-05-15 23:10:00,834] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 6696
+[2025-05-15 23:10:05,553] INFO "GET /api/profile/3 HTTP/1.1" 200 2249
+[2025-05-15 23:12:38,625] INFO "GET /api/users/3/following_network HTTP/1.1" 200 89
+[2025-05-15 23:12:52,144] INFO "GET /api/users/3/following_network HTTP/1.1" 200 89
+[2025-05-15 23:12:52,934] INFO "GET /api/users/3/following_network HTTP/1.1" 200 89
+[2025-05-15 23:13:16,352] INFO "GET /api/users/3/following_network HTTP/1.1" 200 2019
+[2025-05-15 23:13:25,406] INFO "GET /api/profile/4 HTTP/1.1" 200 760
+[2025-05-15 23:13:25,887] WARNING Request failed: {"request": {"timestamp": "15/May/2025 23:13:25", "request_id": "347e391c", "method": "GET", "path": "/api/users/following/status/3/4", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": ""}, "response": {"timestamp": "15/May/2025 23:13:25", "request_id": "347e391c", "status_code": 500, "processing_time_ms": 1.71, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 23:13:25,887] ERROR "GET /api/users/following/status/3/4 HTTP/1.1" 500 142
+[2025-05-15 23:13:34,443] INFO "GET /api/profile/3 HTTP/1.1" 200 2249
+[2025-05-15 23:14:09,028] WARNING Request failed: {"request": {"timestamp": "15/May/2025 23:14:09", "request_id": "cc8d9fc3", "method": "GET", "path": "/api/users/following/status/3/4", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": ""}, "response": {"timestamp": "15/May/2025 23:14:09", "request_id": "cc8d9fc3", "status_code": 500, "processing_time_ms": 2.51, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 23:14:09,029] ERROR "GET /api/users/following/status/3/4 HTTP/1.1" 500 142
+[2025-05-15 23:15:10,592] INFO "POST /api/ratings/submit HTTP/1.1" 201 274
+[2025-05-15 23:15:15,609] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 6696
+[2025-05-15 23:15:26,399] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 6696
+[2025-05-15 23:15:51,696] INFO "POST /api/ratings/submit HTTP/1.1" 201 274
+[2025-05-15 23:15:59,071] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 6696
+[2025-05-15 23:20:56,070] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 6696
+[2025-05-15 23:23:43,722] INFO "GET /api/profile/3 HTTP/1.1" 200 2249
+[2025-05-15 23:30:15,493] INFO "GET /api/feed?limit=20&offset=20&user_id=3 HTTP/1.1" 200 1983
+[2025-05-15 23:31:17,194] INFO "GET /api/profile/3 HTTP/1.1" 200 2249
+[2025-05-15 23:36:50,178] WARNING Request failed: {"request": {"timestamp": "15/May/2025 23:36:50", "request_id": "2837f48a", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 23:36:50", "request_id": "2837f48a", "status_code": 500, "processing_time_ms": 1.71, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 23:36:50,178] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 23:36:55,114] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 165
+[2025-05-15 23:36:57,849] WARNING Request failed: {"request": {"timestamp": "15/May/2025 23:36:25", "request_id": "180e87cd", "method": "GET", "path": "/api/profile/3", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": ""}, "response": {"timestamp": "15/May/2025 23:36:57", "request_id": "180e87cd", "status_code": 500, "processing_time_ms": 32091.27, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 23:36:57,849] ERROR "GET /api/profile/3 HTTP/1.1" 500 42
+[2025-05-15 23:37:19,144] WARNING Request failed: {"request": {"timestamp": "15/May/2025 23:37:19", "request_id": "dd7647d9", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 23:37:19", "request_id": "dd7647d9", "status_code": 500, "processing_time_ms": 1.95, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 23:37:19,145] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 23:37:21,736] WARNING Request failed: {"request": {"timestamp": "15/May/2025 23:36:49", "request_id": "ea35c93d", "method": "GET", "path": "/api/profile/3", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": ""}, "response": {"timestamp": "15/May/2025 23:37:21", "request_id": "ea35c93d", "status_code": 500, "processing_time_ms": 32039.42, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 23:37:21,737] ERROR "GET /api/profile/3 HTTP/1.1" 500 42
+[2025-05-15 23:37:42,101] WARNING Request failed: {"request": {"timestamp": "15/May/2025 23:37:10", "request_id": "2aa826bb", "method": "GET", "path": "/api/profile/3", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": ""}, "response": {"timestamp": "15/May/2025 23:37:42", "request_id": "2aa826bb", "status_code": 500, "processing_time_ms": 32073.93, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 23:37:42,102] ERROR "GET /api/profile/3 HTTP/1.1" 500 42
+[2025-05-15 23:37:50,889] WARNING Request failed: {"request": {"timestamp": "15/May/2025 23:37:18", "request_id": "60c0c7db", "method": "GET", "path": "/api/profile/3", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": ""}, "response": {"timestamp": "15/May/2025 23:37:50", "request_id": "60c0c7db", "status_code": 500, "processing_time_ms": 32046.85, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 23:37:50,889] ERROR "GET /api/profile/3 HTTP/1.1" 500 42
+[2025-05-15 23:38:49,091] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 6696
+[2025-05-15 23:38:59,624] WARNING Request failed: {"request": {"timestamp": "15/May/2025 23:38:59", "request_id": "0d50e782", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 23:38:59", "request_id": "0d50e782", "status_code": 500, "processing_time_ms": 1.58, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 23:38:59,624] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 23:38:59,747] INFO "GET /api/profile/3 HTTP/1.1" 200 5827
+[2025-05-15 23:39:05,582] INFO "GET /api/profile/3 HTTP/1.1" 200 5827
+[2025-05-15 23:39:14,365] WARNING Request failed: {"request": {"timestamp": "15/May/2025 23:39:14", "request_id": "d54b77e4", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 23:39:14", "request_id": "d54b77e4", "status_code": 500, "processing_time_ms": 1.32, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 23:39:14,366] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 23:39:24,804] WARNING Request failed: {"request": {"timestamp": "15/May/2025 23:39:24", "request_id": "90ffeaa3", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 23:39:24", "request_id": "90ffeaa3", "status_code": 500, "processing_time_ms": 1.66, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 23:39:24,805] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 23:39:31,410] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 6696
+[2025-05-15 23:40:47,217] WARNING Request failed: {"request": {"timestamp": "15/May/2025 23:40:47", "request_id": "2429981b", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 23:40:47", "request_id": "2429981b", "status_code": 500, "processing_time_ms": 8.02, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 23:40:47,218] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 23:41:36,056] WARNING Request failed: {"request": {"timestamp": "15/May/2025 23:41:36", "request_id": "5540f7d9", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 23:41:36", "request_id": "5540f7d9", "status_code": 500, "processing_time_ms": 1.64, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 23:41:36,056] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 23:41:41,886] INFO "GET /api/profile/3 HTTP/1.1" 200 5834
+[2025-05-15 23:42:34,920] WARNING Request failed: {"request": {"timestamp": "15/May/2025 23:42:34", "request_id": "17fe77c7", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 23:42:34", "request_id": "17fe77c7", "status_code": 500, "processing_time_ms": 1.53, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 23:42:34,921] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 23:42:41,046] WARNING Request failed: {"request": {"timestamp": "15/May/2025 23:42:41", "request_id": "93e31e79", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 23:42:41", "request_id": "93e31e79", "status_code": 500, "processing_time_ms": 1.99, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 23:42:41,047] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 23:44:00,292] INFO "GET /api/profile/3 HTTP/1.1" 200 5834
+[2025-05-15 23:44:44,495] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 6696
+[2025-05-15 23:45:59,285] WARNING Request failed: {"request": {"timestamp": "15/May/2025 23:45:59", "request_id": "405d9fab", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 23:45:59", "request_id": "405d9fab", "status_code": 500, "processing_time_ms": 1.9, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 23:45:59,286] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 23:47:57,342] WARNING Request failed: {"request": {"timestamp": "15/May/2025 23:47:57", "request_id": "f7ae8da0", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 23:47:57", "request_id": "f7ae8da0", "status_code": 500, "processing_time_ms": 1.69, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 23:47:57,343] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 23:48:03,290] INFO "GET /api/profile/3 HTTP/1.1" 200 5834
+[2025-05-15 23:48:06,121] INFO "GET /api/profile/3 HTTP/1.1" 200 5834
+[2025-05-15 23:50:00,100] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 6696
+[2025-05-15 23:50:49,588] WARNING Request failed: {"request": {"timestamp": "15/May/2025 23:50:49", "request_id": "153b6578", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 23:50:49", "request_id": "153b6578", "status_code": 500, "processing_time_ms": 2.94, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 23:50:49,588] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 23:50:55,366] INFO "GET /api/profile/3 HTTP/1.1" 200 2447
+[2025-05-15 23:51:55,548] WARNING Request failed: {"request": {"timestamp": "15/May/2025 23:51:55", "request_id": "0ceb6e86", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "15/May/2025 23:51:55", "request_id": "0ceb6e86", "status_code": 500, "processing_time_ms": 1.61, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-15 23:51:55,549] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-15 23:55:02,828] INFO "GET /api/profile/3 HTTP/1.1" 200 2447
+[2025-05-15 23:55:47,924] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 6696
+[2025-05-15 23:57:27,051] INFO "GET /api/profile/3 HTTP/1.1" 200 2447
+[2025-05-15 23:58:51,217] INFO "GET /api/profile/3 HTTP/1.1" 200 2447
+[2025-05-16 00:03:54,872] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 6696
+[2025-05-16 00:04:00,998] INFO "GET /api/profile/3 HTTP/1.1" 200 2447
+[2025-05-16 00:06:06,826] INFO "GET /api/profile/3 HTTP/1.1" 200 2447
+[2025-05-16 00:10:13,366] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 6696
+[2025-05-16 00:10:18,607] INFO "GET /api/profile/4 HTTP/1.1" 200 804
+[2025-05-16 00:10:18,828] WARNING Request failed: {"request": {"timestamp": "16/May/2025 00:10:18", "request_id": "1d19a470", "method": "GET", "path": "/api/users/following/status/3/4", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": ""}, "response": {"timestamp": "16/May/2025 00:10:18", "request_id": "1d19a470", "status_code": 500, "processing_time_ms": 2.23, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-16 00:10:18,829] ERROR "GET /api/users/following/status/3/4 HTTP/1.1" 500 142
+[2025-05-16 00:10:26,891] INFO "GET /api/profile/3 HTTP/1.1" 200 2447
+[2025-05-16 00:10:28,172] WARNING Request failed: {"request": {"timestamp": "16/May/2025 00:10:28", "request_id": "970ee63b", "method": "GET", "path": "/api/users/following/status/3/4", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": ""}, "response": {"timestamp": "16/May/2025 00:10:28", "request_id": "970ee63b", "status_code": 500, "processing_time_ms": 2.02, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-16 00:10:28,173] ERROR "GET /api/users/following/status/3/4 HTTP/1.1" 500 142
+[2025-05-16 00:16:41,574] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 6696
+[2025-05-16 00:16:46,666] WARNING Request failed: {"request": {"timestamp": "16/May/2025 00:16:46", "request_id": "bc5c5917", "method": "GET", "path": "/api/users/following/status/3/4", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": ""}, "response": {"timestamp": "16/May/2025 00:16:46", "request_id": "bc5c5917", "status_code": 500, "processing_time_ms": 2.09, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-16 00:16:46,667] ERROR "GET /api/users/following/status/3/4 HTTP/1.1" 500 142
+[2025-05-16 00:16:50,593] INFO "GET /api/profile/4 HTTP/1.1" 200 804
+[2025-05-16 00:23:17,010] INFO "GET /api/profile/4 HTTP/1.1" 200 804
+[2025-05-16 00:23:19,222] INFO "GET /api/users/following/status/3/4 HTTP/1.1" 200 224
+[2025-05-16 00:27:10,717] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 6696
+[2025-05-16 00:27:12,874] INFO "GET /api/profile/3 HTTP/1.1" 200 2447
+[2025-05-16 00:27:20,336] INFO "GET /api/profile/4 HTTP/1.1" 200 804
+[2025-05-16 00:27:22,649] INFO "GET /api/users/following/status/3/4 HTTP/1.1" 200 224
+[2025-05-16 00:28:59,219] INFO "GET /api/users/following/status/3/4 HTTP/1.1" 200 223
+[2025-05-16 00:31:42,999] INFO "GET /api/profile/4 HTTP/1.1" 200 804
+[2025-05-16 00:31:45,101] INFO "GET /api/users/following/status/3/4 HTTP/1.1" 200 224
+[2025-05-16 00:31:56,702] INFO "GET /api/users/following/status/3/4 HTTP/1.1" 200 224
+[2025-05-16 00:33:01,274] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 165
+[2025-05-16 00:33:03,168] WARNING Request failed: {"request": {"timestamp": "16/May/2025 00:32:31", "request_id": "5684395f", "method": "GET", "path": "/api/users/following/status/3/4", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": ""}, "response": {"timestamp": "16/May/2025 00:33:03", "request_id": "5684395f", "status_code": 500, "processing_time_ms": 32078.42, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-16 00:33:03,169] ERROR "GET /api/users/following/status/3/4 HTTP/1.1" 500 152
+[2025-05-16 00:33:18,573] WARNING Request failed: {"request": {"timestamp": "16/May/2025 00:32:46", "request_id": "04723b61", "method": "GET", "path": "/api/users/following/status/3/4", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": ""}, "response": {"timestamp": "16/May/2025 00:33:18", "request_id": "04723b61", "status_code": 500, "processing_time_ms": 32051.53, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-16 00:33:18,574] ERROR "GET /api/users/following/status/3/4 HTTP/1.1" 500 152
+[2025-05-16 00:33:30,968] WARNING Request failed: {"request": {"timestamp": "16/May/2025 00:32:58", "request_id": "8e681b74", "method": "GET", "path": "/api/profile/3", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": ""}, "response": {"timestamp": "16/May/2025 00:33:30", "request_id": "8e681b74", "status_code": 500, "processing_time_ms": 32069.64, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-16 00:33:30,969] ERROR "GET /api/profile/3 HTTP/1.1" 500 42
+[2025-05-16 00:33:33,046] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 165
+[2025-05-16 00:33:34,070] WARNING Request failed: {"request": {"timestamp": "16/May/2025 00:33:02", "request_id": "6a5188aa", "method": "GET", "path": "/api/users/following/status/3/4", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": ""}, "response": {"timestamp": "16/May/2025 00:33:34", "request_id": "6a5188aa", "status_code": 500, "processing_time_ms": 32063.98, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-16 00:33:34,071] ERROR "GET /api/users/following/status/3/4 HTTP/1.1" 500 152
+[2025-05-16 00:33:38,167] WARNING Request failed: {"request": {"timestamp": "16/May/2025 00:33:06", "request_id": "7b446070", "method": "GET", "path": "/api/users/following/status/3/4", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": ""}, "response": {"timestamp": "16/May/2025 00:33:38", "request_id": "7b446070", "status_code": 500, "processing_time_ms": 32075.02, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-16 00:33:38,168] ERROR "GET /api/users/following/status/3/4 HTTP/1.1" 500 152
+[2025-05-16 00:33:53,590] WARNING Request failed: {"request": {"timestamp": "16/May/2025 00:33:21", "request_id": "ea1d3bc6", "method": "GET", "path": "/api/users/following/status/3/4", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": ""}, "response": {"timestamp": "16/May/2025 00:33:53", "request_id": "ea1d3bc6", "status_code": 500, "processing_time_ms": 32047.87, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-16 00:33:53,590] ERROR "GET /api/users/following/status/3/4 HTTP/1.1" 500 152
+[2025-05-16 00:34:01,131] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 165
+[2025-05-16 00:34:02,930] WARNING Request failed: {"request": {"timestamp": "16/May/2025 00:33:30", "request_id": "74596383", "method": "GET", "path": "/api/users/following/status/3/4", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": ""}, "response": {"timestamp": "16/May/2025 00:34:02", "request_id": "74596383", "status_code": 500, "processing_time_ms": 32056.18, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-16 00:34:02,931] ERROR "GET /api/users/following/status/3/4 HTTP/1.1" 500 152
+[2025-05-16 00:34:09,022] WARNING Request failed: {"request": {"timestamp": "16/May/2025 00:33:36", "request_id": "c08739dd", "method": "GET", "path": "/api/users/following/status/3/4", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": ""}, "response": {"timestamp": "16/May/2025 00:34:09", "request_id": "c08739dd", "status_code": 500, "processing_time_ms": 32063.94, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-16 00:34:09,022] ERROR "GET /api/users/following/status/3/4 HTTP/1.1" 500 152
+[2025-05-16 00:34:18,355] WARNING Request failed: {"request": {"timestamp": "16/May/2025 00:33:46", "request_id": "c58c70b5", "method": "GET", "path": "/api/users/following/status/3/4", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": ""}, "response": {"timestamp": "16/May/2025 00:34:18", "request_id": "c58c70b5", "status_code": 500, "processing_time_ms": 32054.41, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-16 00:34:18,355] ERROR "GET /api/users/following/status/3/4 HTTP/1.1" 500 152
+[2025-05-16 00:34:33,823] WARNING Request failed: {"request": {"timestamp": "16/May/2025 00:34:01", "request_id": "e2f42a84", "method": "GET", "path": "/api/users/following/status/3/4", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": ""}, "response": {"timestamp": "16/May/2025 00:34:33", "request_id": "e2f42a84", "status_code": 500, "processing_time_ms": 32060.62, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-16 00:34:33,823] ERROR "GET /api/users/following/status/3/4 HTTP/1.1" 500 152
+[2025-05-16 00:34:34,581] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 165
+[2025-05-16 00:34:36,572] WARNING Request failed: {"request": {"timestamp": "16/May/2025 00:34:04", "request_id": "1da610e8", "method": "GET", "path": "/api/profile/4", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": ""}, "response": {"timestamp": "16/May/2025 00:34:36", "request_id": "1da610e8", "status_code": 500, "processing_time_ms": 32062.64, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-16 00:34:36,573] ERROR "GET /api/profile/4 HTTP/1.1" 500 42
+[2025-05-16 00:34:36,791] WARNING Request failed: {"request": {"timestamp": "16/May/2025 00:34:04", "request_id": "8661f76e", "method": "GET", "path": "/api/users/following/status/3/4", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": ""}, "response": {"timestamp": "16/May/2025 00:34:36", "request_id": "8661f76e", "status_code": 500, "processing_time_ms": 32070.36, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-16 00:34:36,792] ERROR "GET /api/users/following/status/3/4 HTTP/1.1" 500 152
+[2025-05-16 00:34:52,185] WARNING Request failed: {"request": {"timestamp": "16/May/2025 00:34:20", "request_id": "ae5eb90b", "method": "GET", "path": "/api/users/following/status/3/4", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": ""}, "response": {"timestamp": "16/May/2025 00:34:52", "request_id": "ae5eb90b", "status_code": 500, "processing_time_ms": 32038.48, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-16 00:34:52,186] ERROR "GET /api/users/following/status/3/4 HTTP/1.1" 500 152
+[2025-05-16 00:35:07,649] WARNING Request failed: {"request": {"timestamp": "16/May/2025 00:34:35", "request_id": "1242a595", "method": "GET", "path": "/api/users/following/status/3/4", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": ""}, "response": {"timestamp": "16/May/2025 00:35:07", "request_id": "1242a595", "status_code": 500, "processing_time_ms": 32066.57, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-16 00:35:07,650] ERROR "GET /api/users/following/status/3/4 HTTP/1.1" 500 152
+[2025-05-16 00:35:07,914] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 165
+[2025-05-16 00:35:24,178] WARNING Request failed: {"request": {"timestamp": "16/May/2025 00:35:24", "request_id": "921aed74", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "16/May/2025 00:35:24", "request_id": "921aed74", "status_code": 500, "processing_time_ms": 20.4, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-16 00:35:24,179] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-16 00:35:24,233] WARNING Request failed: {"request": {"timestamp": "16/May/2025 00:35:24", "request_id": "16763f13", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "16/May/2025 00:35:24", "request_id": "16763f13", "status_code": 500, "processing_time_ms": 1.92, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-16 00:35:24,233] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-16 00:35:24,321] WARNING Request failed: {"request": {"timestamp": "16/May/2025 00:35:24", "request_id": "7fff1a28", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "16/May/2025 00:35:24", "request_id": "7fff1a28", "status_code": 500, "processing_time_ms": 2.24, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-16 00:35:24,321] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-16 00:35:33,636] INFO "POST /api/auth/spotify HTTP/1.1" 200 777
+[2025-05-16 00:35:39,517] INFO "GET /api/users/3/following_network HTTP/1.1" 200 2019
+[2025-05-16 00:35:45,532] INFO "GET /api/profile/4 HTTP/1.1" 200 804
+[2025-05-16 00:35:52,304] INFO "GET /api/users/following/status/3/4 HTTP/1.1" 200 223
+[2025-05-16 00:36:34,986] WARNING Request failed: {"request": {"timestamp": "16/May/2025 00:36:34", "request_id": "6f4b5acd", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "16/May/2025 00:36:34", "request_id": "6f4b5acd", "status_code": 500, "processing_time_ms": 5.5, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-16 00:36:34,987] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-16 00:36:35,071] WARNING Request failed: {"request": {"timestamp": "16/May/2025 00:36:35", "request_id": "789bc0f5", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "16/May/2025 00:36:35", "request_id": "789bc0f5", "status_code": 500, "processing_time_ms": 7.34, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-16 00:36:35,072] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-16 00:36:35,208] WARNING Request failed: {"request": {"timestamp": "16/May/2025 00:36:35", "request_id": "b7f458e0", "method": "POST", "path": "/api/auth/verify", "query_params": {}, "remote_addr": "127.0.0.1", "user_agent": "Dart/3.7 (dart:io)", "content_type": "application/json", "content_length": "4"}, "response": {"timestamp": "16/May/2025 00:36:35", "request_id": "b7f458e0", "status_code": 500, "processing_time_ms": 12.55, "content_type": "application/json", "content_length": "unknown"}}
+[2025-05-16 00:36:35,209] ERROR "POST /api/auth/verify HTTP/1.1" 500 193
+[2025-05-16 00:36:47,330] INFO "POST /api/auth/spotify HTTP/1.1" 200 777
+[2025-05-16 00:36:53,257] INFO "GET /api/users/3/following_network HTTP/1.1" 200 2019
+[2025-05-16 00:36:59,045] INFO "GET /api/profile/4 HTTP/1.1" 200 804
+[2025-05-16 00:37:05,493] INFO "GET /api/users/following/status/3/4 HTTP/1.1" 200 223
+[2025-05-16 00:37:33,487] INFO "GET /api/feed?limit=20&offset=0&user_id=3 HTTP/1.1" 200 6696
+[2025-05-16 00:37:39,522] INFO "GET /api/users/following/status/3/4 HTTP/1.1" 200 223
+[2025-05-16 00:37:45,578] INFO "GET /api/users/following/status/3/4 HTTP/1.1" 200 223
+[2025-05-16 00:38:08,508] INFO "GET /api/users/following/status/3/4 HTTP/1.1" 200 223
+[2025-05-16 00:38:09,942] INFO "GET /api/users/following/status/3/4 HTTP/1.1" 200 223
+[2025-05-16 00:38:15,155] INFO "GET /api/users/following/status/3/4 HTTP/1.1" 200 223
+[2025-05-16 00:38:20,244] INFO "GET /api/users/following/status/3/4 HTTP/1.1" 200 223
+[2025-05-16 00:38:21,740] INFO "GET /api/users/following/status/3/4 HTTP/1.1" 200 223
+[2025-05-16 00:38:26,898] INFO "GET /api/users/following/status/3/4 HTTP/1.1" 200 223
+[2025-05-16 00:38:33,494] INFO "GET /api/users/following/status/3/4 HTTP/1.1" 200 223
+[2025-05-16 00:40:45,518] INFO "GET /api/profile/4 HTTP/1.1" 200 804
+[2025-05-16 00:40:47,811] INFO "GET /api/users/following/status/3/4 HTTP/1.1" 200 223
+[2025-05-16 00:40:54,398] INFO "GET /api/users/following/status/3/4 HTTP/1.1" 200 223
+[2025-05-16 00:41:01,014] INFO "GET /api/users/following/status/3/4 HTTP/1.1" 200 223
+[2025-05-16 00:44:15,658] INFO "GET /api/profile/4 HTTP/1.1" 200 804
+[2025-05-16 00:44:17,918] INFO "GET /api/users/following/status/3/4 HTTP/1.1" 200 223

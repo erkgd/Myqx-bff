@@ -297,3 +297,95 @@ ImportError: Could not import 'api.utils.custom_exception_handler' for API setti
 [2025-05-04 23:31:44,353] ERROR log 13248 4080 Internal Server Error: /api/users/following/status/4/3
 [2025-05-04 23:36:35,278] INFO autoreload 13248 7528 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\views\user_following_status_view.py changed, reloading.
 [2025-05-04 23:36:35,989] INFO autoreload 19904 8572 Watching for file changes with StatReloader
+[2025-05-04 23:36:51,078] INFO autoreload 19904 8572 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\controllers\auth_controller.py changed, reloading.
+[2025-05-04 23:36:51,857] INFO autoreload 16136 3060 Watching for file changes with StatReloader
+[2025-05-04 23:37:14,182] ERROR log 16136 18916 Internal Server Error: /api/users/following/status/4/3
+[2025-05-15 17:05:34,438] INFO autoreload 10624 21356 Watching for file changes with StatReloader
+[2025-05-15 17:08:53,469] ERROR log 10624 5476 Internal Server Error: /api/auth/verify
+[2025-05-15 17:08:53,556] ERROR log 10624 15004 Internal Server Error: /api/auth/verify
+[2025-05-15 17:08:54,042] ERROR log 10624 15004 Internal Server Error: /api/auth/verify
+[2025-05-15 17:48:41,042] ERROR log 10624 4028 Internal Server Error: /api/auth/verify
+[2025-05-15 18:35:48,263] ERROR log 10624 18064 Internal Server Error: /api/auth/verify
+[2025-05-15 18:35:48,346] ERROR log 10624 18064 Internal Server Error: /api/auth/verify
+[2025-05-15 18:35:48,452] ERROR log 10624 18064 Internal Server Error: /api/auth/verify
+[2025-05-15 18:58:38,107] INFO autoreload 10624 21356 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\auth_views.py changed, reloading.
+[2025-05-15 18:58:38,968] INFO autoreload 23172 8716 Watching for file changes with StatReloader
+[2025-05-15 19:00:18,338] ERROR log 23172 7416 Internal Server Error: /api/auth/verify
+[2025-05-15 19:00:18,451] ERROR log 23172 7416 Internal Server Error: /api/auth/verify
+[2025-05-15 19:00:18,552] ERROR log 23172 7416 Internal Server Error: /api/auth/verify
+[2025-05-15 22:07:59,483] ERROR log 23172 29272 Internal Server Error: /api/auth/verify
+[2025-05-15 22:07:59,567] ERROR log 23172 29272 Internal Server Error: /api/auth/verify
+[2025-05-15 22:07:59,692] ERROR log 23172 29272 Internal Server Error: /api/auth/verify
+[2025-05-15 22:12:21,121] ERROR log 23172 9116 Internal Server Error: /api/auth/verify
+[2025-05-15 22:12:41,450] ERROR log 23172 13824 Internal Server Error: /api/auth/verify
+[2025-05-15 22:13:21,875] ERROR log 23172 25656 Internal Server Error: /api/auth/verify
+[2025-05-15 22:13:21,958] ERROR log 23172 25656 Internal Server Error: /api/auth/verify
+[2025-05-15 22:13:22,091] ERROR log 23172 25656 Internal Server Error: /api/auth/verify
+[2025-05-15 22:16:30,625] ERROR log 23172 21632 Internal Server Error: /api/auth/verify
+[2025-05-15 22:18:20,404] ERROR log 23172 28388 Internal Server Error: /api/users/following/status/3/4
+[2025-05-15 22:20:11,961] ERROR log 23172 12648 Internal Server Error: /api/auth/verify
+[2025-05-15 22:20:12,045] ERROR log 23172 12648 Internal Server Error: /api/auth/verify
+[2025-05-15 22:20:12,164] ERROR log 23172 12648 Internal Server Error: /api/auth/verify
+[2025-05-15 22:20:57,512] ERROR log 23172 23460 Internal Server Error: /api/users/following/status/3/4
+[2025-05-15 22:24:14,637] ERROR log 23172 20440 Internal Server Error: /api/users/following/status/3/4
+[2025-05-15 22:26:04,745] ERROR log 23172 2772 Internal Server Error: /api/auth/verify
+[2025-05-15 22:26:04,816] ERROR log 23172 15116 Internal Server Error: /api/auth/verify
+[2025-05-15 22:26:05,024] ERROR log 23172 15116 Internal Server Error: /api/auth/verify
+[2025-05-15 22:28:48,709] ERROR log 23172 17540 Internal Server Error: /api/users/following/status/4/3
+[2025-05-15 22:28:55,892] ERROR log 23172 3968 Internal Server Error: /api/users/following/status/4/3
+[2025-05-15 22:29:20,605] ERROR log 23172 27280 Internal Server Error: /api/auth/verify
+[2025-05-15 22:29:20,665] ERROR log 23172 27280 Internal Server Error: /api/auth/verify
+[2025-05-15 22:29:20,736] ERROR log 23172 27280 Internal Server Error: /api/auth/verify
+[2025-05-15 22:31:50,531] ERROR log 23172 27664 Internal Server Error: /api/users/following/status/4/3
+[2025-05-15 22:32:02,151] ERROR log 23172 20200 Internal Server Error: /api/users/following/status/4/3
+[2025-05-15 22:49:39,855] ERROR log 23172 28684 Internal Server Error: /api/users/following/status/3/4
+[2025-05-15 22:58:08,172] ERROR log 23172 6608 Internal Server Error: /api/users/following/status/3/4
+[2025-05-15 23:01:04,421] ERROR log 23172 28112 Internal Server Error: /api/users/following/status/3/4
+[2025-05-15 23:13:25,887] ERROR log 23172 11036 Internal Server Error: /api/users/following/status/3/4
+[2025-05-15 23:14:09,029] ERROR log 23172 23436 Internal Server Error: /api/users/following/status/3/4
+[2025-05-15 23:36:50,178] ERROR log 23172 20568 Internal Server Error: /api/auth/verify
+[2025-05-15 23:36:57,849] ERROR log 23172 21256 Internal Server Error: /api/profile/3
+[2025-05-15 23:37:19,145] ERROR log 23172 26644 Internal Server Error: /api/auth/verify
+[2025-05-15 23:37:21,736] ERROR log 23172 14132 Internal Server Error: /api/profile/3
+[2025-05-15 23:37:42,102] ERROR log 23172 11472 Internal Server Error: /api/profile/3
+[2025-05-15 23:37:50,889] ERROR log 23172 28320 Internal Server Error: /api/profile/3
+[2025-05-15 23:38:59,624] ERROR log 23172 21256 Internal Server Error: /api/auth/verify
+[2025-05-15 23:39:14,365] ERROR log 23172 21256 Internal Server Error: /api/auth/verify
+[2025-05-15 23:39:24,805] ERROR log 23172 21256 Internal Server Error: /api/auth/verify
+[2025-05-15 23:40:47,218] ERROR log 23172 4588 Internal Server Error: /api/auth/verify
+[2025-05-15 23:41:36,056] ERROR log 23172 17504 Internal Server Error: /api/auth/verify
+[2025-05-15 23:42:34,921] ERROR log 23172 29004 Internal Server Error: /api/auth/verify
+[2025-05-15 23:42:41,047] ERROR log 23172 29004 Internal Server Error: /api/auth/verify
+[2025-05-15 23:45:59,286] ERROR log 23172 8652 Internal Server Error: /api/auth/verify
+[2025-05-15 23:47:57,342] ERROR log 23172 21876 Internal Server Error: /api/auth/verify
+[2025-05-15 23:50:49,588] ERROR log 23172 13388 Internal Server Error: /api/auth/verify
+[2025-05-15 23:51:55,549] ERROR log 23172 4932 Internal Server Error: /api/auth/verify
+[2025-05-16 00:10:18,828] ERROR log 23172 18484 Internal Server Error: /api/users/following/status/3/4
+[2025-05-16 00:10:28,173] ERROR log 23172 9708 Internal Server Error: /api/users/following/status/3/4
+[2025-05-16 00:16:46,666] ERROR log 23172 18920 Internal Server Error: /api/users/following/status/3/4
+[2025-05-16 00:22:14,241] INFO autoreload 23172 8716 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\views\user_following_status_view.py changed, reloading.
+[2025-05-16 00:22:15,135] INFO autoreload 25676 2808 Watching for file changes with StatReloader
+[2025-05-16 00:23:08,241] INFO autoreload 25676 2808 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\views\user_following_status_view.py changed, reloading.
+[2025-05-16 00:23:08,827] INFO autoreload 25464 16016 Watching for file changes with StatReloader
+[2025-05-16 00:33:03,168] ERROR log 25464 28952 Internal Server Error: /api/users/following/status/3/4
+[2025-05-16 00:33:18,573] ERROR log 25464 26316 Internal Server Error: /api/users/following/status/3/4
+[2025-05-16 00:33:30,969] ERROR log 25464 7124 Internal Server Error: /api/profile/3
+[2025-05-16 00:33:34,071] ERROR log 25464 26936 Internal Server Error: /api/users/following/status/3/4
+[2025-05-16 00:33:38,168] ERROR log 25464 5080 Internal Server Error: /api/users/following/status/3/4
+[2025-05-16 00:33:53,590] ERROR log 25464 28332 Internal Server Error: /api/users/following/status/3/4
+[2025-05-16 00:34:02,930] ERROR log 25464 1888 Internal Server Error: /api/users/following/status/3/4
+[2025-05-16 00:34:09,022] ERROR log 25464 26540 Internal Server Error: /api/users/following/status/3/4
+[2025-05-16 00:34:18,355] ERROR log 25464 7832 Internal Server Error: /api/users/following/status/3/4
+[2025-05-16 00:34:33,823] ERROR log 25464 17132 Internal Server Error: /api/users/following/status/3/4
+[2025-05-16 00:34:36,573] ERROR log 25464 26680 Internal Server Error: /api/profile/4
+[2025-05-16 00:34:36,791] ERROR log 25464 19884 Internal Server Error: /api/users/following/status/3/4
+[2025-05-16 00:34:52,185] ERROR log 25464 16560 Internal Server Error: /api/users/following/status/3/4
+[2025-05-16 00:35:07,650] ERROR log 25464 24164 Internal Server Error: /api/users/following/status/3/4
+[2025-05-16 00:35:24,178] ERROR log 25464 25772 Internal Server Error: /api/auth/verify
+[2025-05-16 00:35:24,233] ERROR log 25464 25772 Internal Server Error: /api/auth/verify
+[2025-05-16 00:35:24,321] ERROR log 25464 25772 Internal Server Error: /api/auth/verify
+[2025-05-16 00:36:34,987] ERROR log 25464 24044 Internal Server Error: /api/auth/verify
+[2025-05-16 00:36:35,071] ERROR log 25464 24044 Internal Server Error: /api/auth/verify
+[2025-05-16 00:36:35,208] ERROR log 25464 24044 Internal Server Error: /api/auth/verify
+[2025-05-16 00:45:08,237] INFO autoreload 25464 16016 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\views\user_following_status_view.py changed, reloading.
+[2025-05-16 00:45:09,042] INFO autoreload 5956 27824 Watching for file changes with StatReloader

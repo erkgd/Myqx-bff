@@ -1,0 +1,60 @@
+@startuml Controladors_i_Vistes
+
+' Style definitions
+skinparam packageStyle rectangle
+skinparam backgroundColor white
+skinparam componentStyle uml2
+skinparam linetype ortho
+
+' Títol general
+title Controladors i Vistes - Myqx-BFF
+
+' CAPA DE VISTES
+package "Vistes API" {
+    component [VistesAutenticació] as AuthView
+    component [VistesUsuari] as UserView
+    component [VistesÀlbum] as AlbumView
+    component [VistaFeed] as FeedView
+    component [VistaPerfil] as ProfileView
+    component [VistaEstatSeguimentUsuari] as UserFollowingStatusView
+    component [VistaPerfilCompletUsuari] as UserCompleteProfileView
+    component [VistesValoració] as RatingsView
+    component [VistaComprovacióSalut] as HealthCheckView
+}
+
+' CAPA DE CONTROLADORS
+package "Controladors" {
+    component [ControladorAutenticació] as AuthController
+    component [ControladorUsuaris] as UsersController
+    component [ControladorÀlbums] as AlbumsController
+    component [ControladorFeed] as FeedController
+    component [ControladorPerfil] as ProfileController
+}
+
+' CAPA D'EXCEPCIONS
+component [GestorExcepcions] as ExceptionHandler
+
+' Relacions de vistes a controladors
+AuthView --> AuthController : Crida
+UserView --> UsersController : Crida
+AlbumView --> AlbumsController : Crida
+ProfileView --> ProfileController : Crida
+FeedView --> FeedController : Crida
+UserFollowingStatusView --> UsersController : Crida
+UserCompleteProfileView --> UsersController : Crida
+RatingsView --> AlbumsController : Crida
+
+' Relacions amb excepcions
+ExceptionHandler <-- "Vistes API" : Gestiona excepcions
+
+note right of "Vistes API"
+  Gestionen les peticions HTTP 
+  i serialitzen les respostes
+end note
+
+note right of "Controladors"
+  Contenen la lògica de negoci
+  i deleguen operacions
+end note
+
+@enduml

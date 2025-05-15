@@ -1,0 +1,82 @@
+@startuml Repositoris_DTOs_Models_Simple
+
+' Style definitions
+skinparam packageStyle rectangle
+skinparam backgroundColor white
+skinparam componentStyle uml2
+skinparam linetype ortho
+
+' Títol general
+title Repositoris, DTOs i Models - Myqx-BFF
+
+' CAPA DE CONTROLADORS
+package "Controladors" {
+    component [ControladorUsuaris] as UsersController
+    component [ControladorÀlbums] as AlbumsController
+    component [ControladorFeed] as FeedController
+    component [ControladorPerfil] as ProfileController
+}
+
+' CAPA DE REPOSITORIS
+package "Repositoris" {
+    component [RepositoriUsuari] as UserRepository
+    component [RepositoriÀlbum] as AlbumRepository
+    component [RepositoriFeed] as FeedRepository
+}
+
+' CAPA DE SERVEIS
+package "Serveis" {
+    component [ImplServeiUsuaris] as UsersServiceImpl
+    component [ImplServeiÀlbums] as AlbumsServiceImpl
+    component [ImplServeiFeed] as FeedServiceImpl
+}
+
+' CAPA DE DTOs
+package "DTOs" {
+    component [DTOUsuari] as UserDTO
+    component [DTOÀlbum] as AlbumDTO
+    component [DTOValoracióÀlbum] as AlbumRatingDTO
+    component [DTOElementFeed] as FeedItemDTO
+}
+
+' CAPA DE MODELS
+package "Models" {
+    component [ModelUsuari] as UserModel
+}
+
+' Relacions de controladors a repositoris
+UsersController --> UserRepository
+AlbumsController --> AlbumRepository
+FeedController --> FeedRepository
+ProfileController --> UserRepository
+
+' Relacions de repositoris a serveis
+UserRepository --> UsersServiceImpl
+AlbumRepository --> AlbumsServiceImpl
+FeedRepository --> FeedServiceImpl
+
+' Relacions de DTOs
+UserRepository --> UserDTO
+AlbumRepository --> AlbumDTO
+AlbumRepository --> AlbumRatingDTO
+FeedRepository --> FeedItemDTO
+
+' Relacions amb models
+UserDTO --> UserModel
+
+note right of "Repositoris"
+  Accés a les dades
+  i abstracció de la font
+end note
+
+note right of "DTOs"
+  Objectes de transferència
+  per a peticions/respostes
+end note
+
+note right of "Models"
+  Representacions de
+  les entitats de domini
+end note
+
+@enduml

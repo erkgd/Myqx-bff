@@ -1,0 +1,48 @@
+@startuml estils
+' Definició de colors per a les capes
+!define CLIENT_COLOR #C2E0FF
+!define VIEW_COLOR #D5E8D4
+!define CONTROLLER_COLOR #DAE8FC
+!define SERVICE_COLOR #F8CECC
+!define REPOSITORY_COLOR #FFE6CC
+!define DTO_COLOR #E1D5E7
+!define INTERFACE_COLOR #FFF2CC
+!define MIDDLEWARE_COLOR #D4E1F5
+!define MODEL_COLOR #F5F5F5
+!define UTILS_COLOR #FFF8DC
+
+skinparam backgroundColor white
+skinparam handwritten false
+skinparam DefaultFontName Arial
+skinparam DefaultFontSize 12
+skinparam ArrowColor #333333
+skinparam shadowing false
+skinparam RoundCorner 10
+
+skinparam rectangle {
+    BackgroundColor white
+    BorderColor #333333
+    FontColor #333333
+}
+
+skinparam package {
+    BackgroundColor #FEFEFE
+    BorderColor #999999
+}
+
+skinparam component {
+    BackgroundColor white
+    BorderColor #333333
+    FontColor #333333
+}
+
+skinparam interface {
+    BackgroundColor white
+    BorderColor #333333
+}
+
+skinparam note {
+    BackgroundColor #FFFFAA
+    BorderColor #DDDD77
+}
+@enduml

@@ -1,0 +1,98 @@
+@startuml Serveis i Interfícies
+
+' Definició de colors per a les capes
+!define CLIENT_COLOR #C2E0FF
+!define VIEW_COLOR #D5E8D4
+!define CONTROLLER_COLOR #DAE8FC
+!define SERVICE_COLOR #F8CECC
+!define REPOSITORY_COLOR #FFE6CC
+!define DTO_COLOR #E1D5E7
+!define INTERFACE_COLOR #FFF2CC
+!define MIDDLEWARE_COLOR #D4E1F5
+!define MODEL_COLOR #F5F5F5
+!define UTILS_COLOR #FFF8DC
+
+' Títol general
+title Serveis i Interfícies - Myqx-BFF
+
+' CAPA DE CONTROLADORS
+package "Controladors" as ControllerLayer #CONTROLLER_COLOR {
+    component "ControladorAutenticació" as AuthController
+    component "ControladorUsuaris" as UsersController
+    component "ControladorÀlbums" as AlbumsController
+    component "ControladorFeed" as FeedController
+    component "ControladorPerfil" as ProfileController
+}
+
+' CAPA D'INTERFÍCIES
+package "Interfícies" as InterfaceLayer #INTERFACE_COLOR {
+    interface "InterfícieServeiUsuari" as UserServiceInterface
+    interface "InterfícieServeiÀlbum" as AlbumServiceInterface
+    interface "InterfícieServeiFeed" as FeedServiceInterface
+    interface "InterfícieServeiPerfil" as ProfileServiceInterface
+    interface "InterfícieRepositori<T>" as RepositoryInterface
+}
+
+' CAPA DE SERVEIS
+package "Serveis" as ServiceLayer #SERVICE_COLOR {
+    component "ServeiBase" as BaseService
+    
+    package "Implementacions" as ServiceImplementations {
+        component "ImplServeiUsuaris" as UsersServiceImpl
+        component "ImplServeiAutenticació" as AuthServiceImpl
+        component "ImplServeiÀlbums" as AlbumsServiceImpl
+        component "ImplServeiFeed" as FeedServiceImpl
+        component "ImplServeiPerfil" as ProfileServiceImpl
+    }
+}
+
+' BACKENDS EXTERNS
+package "Serveis Backend" as BackendServices {
+    component "API d'Usuaris" as UsersAPI
+    component "API d'Àlbums" as AlbumsAPI
+    component "API de Valoracions" as RatingsAPI
+    component "API de Feed" as FeedAPI
+    component "API de Spotify" as SpotifyAPI
+}
+
+' Relacions de controladors a serveis
+AuthController --> AuthServiceImpl : Utilitza directament
+ProfileController --> ProfileServiceImpl : Utilitza
+
+' Implementacions d'interfícies
+UserServiceInterface <|.. UsersServiceImpl : Implementa
+AlbumServiceInterface <|.. AlbumsServiceImpl : Implementa
+FeedServiceInterface <|.. FeedServiceImpl : Implementa
+ProfileServiceInterface <|.. ProfileServiceImpl : Implementa
+
+' Relacions de serveis
+BaseService <-- UsersServiceImpl : Estén
+BaseService <-- AuthServiceImpl : Estén
+BaseService <-- AlbumsServiceImpl : Estén
+BaseService <-- FeedServiceImpl : Estén
+BaseService <-- ProfileServiceImpl : Estén
+
+' Relacions amb configuració
+component "Configuracions" as Settings
+Settings --> ServiceLayer : Configura
+
+' Relacions amb backends externs
+UsersServiceImpl --> UsersAPI : Peticions HTTP
+AuthServiceImpl --> UsersAPI : Peticions HTTP
+AuthServiceImpl --> SpotifyAPI : OAuth
+AlbumsServiceImpl --> AlbumsAPI : Peticions HTTP
+AlbumsServiceImpl --> RatingsAPI : Peticions HTTP
+FeedServiceImpl --> FeedAPI : Peticions HTTP
+ProfileServiceImpl --> UsersAPI : Peticions HTTP
+
+' Llegenda
+note bottom of ServiceLayer
+  <b>Capa de Serveis:</b>
+  
+  1. <color:#DAE8FC>Controladors</color> - Utilitzen serveis per a operacions específiques
+  2. <color:#FFF2CC>Interfícies</color> - Defineixen contractes per als serveis
+  3. <color:#F8CECC>Serveis</color> - Implementen la lògica de comunicació amb backends
+  4. L'abstracció permet canviar les implementacions sense modificar els controladors
+end note
+
+@enduml
