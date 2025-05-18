@@ -337,17 +337,24 @@ class UsersServiceImpl(BaseService, UserServiceInterface):
             # Realizamos la solicitud GET
             print(f"[IS_FOLLOWING] Realizando solicitud GET a {endpoint_url}", file=sys.stderr)
             response = self.get(endpoint_url, headers=headers)
-            
-            # Verificamos la respuesta
+              # Verificamos la respuesta
             print(f"[IS_FOLLOWING] Respuesta: {response}", file=sys.stderr)
             
-            # Si la respuesta contiene un campo 'is_following', lo utilizamos
-            if isinstance(response, dict) and 'is_following' in response:
-                return response.get('is_following', False)
+            # Comprobamos primero si existe el campo 'isFollowing' (camelCase)
+            if isinstance(response, dict) and 'isFollowing' in response:
+                result = response.get('isFollowing', False)
+                print(f"[IS_FOLLOWING] Campo 'isFollowing' encontrado con valor: {result}", file=sys.stderr)
+                return result
                 
-            # Si no hay campo específico, asumimos que la existencia de una respuesta válida
-            # indica que existe la relación
-            return response is not None and isinstance(response, dict)
+            # Alternativamente buscamos 'is_following' (snake_case)
+            if isinstance(response, dict) and 'is_following' in response:
+                result = response.get('is_following', False)
+                print(f"[IS_FOLLOWING] Campo 'is_following' encontrado con valor: {result}", file=sys.stderr)
+                return result
+            
+            # Si no encontramos ningún campo específico, asumimos que NO existe la relación
+            print(f"[IS_FOLLOWING] No se encontró campo de seguimiento, asumiendo FALSE", file=sys.stderr)
+            return False
             
         except Exception as e:
             # Si hay un error, asumimos que no existe la relación

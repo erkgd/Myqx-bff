@@ -389,3 +389,70 @@ ImportError: Could not import 'api.utils.custom_exception_handler' for API setti
 [2025-05-16 00:36:35,208] ERROR log 25464 24044 Internal Server Error: /api/auth/verify
 [2025-05-16 00:45:08,237] INFO autoreload 25464 16016 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\views\user_following_status_view.py changed, reloading.
 [2025-05-16 00:45:09,042] INFO autoreload 5956 27824 Watching for file changes with StatReloader
+[2025-05-16 00:45:19,971] INFO autoreload 5956 27824 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\views\user_following_status_view.py changed, reloading.
+[2025-05-16 00:45:20,569] INFO autoreload 1592 14744 Watching for file changes with StatReloader
+[2025-05-16 00:45:24,231] INFO autoreload 1592 14744 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\views\user_following_status_view.py changed, reloading.
+[2025-05-16 00:45:24,840] INFO autoreload 11160 18328 Watching for file changes with StatReloader
+[2025-05-16 17:14:49,963] INFO autoreload 8684 10976 Watching for file changes with StatReloader
+[2025-05-16 17:20:15,855] ERROR log 8684 5484 Internal Server Error: /api/auth/verify
+[2025-05-16 17:20:15,901] ERROR log 8684 5484 Internal Server Error: /api/auth/verify
+[2025-05-16 17:20:16,002] ERROR log 8684 5484 Internal Server Error: /api/auth/verify
+[2025-05-16 18:01:53,483] ERROR log 8684 24400 Internal Server Error: /api/auth/verify
+[2025-05-16 18:01:53,519] ERROR log 8684 24400 Internal Server Error: /api/auth/verify
+[2025-05-16 18:01:53,628] ERROR log 8684 24400 Internal Server Error: /api/auth/verify
+[2025-05-16 18:03:59,370] ERROR log 8684 17636 Internal Server Error: /api/auth/verify
+[2025-05-16 18:03:59,429] ERROR log 8684 17636 Internal Server Error: /api/auth/verify
+[2025-05-16 18:03:59,516] ERROR log 8684 17636 Internal Server Error: /api/auth/verify
+[2025-05-16 18:07:10,493] ERROR log 8684 23788 Internal Server Error: /api/auth/verify
+[2025-05-16 18:07:10,545] ERROR log 8684 23788 Internal Server Error: /api/auth/verify
+[2025-05-16 18:07:10,654] ERROR log 8684 23788 Internal Server Error: /api/auth/verify
+[2025-05-16 18:20:54,330] ERROR log 8684 16904 Internal Server Error: /api/auth/verify
+[2025-05-16 18:20:54,332] ERROR log 8684 23888 Internal Server Error: /api/auth/verify
+[2025-05-16 18:20:54,454] ERROR log 8684 23888 Internal Server Error: /api/auth/verify
+[2025-05-16 18:24:00,502] ERROR log 8684 24172 Internal Server Error: /api/auth/verify
+[2025-05-16 18:24:00,551] ERROR log 8684 24172 Internal Server Error: /api/auth/verify
+[2025-05-16 18:24:00,650] ERROR log 8684 24172 Internal Server Error: /api/auth/verify
+[2025-05-16 19:13:27,347] ERROR log 8684 23692 Internal Server Error: /api/auth/verify
+[2025-05-16 19:13:27,396] ERROR log 8684 23692 Internal Server Error: /api/auth/verify
+[2025-05-16 19:13:27,473] ERROR log 8684 23692 Internal Server Error: /api/auth/verify
+[2025-05-16 19:38:23,098] ERROR log 8684 21816 Internal Server Error: /api/auth/verify
+[2025-05-16 19:38:23,210] ERROR log 8684 21816 Internal Server Error: /api/auth/verify
+[2025-05-16 19:38:23,315] ERROR log 8684 21816 Internal Server Error: /api/auth/verify
+[2025-05-16 19:46:30,641] ERROR log 8684 13568 Internal Server Error: /api/auth/verify
+[2025-05-16 19:46:30,752] ERROR log 8684 13568 Internal Server Error: /api/auth/verify
+[2025-05-16 19:46:30,876] ERROR log 8684 13568 Internal Server Error: /api/auth/verify
+[2025-05-16 20:06:05,388] ERROR log 8684 9012 Internal Server Error: /api/users/following/status/4
+[2025-05-16 20:06:22,867] ERROR log 8684 25128 Internal Server Error: /api/users/following/status/4
+[2025-05-16 20:06:23,023] ERROR log 8684 24844 Internal Server Error: /api/users/following/status/4
+[2025-05-16 20:07:43,212] ERROR log 8684 17416 Internal Server Error: /api/users/following/status/4
+[2025-05-16 20:08:32,800] ERROR log 8684 24652 Internal Server Error: /api/users/following/status/4
+[2025-05-16 20:08:51,930] ERROR log 8684 24652 Internal Server Error: /api/users/following/status/4
+[2025-05-16 20:09:10,943] ERROR log 8684 24652 Internal Server Error: /api/users/following/status/4
+[2025-05-16 20:09:36,665] ERROR log 8684 22116 Internal Server Error: /api/users/following/status/4
+[2025-05-16 20:10:03,494] ERROR log 8684 22996 Internal Server Error: /api/users/following/status/4
+[2025-05-16 20:14:21,741] ERROR log 8684 15384 Internal Server Error: /api/profile/3
+[2025-05-16 20:14:26,821] ERROR log 8684 9528 Internal Server Error: /api/profile/4
+[2025-05-16 20:14:27,115] ERROR log 8684 25168 Internal Server Error: /api/users/following/status/3/4
+[2025-05-16 20:14:27,393] ERROR log 8684 25224 Internal Server Error: /api/users/following/status/3/4
+[2025-05-16 20:17:08,665] ERROR log 8684 15560 Internal Server Error: /api/auth/verify
+[2025-05-16 20:17:08,713] ERROR log 8684 15560 Internal Server Error: /api/auth/verify
+[2025-05-16 20:17:09,042] ERROR log 8684 15560 Internal Server Error: /api/auth/verify
+[2025-05-16 20:19:29,696] ERROR log 8684 23372 Internal Server Error: /api/auth/verify
+[2025-05-16 20:19:29,754] ERROR log 8684 23372 Internal Server Error: /api/auth/verify
+[2025-05-16 20:19:29,854] ERROR log 8684 23372 Internal Server Error: /api/auth/verify
+[2025-05-16 20:19:29,964] ERROR log 8684 23372 Internal Server Error: /api/auth/verify
+[2025-05-16 20:21:12,587] ERROR log 8684 17660 Internal Server Error: /api/auth/verify
+[2025-05-16 20:21:12,648] ERROR log 8684 17660 Internal Server Error: /api/auth/verify
+[2025-05-16 20:21:12,781] ERROR log 8684 17660 Internal Server Error: /api/auth/verify
+[2025-05-18 12:30:08,689] INFO autoreload 23600 13024 Watching for file changes with StatReloader
+[2025-05-18 12:32:00,450] ERROR log 23600 24808 Internal Server Error: /api/auth/verify
+[2025-05-18 12:32:00,555] ERROR log 23600 24808 Internal Server Error: /api/auth/verify
+[2025-05-18 12:32:00,747] ERROR log 23600 24808 Internal Server Error: /api/auth/verify
+[2025-05-18 13:12:34,705] ERROR log 23600 24484 Internal Server Error: /api/auth/verify
+[2025-05-18 13:13:05,492] ERROR log 23600 21972 Internal Server Error: /api/auth/verify
+[2025-05-18 13:14:29,163] ERROR log 23600 12044 Internal Server Error: /api/auth/verify
+[2025-05-18 13:14:29,224] ERROR log 23600 12044 Internal Server Error: /api/auth/verify
+[2025-05-18 13:14:29,320] ERROR log 23600 12044 Internal Server Error: /api/auth/verify
+[2025-05-18 13:15:38,724] ERROR log 23600 26612 Internal Server Error: /api/auth/verify
+[2025-05-18 14:11:33,061] INFO autoreload 23600 13024 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\services\implementations\users_service_impl.py changed, reloading.
+[2025-05-18 14:11:33,974] INFO autoreload 9528 23544 Watching for file changes with StatReloader
