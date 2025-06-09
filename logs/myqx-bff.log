@@ -456,3 +456,13 @@ ImportError: Could not import 'api.utils.custom_exception_handler' for API setti
 [2025-05-18 13:15:38,724] ERROR log 23600 26612 Internal Server Error: /api/auth/verify
 [2025-05-18 14:11:33,061] INFO autoreload 23600 13024 C:\Users\aleja\Desktop\BINFO\TFB\Myqx\Myqx-bff\api\services\implementations\users_service_impl.py changed, reloading.
 [2025-05-18 14:11:33,974] INFO autoreload 9528 23544 Watching for file changes with StatReloader
+[2025-05-18 14:14:34,664] ERROR log 9528 14880 Internal Server Error: /api/auth/verify
+[2025-05-18 14:14:34,720] ERROR log 9528 14880 Internal Server Error: /api/auth/verify
+[2025-05-18 14:14:34,797] ERROR log 9528 14880 Internal Server Error: /api/auth/verify
+[2025-05-18 14:16:10,455] ERROR log 9528 5824 Internal Server Error: /api/auth/verify
+[2025-05-18 14:17:41,940] ERROR log 9528 23304 Internal Server Error: /api/auth/verify
+[2025-05-18 14:18:58,885] ERROR log 9528 27316 Internal Server Error: /api/auth/verify
+[2025-05-18 14:18:58,922] ERROR log 9528 27316 Internal Server Error: /api/auth/verify
+[2025-05-18 14:18:58,997] ERROR log 9528 27316 Internal Server Error: /api/auth/verify
+[2025-05-18 14:20:07,715] ERROR log 9528 8784 Internal Server Error: /api/auth/verify
+[2025-05-18 14:25:05,173] ERROR log 9528 18996 Internal Server Error: /api/auth/verify

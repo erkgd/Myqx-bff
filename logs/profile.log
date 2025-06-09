@@ -9857,3 +9857,111 @@ api.exceptions.api_exceptions.ResourceNotFoundException: Usuario con id 4 no enc
 }
 [PROFILE_CONTROLLER] =======================
              - module:profile_controller process:9528 thread:6688
+2025-05-18 14:17:17,370 INFO 
+[PROFILE_VIEW] ===========================================
+[PROFILE_VIEW] GET /api/profile/4 HTTP/1.1
+[PROFILE_VIEW] Timestamp: 2025-05-18T14:17:17.370446
+[PROFILE_VIEW] Cliente: 127.0.0.1
+[PROFILE_VIEW] User-Agent: Dart/3.7 (dart:io)
+[PROFILE_VIEW] Parámetros de consulta: {}
+[PROFILE_VIEW] Usuario objetivo: 4
+[PROFILE_VIEW] ===========================================
+             - module:profile_view process:9528 thread:8628
+2025-05-18 14:17:21,625 INFO 
+[PROFILE_CONTROLLER] ===== RESPUESTA =====
+[PROFILE_CONTROLLER] Status: 200
+[PROFILE_CONTROLLER] Timestamp: 2025-05-18T14:17:21.625177
+[PROFILE_CONTROLLER] Payload:
+{
+  "status": "success",
+  "timestamp": "2025-05-18T14:17:21.625080",
+  "message": "Perfil de usuario obtenido con \u00e9xito",
+  "data": {
+    "userId": "4",
+    "username": "Papumbo",
+    "profileImage": "https://i.scdn.co/image/ab6775700000ee8579f765addd71c129c1e98e4d",
+    "spotifyId": "nataliagrandalla",
+    "topRatedTrack": {
+      "trackId": "7H6lDjQ509hVPiN72wlwzM",
+      "title": "Canci\u00f3n 7H6lDjQ509hVPiN72wlwzM",
+      "artist": "Artista desconocido",
+      "imageUrl": null,
+      "contentType": "track",
+      "rating": 5,
+      "normalizedRating": 2.5,
+      "date": "2025-05-15T20:31:30.576000Z",
+      "review": null
+    },
+    "recentRatings": [
+      {
+        "trackId": "7H6lDjQ509hVPiN72wlwzM",
+        "title": "Canci\u00f3n 7H6lDjQ509hVPiN72wlwzM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "contentType": "track",
+        "rating": 5,
+        "normalizedRating": 2.5,
+        "date": "2025-05-15T20:31:30.576000Z",
+        "review": null
+      }
+    ],
+    "totalRatings": 4,
+    "averageRating": 4.0
+  }
+}
+[PROFILE_CONTROLLER] =======================
+             - module:profile_controller process:9528 thread:8628
+2025-05-18 14:21:09,837 INFO 
+[PROFILE_VIEW] ===========================================
+[PROFILE_VIEW] GET /api/profile/4 HTTP/1.1
+[PROFILE_VIEW] Timestamp: 2025-05-18T14:21:09.837592
+[PROFILE_VIEW] Cliente: 127.0.0.1
+[PROFILE_VIEW] User-Agent: Dart/3.7 (dart:io)
+[PROFILE_VIEW] Parámetros de consulta: {}
+[PROFILE_VIEW] Usuario objetivo: 4
+[PROFILE_VIEW] ===========================================
+             - module:profile_view process:9528 thread:27316
+2025-05-18 14:21:14,028 INFO 
+[PROFILE_CONTROLLER] ===== RESPUESTA =====
+[PROFILE_CONTROLLER] Status: 200
+[PROFILE_CONTROLLER] Timestamp: 2025-05-18T14:21:14.028528
+[PROFILE_CONTROLLER] Payload:
+{
+  "status": "success",
+  "timestamp": "2025-05-18T14:21:14.028448",
+  "message": "Perfil de usuario obtenido con \u00e9xito",
+  "data": {
+    "userId": "4",
+    "username": "Papumbo",
+    "profileImage": "https://i.scdn.co/image/ab6775700000ee8579f765addd71c129c1e98e4d",
+    "spotifyId": "nataliagrandalla",
+    "topRatedTrack": {
+      "trackId": "7H6lDjQ509hVPiN72wlwzM",
+      "title": "Canci\u00f3n 7H6lDjQ509hVPiN72wlwzM",
+      "artist": "Artista desconocido",
+      "imageUrl": null,
+      "contentType": "track",
+      "rating": 5,
+      "normalizedRating": 2.5,
+      "date": "2025-05-15T20:31:30.576000Z",
+      "review": null
+    },
+    "recentRatings": [
+      {
+        "trackId": "7H6lDjQ509hVPiN72wlwzM",
+        "title": "Canci\u00f3n 7H6lDjQ509hVPiN72wlwzM",
+        "artist": "Artista desconocido",
+        "imageUrl": null,
+        "contentType": "track",
+        "rating": 5,
+        "normalizedRating": 2.5,
+        "date": "2025-05-15T20:31:30.576000Z",
+        "review": null
+      }
+    ],
+    "totalRatings": 4,
+    "averageRating": 4.0
+  }
+}
+[PROFILE_CONTROLLER] =======================
+             - module:profile_controller process:9528 thread:27316
